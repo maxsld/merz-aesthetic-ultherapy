@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+/* ===================== STICKY NAV ===================== */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(180deg, #f5bb3a 0%, #df9f2f 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.sticky-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 34px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.sticky-nav-inner::-webkit-scrollbar { display: none; }
+.sticky-nav-inner a {
+  flex: 0 0 auto;
+  padding: 14px 18px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 180ms;
+}
+.sticky-nav-inner a:hover {
+  background: rgba(0,0,0,0.08);
+}
+
 
 :root {
   --gold: #e5a72d;
@@ -218,6 +253,16 @@ h1 span {
   border-left: 9px solid var(--gold);
 }
 
+/* ===================== STATS FOOTNOTE ===================== */
+.stats-footnote {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 34px 18px;
+  color: rgba(0,0,0,0.5);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 .stats-band {
   position: relative;
   background: #fff;
@@ -276,6 +321,101 @@ h1 span {
   color: rgba(0, 0, 0, 0.68);
   font-size: 14px;
   line-height: 1.3;
+}
+
+/* ===================== BENEFIT INTRO SECTION ===================== */
+.benefit-intro-section {
+  padding: 72px 0;
+  background: var(--cream);
+}
+.benefit-intro-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 56px;
+}
+.benefit-intro-copy {
+  max-width: 600px;
+}
+.benefit-intro-copy p {
+  margin: 12px 0 0;
+  color: rgba(0,0,0,0.7);
+  font-size: 17px;
+  line-height: 1.65;
+}
+.benefit-intro-footnote {
+  font-size: 13px !important;
+  opacity: 0.6;
+}
+.benefit-intro-btn {
+  margin-top: 28px;
+  min-height: 52px;
+  padding: 0 24px;
+}
+.benefit-intro-visual {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  min-height: 400px;
+  height: 100%;
+  background: #f5efe8;
+}
+.benefit-intro-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
+}
+@media (max-width: 820px) {
+  .benefit-intro-content {
+    grid-template-columns: 1fr;
+  }
+  .benefit-intro-section {
+    padding: 56px 0;
+  }
+}
+
+/* ===================== ADVANTAGES CTA ===================== */
+.advantages-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+.advantages-footnote {
+  margin: 16px 0 0;
+  color: rgba(0,0,0,0.5);
+  font-size: 13px;
+}
+
+/* ===================== COMPARE DELAY ===================== */
+.compare-delay {
+  margin: 10px 0 0;
+  text-align: center;
+  color: rgba(0,0,0,0.56);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ===================== SALMA LEGAL ===================== */
+.salma-legal {
+  margin-top: 18px;
+  color: rgba(0,0,0,0.45);
+  font-size: 12px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ===================== BODY FOCUS KICKER ===================== */
+.body-focus-kicker {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 300;
+  color: var(--gold-dark);
+  margin: 0 0 48px;
+  text-align: center;
 }
 
 .section-shell {
