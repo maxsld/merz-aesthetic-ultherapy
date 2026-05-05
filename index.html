@@ -145,8 +145,12 @@
         <div class="compare-grid">
           <article class="compare-card">
             <div class="compare-slider" style="--reveal: 50%;">
-              <img class="compare-img compare-before" src="img/bras-img.png" alt="Avant traitement des bras">
-              <img class="compare-img compare-after" src="img/bras-img.png" alt="Après traitement des bras">
+              <div class="compare-img compare-placeholder compare-before" aria-hidden="true">
+                <i class="fa-regular fa-image"></i>
+              </div>
+              <div class="compare-img compare-placeholder compare-after" aria-hidden="true">
+                <i class="fa-regular fa-image"></i>
+              </div>
               <span class="compare-label compare-label-before">Avant</span>
               <span class="compare-label compare-label-after">Après</span>
               <span class="compare-handle" aria-hidden="true">
@@ -160,8 +164,31 @@
 
           <article class="compare-card">
             <div class="compare-slider" style="--reveal: 50%;">
-              <img class="compare-img compare-before" src="img/abdomen-img.png" alt="Avant traitement de l’abdomen">
-              <img class="compare-img compare-after" src="img/abdomen-img.png" alt="Après traitement de l’abdomen">
+              <div class="compare-img compare-placeholder compare-before" aria-hidden="true">
+                <i class="fa-regular fa-image"></i>
+              </div>
+              <div class="compare-img compare-placeholder compare-after" aria-hidden="true">
+                <i class="fa-regular fa-image"></i>
+              </div>
+              <span class="compare-label compare-label-before">Avant</span>
+              <span class="compare-label compare-label-after">Après</span>
+              <span class="compare-handle" aria-hidden="true">
+                <svg viewBox="0 0 28 14" focusable="false">
+                  <path d="M9 2 3 7l6 5M3 7h22M19 2l6 5-6 5"/>
+                </svg>
+              </span>
+              <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour les bras postérieurs">
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="compare-slider" style="--reveal: 50%;">
+              <div class="compare-img compare-placeholder compare-before" aria-hidden="true">
+                <i class="fa-regular fa-image"></i>
+              </div>
+              <div class="compare-img compare-placeholder compare-after" aria-hidden="true">
+                <i class="fa-regular fa-image"></i>
+              </div>
               <span class="compare-label compare-label-before">Avant</span>
               <span class="compare-label compare-label-after">Après</span>
               <span class="compare-handle" aria-hidden="true">
@@ -170,21 +197,6 @@
                 </svg>
               </span>
               <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour l’abdomen">
-            </div>
-          </article>
-
-          <article class="compare-card">
-            <div class="compare-slider" style="--reveal: 50%;">
-              <img class="compare-img compare-before" src="img/bg-hero.jpg" alt="Avant traitement de la peau">
-              <img class="compare-img compare-after" src="img/bg-hero.jpg" alt="Après traitement de la peau">
-              <span class="compare-label compare-label-before">Avant</span>
-              <span class="compare-label compare-label-after">Après</span>
-              <span class="compare-handle" aria-hidden="true">
-                <svg viewBox="0 0 28 14" focusable="false">
-                  <path d="M9 2 3 7l6 5M3 7h22M19 2l6 5-6 5"/>
-                </svg>
-              </span>
-              <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour la peau">
             </div>
           </article>
         </div>
@@ -208,7 +220,7 @@
           </footer>
         </blockquote>
         <div class="salma-photo" aria-hidden="true">
-          <img src="img/bg-hero.webp" alt="">
+          <img src="img/salma-hayek-section-citation.jpg" alt="Salma Hayek Pinault">
         </div>
       </div>
     </section>
@@ -242,7 +254,7 @@
 
           <article class="body-focus-row body-focus-row-reverse">
             <figure class="body-focus-visual">
-              <img src="img/bg-hero.jpg" alt="Bras postérieur traité par Ultherapy PRIME">
+              <img src="img/bras-posterieur.png" alt="Bras postérieur traité par Ultherapy PRIME">
             </figure>
             <div class="body-focus-copy">
               <h3>Bras postérieur</h3>
@@ -287,7 +299,9 @@
         <div class="face-recap-grid">
           <article class="face-recap-card">
             <figure class="face-recap-visual">
-              <img src="img/bg-hero.webp" alt="Lifting du visage avec Ultherapy PRIME">
+              <div class="face-recap-placeholder" aria-hidden="true">
+                <i class="fa-regular fa-image"></i>
+              </div>
             </figure>
             <div class="face-recap-copy">
               <h3>Lifting visage</h3>
@@ -300,7 +314,9 @@
 
           <article class="face-recap-card">
             <figure class="face-recap-visual">
-              <img src="img/bg-hero.jpg" alt="Raffermissement du cou avec Ultherapy PRIME">
+              <div class="face-recap-placeholder" aria-hidden="true">
+                <i class="fa-regular fa-image"></i>
+              </div>
             </figure>
             <div class="face-recap-copy">
               <h3>Cou & décolleté</h3>
@@ -313,7 +329,9 @@
 
           <article class="face-recap-card">
             <figure class="face-recap-visual">
-              <img src="img/bg-hero.png" alt="Redéfinition de l’ovale avec Ultherapy PRIME">
+              <div class="face-recap-placeholder" aria-hidden="true">
+                <i class="fa-regular fa-image"></i>
+              </div>
             </figure>
             <div class="face-recap-copy">
               <h3>Ovale & mâchoire</h3>
@@ -343,9 +361,25 @@
         </div>
 
         <div class="benefits-video-block">
-          <video class="benefits-video" controls poster="img/bg-hero.jpg">
+          <video class="benefits-video" controls muted playsinline preload="auto" aria-label="Animation Ultherapy sous la peau">
+            <source src="img/extras-01.mp4" type="video/mp4">
+            <source src="img/extras-02.mp4" type="video/mp4">
+            <source src="img/extras-03.mp4" type="video/mp4">
             Votre navigateur ne prend pas en charge la lecture vidéo.
           </video>
+          <div class="benefits-video-controls" aria-label="Contrôles vidéo">
+            <button class="video-control-btn video-toggle" type="button" aria-label="Lire la vidéo">
+              <i class="fa-solid fa-play" aria-hidden="true"></i>
+            </button>
+            <label class="video-progress-wrap">
+              <span class="sr-only">Progression de la vidéo</span>
+              <input class="video-progress" type="range" min="0" max="100" value="0" step="0.1">
+            </label>
+            <span class="video-time" aria-live="off">0:00</span>
+            <button class="video-control-btn video-mute" type="button" aria-label="Activer le son">
+              <i class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -353,7 +387,7 @@
     <section class="personalized-section" aria-labelledby="personalized-title">
       <div class="section-shell personalized-content">
         <figure class="personalized-visual">
-          <img src="img/bg-hero.webp" alt="Approche personnalisée Ultherapy PRIME">
+          <img src="img/machine-system.png" alt="Machine Ultherapy PRIME avec transducteurs">
         </figure>
 
         <div class="section-heading personalized-copy">
@@ -394,7 +428,9 @@
               <h3>Après 1 semaine</h3>
               <p>La zone traitée a retrouvé son rythme. Aucune trace visible, le quotidien reprend normalement pendant que la réponse biologique s'amorce en profondeur.</p>
               <figure class="timeline-photo">
-                <img src="img/bras-img.png" alt="Illustration du résultat après une semaine">
+                <div class="timeline-photo-placeholder" aria-hidden="true">
+                  <i class="fa-regular fa-image"></i>
+                </div>
               </figure>
             </div>
             <span class="timeline-dot" aria-hidden="true"></span>
@@ -406,7 +442,9 @@
               <h3>Après 30 jours</h3>
               <p>La peau commence à se retendre. La sensation de tonicité s'installe progressivement et les premiers changements de texture deviennent perceptibles.</p>
               <figure class="timeline-photo">
-                <img src="img/abdomen-img.png" alt="Illustration du résultat après trente jours">
+                <div class="timeline-photo-placeholder" aria-hidden="true">
+                  <i class="fa-regular fa-image"></i>
+                </div>
               </figure>
             </div>
             <span class="timeline-dot" aria-hidden="true"></span>
@@ -418,7 +456,9 @@
               <h3>Après 60 jours</h3>
               <p>Le raffermissement est maintenant visible. Les contours se redéfinissent et la peau gagne en densité sur les bras, l’abdomen ou le visage traité.</p>
               <figure class="timeline-photo">
-                <img src="img/bg-hero.jpg" alt="Illustration du résultat après soixante jours">
+                <div class="timeline-photo-placeholder" aria-hidden="true">
+                  <i class="fa-regular fa-image"></i>
+                </div>
               </figure>
             </div>
             <span class="timeline-dot" aria-hidden="true"></span>
@@ -430,7 +470,9 @@
               <h3>À 90 jours</h3>
               <p>Le résultat est à son plein potentiel. L’effet de fermeté est installé, naturel, et reflète exactement ce que la peau peut offrir quand son collagène est relancé.</p>
               <figure class="timeline-photo">
-                <img src="img/bg-hero.webp" alt="Illustration du résultat à quatre-vingt-dix jours">
+                <div class="timeline-photo-placeholder" aria-hidden="true">
+                  <i class="fa-regular fa-image"></i>
+                </div>
               </figure>
             </div>
             <span class="timeline-dot" aria-hidden="true"></span>

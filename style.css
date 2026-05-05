@@ -14,6 +14,15 @@
   box-sizing: border-box;
 }
 
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 html {
   min-width: 320px;
 }
@@ -501,9 +510,13 @@ h1 span {
 
 .benefits-video-block {
   width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111;
 }
 
 .personalized-content {
@@ -673,10 +686,6 @@ h1 span {
   color: rgba(0, 0, 0, 0.68);
   font-size: 16px;
   line-height: 1.65;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .timeline-photo {
@@ -684,15 +693,19 @@ h1 span {
   margin: 18px 0 0;
   overflow: hidden;
   border-radius: 6px;
-  background: #eadfce;
+  background: linear-gradient(180deg, #f4ecdf 0%, #eadfce 100%);
 }
 
-.timeline-photo img {
+.timeline-photo-placeholder {
   width: 100%;
   height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
+  display: grid;
+  place-items: center;
+  color: rgba(0, 0, 0, 0.22);
+}
+
+.timeline-photo-placeholder i {
+  font-size: clamp(44px, 6vw, 72px);
 }
 
 .timeline-step.is-active .timeline-card {
@@ -990,9 +1003,104 @@ h1 span {
   aspect-ratio: 16 / 9;
   display: block;
   border: 0;
-  border-radius: 8px;
   background: #111;
   object-fit: cover;
+}
+
+.benefits-video-controls {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2;
+  min-height: 42px;
+  padding: 6px 8px;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto 30px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(18, 18, 18, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  backdrop-filter: blur(12px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.benefits-video-block:hover .benefits-video-controls,
+.benefits-video-block:focus-within .benefits-video-controls,
+.benefits-video-block.is-controls-visible .benefits-video-controls,
+.benefits-video-block.is-video-paused .benefits-video-controls {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.video-control-btn {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--gold-dark);
+  font-size: 11px;
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.video-control-btn:hover {
+  transform: translateY(-1px);
+  background: var(--gold);
+  color: #fff;
+}
+
+.video-progress-wrap {
+  min-width: 0;
+  display: grid;
+}
+
+.video-progress {
+  --progress: 0%;
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold) 0 var(--progress), rgba(255, 255, 255, 0.28) var(--progress) 100%);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+}
+
+.video-progress::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+  appearance: none;
+}
+
+.video-progress::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+.video-time {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 .advantages-rail {
@@ -1026,10 +1134,6 @@ h1 span {
   display: flex;
   gap: 18px;
   animation: advantages-scroll 78s linear infinite;
-}
-
-.advantages-rail:hover .advantages-track {
-  animation-play-state: paused;
 }
 
 .advantage-card {
@@ -1114,6 +1218,19 @@ h1 span {
   display: block;
   object-fit: cover;
   object-position: center;
+}
+
+.compare-placeholder,
+.face-recap-placeholder {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #f4ecdf 0%, #eadfce 100%);
+  color: rgba(0, 0, 0, 0.22);
+}
+
+.compare-placeholder i,
+.face-recap-placeholder i {
+  font-size: clamp(44px, 6vw, 72px);
 }
 
 .compare-before {
@@ -1342,6 +1459,9 @@ h1 span {
 
 .body-focus-copy {
   padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .body-focus-eyebrow {
@@ -1406,19 +1526,18 @@ h1 span {
 }
 
 .face-recap-visual {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   margin: 0;
   overflow: hidden;
   border-radius: 8px;
   background: #f5efe8;
 }
 
-.face-recap-visual img {
+.face-recap-placeholder {
   width: 100%;
   height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
+  display: grid;
+  place-items: center;
 }
 
 .face-recap-copy h3 {
@@ -1437,6 +1556,7 @@ h1 span {
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1702,6 +1822,25 @@ h1 span {
   .section-heading p,
   .advantage-card p {
     font-size: 16px;
+  }
+
+  .benefits-video-controls {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    min-height: 38px;
+    grid-template-columns: 28px minmax(0, 1fr) 28px;
+    gap: 8px;
+    padding: 5px 6px;
+  }
+
+  .video-control-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .video-time {
+    display: none;
   }
 
   .express-card {

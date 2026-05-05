@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -v \"^/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy$\")",
+      "Bash(sips -Z 1600 '/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/OneDrive_4_03-05-2026 \\(1\\)/PRO00006835_UTY-24-12211399-02_0329_F2F.jpg' --out /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-theme/assets/img/ba-s02-apres.jpg)"
+    ],
+    "additionalDirectories": [
+      "/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/img"
+    ]
+  }
+}

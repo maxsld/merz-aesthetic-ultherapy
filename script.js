@@ -11,6 +11,140 @@ compareRanges.forEach((range) => {
   updateReveal();
 });
 
+const benefitsSection = document.querySelector(".benefits-section");
+const benefitsVideoBlock = document.querySelector(".benefits-video-block");
+const benefitsVideo = document.querySelector(".benefits-video");
+
+if (benefitsSection && benefitsVideoBlock && benefitsVideo) {
+  const toggleButton = benefitsVideoBlock.querySelector(".video-toggle");
+  const muteButton = benefitsVideoBlock.querySelector(".video-mute");
+  const progress = benefitsVideoBlock.querySelector(".video-progress");
+  const time = benefitsVideoBlock.querySelector(".video-time");
+  const toggleIcon = toggleButton?.querySelector("i");
+  const muteIcon = muteButton?.querySelector("i");
+  let controlsTimer;
+
+  benefitsVideo.removeAttribute("controls");
+
+  const showControlsBriefly = () => {
+    benefitsVideoBlock.classList.add("is-controls-visible");
+    window.clearTimeout(controlsTimer);
+
+    if (!benefitsVideo.paused) {
+      controlsTimer = window.setTimeout(() => {
+        benefitsVideoBlock.classList.remove("is-controls-visible");
+      }, 1600);
+    }
+  };
+
+  const formatVideoTime = (seconds) => {
+    if (!Number.isFinite(seconds)) {
+      return "0:00";
+    }
+
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, "0");
+
+    return `${minutes}:${remainingSeconds}`;
+  };
+
+  const updatePlayState = () => {
+    const isPaused = benefitsVideo.paused;
+
+    benefitsVideoBlock.classList.toggle("is-video-paused", isPaused);
+    toggleButton?.setAttribute("aria-label", isPaused ? "Lire la vidéo" : "Mettre la vidéo en pause");
+    toggleIcon?.classList.toggle("fa-play", isPaused);
+    toggleIcon?.classList.toggle("fa-pause", !isPaused);
+  };
+
+  const updateMuteState = () => {
+    const isMuted = benefitsVideo.muted;
+
+    muteButton?.setAttribute("aria-label", isMuted ? "Activer le son" : "Couper le son");
+    muteIcon?.classList.toggle("fa-volume-xmark", isMuted);
+    muteIcon?.classList.toggle("fa-volume-high", !isMuted);
+  };
+
+  const updateProgress = () => {
+    const duration = benefitsVideo.duration || 0;
+    const percent = duration ? (benefitsVideo.currentTime / duration) * 100 : 0;
+
+    if (progress) {
+      progress.value = String(percent);
+      progress.style.setProperty("--progress", `${percent}%`);
+    }
+
+    if (time) {
+      time.textContent = formatVideoTime(benefitsVideo.currentTime);
+    }
+  };
+
+  const playBenefitsVideo = () => {
+    benefitsVideo.muted = true;
+    benefitsVideo.play().catch(() => {
+      updatePlayState();
+    });
+    updateMuteState();
+  };
+
+  toggleButton?.addEventListener("click", () => {
+    if (benefitsVideo.paused) {
+      benefitsVideo.play().catch(() => {});
+    } else {
+      benefitsVideo.pause();
+    }
+  });
+
+  muteButton?.addEventListener("click", () => {
+    benefitsVideo.muted = !benefitsVideo.muted;
+    updateMuteState();
+  });
+
+  benefitsVideo.addEventListener("click", () => {
+    showControlsBriefly();
+
+    if (benefitsVideo.paused) {
+      benefitsVideo.play().catch(() => {});
+    } else {
+      benefitsVideo.pause();
+    }
+  });
+
+  progress?.addEventListener("input", () => {
+    const duration = benefitsVideo.duration || 0;
+
+    if (duration) {
+      benefitsVideo.currentTime = (Number(progress.value) / 100) * duration;
+    }
+  });
+
+  benefitsVideoBlock.addEventListener("mousemove", showControlsBriefly);
+  benefitsVideoBlock.addEventListener("touchstart", showControlsBriefly, { passive: true });
+  benefitsVideo.addEventListener("play", updatePlayState);
+  benefitsVideo.addEventListener("pause", updatePlayState);
+  benefitsVideo.addEventListener("timeupdate", updateProgress);
+  benefitsVideo.addEventListener("loadedmetadata", updateProgress);
+  benefitsVideo.addEventListener("volumechange", updateMuteState);
+
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          playBenefitsVideo();
+        } else {
+          benefitsVideo.pause();
+        }
+      });
+    }, { threshold: 0.48 });
+
+    videoObserver.observe(benefitsSection);
+  }
+
+  updatePlayState();
+  updateMuteState();
+  updateProgress();
+}
+
 if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 
