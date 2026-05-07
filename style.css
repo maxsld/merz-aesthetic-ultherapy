@@ -1185,6 +1185,31 @@ h1 span {
   border: 0;
 }
 
+.references-section {
+  padding: 0 0 40px;
+  background: #fff;
+}
+
+.references-shell h2 {
+  margin: 0 0 14px;
+  color: rgba(0, 0, 0, 0.88);
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.references-list {
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(0, 0, 0, 0.62);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.references-list li + li {
+  margin-top: 4px;
+}
+
 .site-footer {
   background: #090909;
   color: rgba(255, 255, 255, 0.76);
@@ -1211,7 +1236,7 @@ h1 span {
 .footer-columns {
   padding: 34px 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 1fr) minmax(220px, 1fr);
+  grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr);
   gap: 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1536,6 +1561,8 @@ h1 span {
 
 .compare-label-after {
   right: 14px;
+  background: var(--gold);
+  color: #fff;
 }
 
 .compare-handle {
@@ -2101,10 +2128,7 @@ h1 span {
     bottom: 2px;
   }
 
-  .hero-content {
-    padding: 88px 18px 250px;
-  }
-
+ 
   .hero-description {
     max-width: 100%;
   }
