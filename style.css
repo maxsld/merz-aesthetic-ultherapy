@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
 /* ===================== PRIMARY HEADER ===================== */
 .site-header {
   position: fixed;
@@ -59,6 +57,10 @@
   transition: color 180ms ease;
 }
 
+.site-menu-item-highlight {
+  color: var(--gold-dark);
+}
+
 .site-menu-item.has-chevron::after {
   content: "";
   width: 8px;
@@ -113,6 +115,10 @@
   color: #fff;
 }
 
+.site-header.is-scrolled .site-menu-item-highlight {
+  color: var(--gold);
+}
+
 .site-header.is-scrolled .site-menu-item.is-active::before {
   background: rgba(255, 255, 255, 0.9);
 }
@@ -149,7 +155,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -217,60 +223,10 @@ a {
   z-index: 2;
 }
 
-.hero-signature {
-  position: absolute;
-  right: -10%;
-  top: 25%;
-  transform: translate(-50%, -50%);
-  width: min(22vw, 350px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  z-index: 2;
-}
-
-.hero-signature img {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  display: block;
-  filter: brightness(0);
-  opacity: .8;
-}
-
-.hero-signature p {
-  margin: 10px 0 0;
-  color: rgba(46, 46, 46, 0.82);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.hero-kicker {
-  margin: 0;
-  color: #000;
-    opacity: .7;
-  font-size: clamp(16px, 1.15vw, 18px);
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-.hero-kicker::after {
-  content: "";
-  width: 120px;
-  height: 2px;
-  display: block;
-  margin-top: 10px;
-  background: linear-gradient(90deg, var(--gold) 0 62%, rgba(229, 167, 45, 0.3) 100%);
-}
-
 h1 {
   margin: 0;
   color: rgb(0, 0, 0, 0.8);
-  font-family: "Outfit", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(54px, 5.6vw, 76px);
   font-weight: 200;
   line-height: 0.94;
@@ -279,6 +235,7 @@ h1 {
 }
 
 h1 span {
+  display: block;
   color: var(--gold);
   font-weight: 300;
 }
@@ -289,20 +246,16 @@ h1 span {
   color: #000;
   font-size: clamp(17px, 1.24vw, 21px);
   line-height: 1.55;
-  font-weight: 400;
+  font-weight: 200;
   opacity: .7;
 }
 
-.hero-description b {
-  color: #000;
-  font-weight: 600;
+.hero-primary-cta {
+  margin-top: -6px;
 }
 
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
+.hero-secondary-cta {
+  margin-top: -8px;
 }
 
 .watch-btn {
@@ -314,25 +267,6 @@ h1 span {
   font-size: 14px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-}
-
-.hero-proof {
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: rgba(0, 0, 0, 0.72);
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.laurel-branch {
-  width: 48px;
-  height: 48px;
-  display: block;
-  flex: 0 0 auto;
 }
 
 .play-icon {
@@ -366,18 +300,18 @@ h1 span {
 
 .stats-band {
   position: relative;
-  background: #f5efe8;
+  background: var(--gold);
   margin-top: 0;
 }
 
 .stats-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 26px 34px;
+  padding: 30px 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 34px;
   text-align: center;
 }
 
@@ -395,13 +329,13 @@ h1 span {
   flex: 1 1 auto;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 18px;
+  gap: 24px;
   text-align: center;
 }
 
 .stat-item {
   min-height: 72px;
-  padding: 8px 18px 8px 20px;
+  padding: 8px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -411,23 +345,24 @@ h1 span {
 
 .stat-item strong {
   color: #171717;
-  font-family: "Outfit", sans-serif;
-  font-size: clamp(34px, 3vw, 52px);
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(30px, 2.7vw, 48px);
   font-weight: 300;
   line-height: 0.95;
   letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .stat-item span {
-  color: rgba(0, 0, 0, 0.68);
+  color: rgba(23, 23, 23, 0.88);
   font-size: 14px;
   line-height: 1.3;
 }
 
 /* ===================== BENEFIT INTRO SECTION ===================== */
 .benefit-intro-section {
-  margin-top: 48px;
-  padding: 72px 0;
+  margin-top: 0;
+  padding: 60px 0;
   background: #fff;
 }
 .benefit-intro-content {
@@ -452,7 +387,7 @@ h1 span {
 .benefit-intro-copy h2 {
   margin: 0;
   color: rgb(0, 0, 0, 0.8);
-  font-family: "Outfit", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(42px, 4.6vw, 48px);
   font-weight: 200;
   line-height: 0.98;
@@ -472,26 +407,25 @@ h1 span {
   line-height: 1.65;
 }
 .benefit-intro-footnote {
-  font-size: 13px !important;
+  margin: 10px 0 0;
+  font-size: 10px !important;
   opacity: 0.6;
-}
-.benefit-intro-btn {
-  margin-top: 28px;
-  min-height: 52px;
-  padding: 0 24px;
+  line-height: 1.55;
 }
 .benefit-intro-visual {
   margin: 0;
-  overflow: hidden;
-  border-radius: 8px;
-  min-height: 400px;
-  height: 100%;
-  background: #f5efe8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .benefit-intro-visual img {
   width: 100%;
+  min-height: 400px;
   height: 100%;
   display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f5efe8;
   object-fit: cover;
   object-position: center 20%;
 }
@@ -536,7 +470,7 @@ h1 span {
 
 /* ===================== BODY FOCUS KICKER ===================== */
 .body-focus-kicker {
-  font-family: "Outfit", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-size: clamp(22px, 2vw, 30px);
   font-weight: 200;
@@ -560,7 +494,7 @@ h1 span {
 .body-focus-section,
 .face-recap-section,
 .timeline-section {
-  padding: 72px 0;
+  padding: 60px 0;
   background: #fff;
 }
 
@@ -601,7 +535,7 @@ h1 span {
 .section-heading h2 {
   margin: 0;
   color: rgb(0, 0, 0, 0.8);
-  font-family: "Outfit", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(34px, 3.6vw, 52px);
   font-weight: 200;
   line-height: 1;
@@ -651,7 +585,7 @@ h1 span {
   max-width: 440px;
   margin: 0;
   color: rgb(0, 0, 0, 0.8);
-  font-family: "Outfit", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(19px, 2vw, 30px);
   font-weight: 200;
   line-height: 1.2;
@@ -846,11 +780,12 @@ h1 span {
   content: "\f00c";
   position: absolute;
   left: 0;
-  top: 1px;
+  top: 50%;
   color: var(--gold);
   font-family: "Font Awesome 7 Free";
   font-size: 14px;
   font-weight: 900;
+  transform: translateY(-50%);
 }
 
 .timeline-shell {
@@ -895,7 +830,7 @@ h1 span {
 }
 
 .timeline-step {
-  min-height: 190px;
+  min-height: 120px;
   display: grid;
   align-items: center;
   position: relative;
@@ -932,7 +867,7 @@ h1 span {
 }
 
 .timeline-card {
-  padding: 28px 28px 30px;
+  padding: 22px 22px 24px;
   border-radius: 8px;
   background: #f5efe8;
   opacity: 0.35;
@@ -940,45 +875,30 @@ h1 span {
 }
 
 .timeline-icon {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   color: var(--gold-dark);
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .timeline-card h3 {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   color: #171717;
-  font-family: "Outfit", sans-serif;
-  font-size: clamp(22px, 1.8vw, 28px);
-  font-weight: 300;
-  line-height: 1.02;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(20px, 1.6vw, 24px);
+  font-weight: 400;
+  line-height: 1.08;
 }
 
 .timeline-card p {
   margin: 0;
   color: rgba(0, 0, 0, 0.68);
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.55;
 }
 
-.timeline-photo {
-  aspect-ratio: 16 / 10;
-  margin: 18px 0 0;
-  overflow: hidden;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #f4ecdf 0%, #eadfce 100%);
-}
-
-.timeline-photo-placeholder {
-  width: 100%;
-  height: 100%;
+.timeline-copy {
   display: grid;
-  place-items: center;
-  color: rgba(0, 0, 0, 0.22);
-}
-
-.timeline-photo-placeholder i {
-  font-size: clamp(44px, 6vw, 72px);
+  gap: 12px;
 }
 
 .timeline-step.is-active .timeline-card {
@@ -991,7 +911,7 @@ h1 span {
 }
 
 .faq-section {
-  padding: 72px 0;
+  padding: 60px 0;
   background: #fff;
 }
 
@@ -1041,7 +961,7 @@ h1 span {
 
 .faq-question {
   color: #171717;
-  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.45;
@@ -1097,7 +1017,7 @@ h1 span {
 }
 
 .cta-section {
-  padding: 96px 0;
+  padding: 72px 0;
   margin-top: 0;
   margin-bottom: 0;
   background: #fff;
@@ -1193,7 +1113,7 @@ h1 span {
 .references-shell h2 {
   margin: 0 0 14px;
   color: rgba(0, 0, 0, 0.88);
-  font-family: "Outfit", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 500;
 }
@@ -1436,40 +1356,54 @@ h1 span {
 }
 
 .advantage-card {
-  width: 320px;
-  min-height: 220px;
-  padding: 28px 24px;
+  width: 260px;
+  min-height: 280px;
+  padding: 0;
   flex: 0 0 auto;
   border-radius: 8px;
-  background: linear-gradient(180deg, #f9f6f2 0%, #f3ece4 100%);
+  position: relative;
+  overflow: hidden;
+  background: #f3ece4;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: flex-end;
   text-align: center;
 }
 
-.card-icon {
-  width: auto;
-  height: auto;
-  margin-bottom: 18px;
-  color: var(--gold);
-  font-size: 34px;
+.advantage-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.18) 52%, rgba(0, 0, 0, 0.58) 100%);
+  pointer-events: none;
 }
 
-.advantage-card h3 {
-  margin: 0;
-  color: #171717;
-  font-size: 23px;
-  font-weight: 500;
-  line-height: 1.08;
+.advantage-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .advantage-card p {
-  margin: 16px 0 0;
-  color: rgba(0, 0, 0, 0.68);
-  font-size: 16px;
-  line-height: 1.55;
+  margin: 0;
+  padding: 0 18px 18px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  min-height: 104px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28);
 }
 
 @keyframes advantages-scroll {
@@ -1533,7 +1467,7 @@ h1 span {
 }
 
 .compare-before {
-  filter: grayscale(0.85) saturate(0.72) contrast(0.92) brightness(0.96);
+  filter: none;
 }
 
 .compare-after {
@@ -1634,21 +1568,29 @@ h1 span {
   max-width: 900px;
   margin: 0;
   color: rgb(0, 0, 0, 0.8);
-  font-family: "Outfit", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(28px, 2.7vw, 40px);
   font-weight: 300;
   line-height: 1.12;
   letter-spacing: 0;
 }
 
+.salma-quote > p strong {
+  font-weight: 700;
+}
+
 .salma-quote > p.salma-legal {
   margin-top: 18px;
   color: rgba(0,0,0,0.5);
-  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: 400;
   line-height: 1.45;
   letter-spacing: 0;
+}
+
+.salma-quote > p.salma-translation {
+  margin-top: 6px;
 }
 
 .quote-icon {
@@ -1662,7 +1604,6 @@ h1 span {
   margin-top: 34px;
   display: grid;
   justify-items: start;
-  gap: 6px;
 }
 
 .salma-quote img {
@@ -1677,23 +1618,6 @@ h1 span {
   width: 76px;
   filter: brightness(0) saturate(100%) invert(64%) sepia(81%) saturate(647%) hue-rotate(355deg) brightness(95%) contrast(89%);
   opacity: 1;
-}
-
-.salma-quote span {
-  margin-top: 4px;
-  color: rgba(0, 0, 0, 0.76);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.salma-quote small {
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 .salma-photo {
@@ -1719,7 +1643,7 @@ h1 span {
 }
 
 .body-focus-heading {
-  max-width: 780px;
+  max-width: 980px;
   margin: 0 auto 80px;
   text-align: center;
 }
@@ -1727,6 +1651,20 @@ h1 span {
 .body-focus-heading p {
   margin-left: auto;
   margin-right: auto;
+}
+
+.body-focus-highlight {
+  color: var(--gold);
+  font-weight: 300;
+}
+
+.body-focus-emphasis {
+  display: block;
+  margin-top: 12px;
+  font-size: clamp(44px, 5.2vw, 60px);
+  line-height: 0.95;
+  color: #171717;
+  font-weight: 300;
 }
 
 .body-focus-section .section-shell {
@@ -1838,6 +1776,15 @@ h1 span {
   margin-bottom: 10px;
 }
 
+.face-recap-kicker {
+  margin: 0 0 22px;
+  color: var(--gold-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(18px, 1.9vw, 26px);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
 .face-recap-heading p {
   margin-left: auto;
   margin-right: auto;
@@ -1887,10 +1834,6 @@ h1 span {
 
   .hero-content {
     width: 48vw;
-  }
-
-  .hero-signature {
-    width: min(25vw, 300px);
   }
 
   .stats-inner {
@@ -2003,10 +1946,6 @@ h1 span {
     font-size: clamp(42px, 11vw, 60px);
   }
 
-  .hero-signature {
-    display: none;
-  }
-
   .stats-inner {
     padding: 24px 22px;
   }
@@ -2079,6 +2018,11 @@ h1 span {
     flex-direction: column;
   }
 
+  .body-focus-emphasis {
+    margin-top: 8px;
+    font-size: clamp(34px, 8vw, 46px);
+  }
+
   .face-recap-section {
     padding: 56px 0;
   }
@@ -2146,11 +2090,6 @@ h1 span {
 
   .hero {
     background: url("img/bg-hero.webp") 100% bottom / auto 285px no-repeat;
-  }
-
-  .hero-proof {
-    gap: 10px;
-    font-size: 14px;
   }
 
   .stats-list {

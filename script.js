@@ -246,6 +246,7 @@ if (window.gsap && window.ScrollTrigger) {
       });
     });
   }
+
 }
 
 const faqItems = document.querySelectorAll(".faq-item");
