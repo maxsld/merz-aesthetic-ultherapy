@@ -85,9 +85,26 @@ if (benefitsSection && benefitsVideoBlock && benefitsVideo) {
   const time = benefitsVideoBlock.querySelector(".video-time");
   const toggleIcon = toggleButton?.querySelector("i");
   const muteIcon = muteButton?.querySelector("i");
+  const benefitsPlaylist = (benefitsVideo.dataset.playlist || "")
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+  let currentBenefitsVideoIndex = 0;
   let controlsTimer;
 
   benefitsVideo.removeAttribute("controls");
+
+  const setBenefitsVideoSource = (index) => {
+    const nextSource = benefitsPlaylist[index];
+
+    if (!nextSource || benefitsVideo.currentSrc.endsWith(nextSource)) {
+      return;
+    }
+
+    currentBenefitsVideoIndex = index;
+    benefitsVideo.src = nextSource;
+    benefitsVideo.load();
+  };
 
   const showControlsBriefly = () => {
     benefitsVideoBlock.classList.add("is-controls-visible");
@@ -188,6 +205,22 @@ if (benefitsSection && benefitsVideoBlock && benefitsVideo) {
   benefitsVideo.addEventListener("timeupdate", updateProgress);
   benefitsVideo.addEventListener("loadedmetadata", updateProgress);
   benefitsVideo.addEventListener("volumechange", updateMuteState);
+  benefitsVideo.addEventListener("ended", () => {
+    const nextIndex = currentBenefitsVideoIndex + 1;
+
+    if (nextIndex >= benefitsPlaylist.length) {
+      currentBenefitsVideoIndex = 0;
+      updatePlayState();
+      return;
+    }
+
+    setBenefitsVideoSource(nextIndex);
+    playBenefitsVideo();
+  });
+
+  if (benefitsPlaylist.length) {
+    setBenefitsVideoSource(0);
+  }
 
   if ("IntersectionObserver" in window) {
     const videoObserver = new IntersectionObserver((entries) => {
@@ -244,6 +277,45 @@ if (window.gsap && window.ScrollTrigger) {
           onLeaveBack: () => step.classList.remove("is-active"),
         },
       });
+    });
+  }
+
+  const bodyFocusIndicator = document.querySelector(".body-focus-indicator");
+  const faceRecapIndicator = document.querySelector(".face-recap-indicator");
+
+  if (bodyFocusIndicator) {
+    let bodyFocusIndicatorTimer = null;
+
+    ScrollTrigger.create({
+      trigger: bodyFocusIndicator,
+      start: "top 78%",
+      once: true,
+      onEnter: () => {
+        bodyFocusIndicatorTimer = window.setTimeout(() => {
+          bodyFocusIndicator.classList.add("is-visible");
+        }, 3000);
+      },
+    });
+  }
+
+  if (faceRecapIndicator) {
+    let faceRecapIndicatorTimer = null;
+
+    ScrollTrigger.create({
+      trigger: faceRecapIndicator,
+      start: "top 78%",
+      once: true,
+      onEnter: () => {
+        faceRecapIndicatorTimer = window.setTimeout(() => {
+          faceRecapIndicator.classList.add("is-visible");
+        }, 120);
+      },
+    });
+
+    window.addEventListener("beforeunload", () => {
+      if (faceRecapIndicatorTimer) {
+        window.clearTimeout(faceRecapIndicatorTimer);
+      }
     });
   }
 
