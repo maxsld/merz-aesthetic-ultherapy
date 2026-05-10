@@ -36,6 +36,26 @@
   transition: filter 180ms ease;
 }
 
+.site-menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #111;
+  cursor: pointer;
+}
+
+.site-menu-toggle span {
+  width: 22px;
+  height: 2px;
+  display: block;
+  margin: 5px auto;
+  background: currentColor;
+  transition: transform 180ms ease, opacity 180ms ease, background 180ms ease;
+}
+
 .site-menu {
   display: flex;
   align-items: center;
@@ -60,6 +80,7 @@
 
 .site-menu-item-highlight {
   color: var(--gold-dark);
+  text-align: left;
 }
 
 .site-menu-item.has-chevron::after {
@@ -122,6 +143,22 @@
 
 .site-header.is-scrolled .site-menu-item.is-active::before {
   background: rgba(255, 255, 255, 0.9);
+}
+
+.site-header.is-scrolled .site-menu-toggle {
+  color: #fff;
+}
+
+.site-header.is-menu-open .site-menu-toggle span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header.is-menu-open .site-menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.is-menu-open .site-menu-toggle span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 
@@ -2282,13 +2319,33 @@ h1 span {
     flex: 0 0 auto;
   }
 
+  .site-menu-toggle {
+    display: block;
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+
   .site-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 16px;
+    right: 16px;
     min-width: 0;
-    flex: 1 1 auto;
-    gap: 14px;
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    overflow: hidden;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+    backdrop-filter: blur(12px);
     scrollbar-width: none;
   }
 
@@ -2296,14 +2353,28 @@ h1 span {
     display: none;
   }
 
+  .site-header.is-menu-open .site-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
   .site-menu-item {
-    padding: 10px 0 12px;
-    font-size: 11px;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 12px;
     letter-spacing: 0.08em;
+    text-align: left;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   }
 
   .site-menu-item.is-active::before {
-    bottom: 4px;
+    bottom: 10px;
+  }
+
+  .site-menu-item:last-child {
+    border-bottom: 0;
   }
 
   .hero {
@@ -2443,12 +2514,15 @@ h1 span {
   }
 
   .site-menu {
-    gap: 12px;
+    left: 12px;
+    right: 12px;
+    top: calc(100% + 8px);
+    padding: 14px;
   }
 
   .site-menu-item {
-    padding: 8px 0 10px;
-    font-size: 10px;
+    padding: 12px 0;
+    font-size: 11px;
     letter-spacing: 0.06em;
   }
 
@@ -2543,23 +2617,160 @@ h1 span {
   }
 
   .body-callout {
-    display: none;
+    display: flex;
+  }
+
+  .body-callout-text {
+    font-size: 10px;
+    line-height: 1.15;
+  }
+
+  .body-callout-dot {
+    width: 8px;
+    height: 8px;
+    flex-basis: 8px;
+  }
+
+  .body-callout-arms {
+    top: 51%;
+    left: -19%;
+    gap: 8px;
+  }
+
+  .body-callout-arms .body-callout-text {
+    max-width: 92px;
+    white-space: normal;
+  }
+
+  .body-callout-arms .body-callout-line {
+    width: 34px;
+  }
+
+  .body-callout-abdomen {
+    top: 74%;
+    right: -5%;
+    gap: 8px;
+  }
+
+  .body-callout-abdomen .body-callout-text {
+    max-width: 88px;
+    white-space: normal;
+  }
+
+  .body-callout-abdomen .body-callout-line {
+    width: 52px;
   }
 
   .face-callout {
-    display: none;
+    display: flex;
+  }
+
+  .face-callout-text {
+    font-size: 10px;
+    line-height: 1.15;
+  }
+
+  .face-callout-dot {
+    width: 8px;
+    height: 8px;
+    flex-basis: 8px;
+  }
+
+  .face-callout-brow {
+    top: 6%;
+    right: -1%;
+    gap: 8px;
+  }
+
+  .face-callout-brow .face-callout-text {
+    max-width: 92px;
+    white-space: normal;
+  }
+
+  .face-callout-brow .face-callout-line {
+    width: 54px;
+  }
+
+  .face-callout-jaw-left {
+    top: 8%;
+    left: -12%;
+    gap: 8px;
+  }
+
+  .face-callout-jaw-left .face-callout-text {
+    max-width: 86px;
+    white-space: normal;
+  }
+
+  .face-callout-jaw-left .face-callout-line {
+    width: 44px;
+  }
+
+  .face-callout-oval {
+    top: 15%;
+    right: 1%;
+    gap: 8px;
+  }
+
+  .face-callout-oval .face-callout-text {
+    max-width: 88px;
+    white-space: normal;
+  }
+
+  .face-callout-oval .face-callout-line {
+    width: 50px;
+  }
+
+  .face-callout-neck {
+    top: 19%;
+    left: 0%;
+    gap: 8px;
+  }
+
+  .face-callout-neck .face-callout-text {
+    max-width: 82px;
+    white-space: normal;
+  }
+
+  .face-callout-neck .face-callout-line {
+    width: 34px;
   }
 
   .face-recap-indicator {
-    min-height: 240px;
+    min-height: 160px;
+    overflow: hidden;
+  }
+
+  .face-recap-indicator-media {
+    min-height: auto;
+  }
+
+  .face-recap-indicator img {
+    width: 100%;
   }
 
   .body-focus-summary p {
     font-size: 16px;
   }
 
+  .face-recap-content {
+    gap: 20px;
+  }
+
+  .face-recap-heading {
+    margin-bottom: 28px;
+  }
+
   .face-recap-summary p {
     font-size: 16px;
+  }
+
+  .face-recap-summary {
+    margin-top: 12px;
+  }
+
+  .face-recap-gallery {
+    margin-top: 12px;
   }
 
   .personalized-visual {

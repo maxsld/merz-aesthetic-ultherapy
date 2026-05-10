@@ -1,6 +1,41 @@
 const compareRanges = document.querySelectorAll(".compare-range");
 const siteHeader = document.querySelector(".site-header");
+const siteMenuToggle = document.querySelector(".site-menu-toggle");
 const siteMenuLinks = Array.from(document.querySelectorAll(".site-menu-item"));
+
+if (siteHeader && siteMenuToggle) {
+  const closeMobileMenu = () => {
+    siteHeader.classList.remove("is-menu-open");
+    siteMenuToggle.setAttribute("aria-expanded", "false");
+    siteMenuToggle.setAttribute("aria-label", "Ouvrir le menu");
+  };
+
+  const openMobileMenu = () => {
+    siteHeader.classList.add("is-menu-open");
+    siteMenuToggle.setAttribute("aria-expanded", "true");
+    siteMenuToggle.setAttribute("aria-label", "Fermer le menu");
+  };
+
+  siteMenuToggle.addEventListener("click", () => {
+    if (siteHeader.classList.contains("is-menu-open")) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      closeMobileMenu();
+    }
+  });
+
+  siteMenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  });
+}
 
 if (siteMenuLinks.length) {
   const menuTargets = siteMenuLinks
@@ -293,7 +328,7 @@ if (window.gsap && window.ScrollTrigger) {
       onEnter: () => {
         bodyFocusIndicatorTimer = window.setTimeout(() => {
           bodyFocusIndicator.classList.add("is-visible");
-        }, 3000);
+        }, 2000);
       },
     });
   }
