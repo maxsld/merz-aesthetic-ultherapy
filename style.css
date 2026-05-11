@@ -237,9 +237,9 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.16);
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.9);
-  color: rgba(0, 0, 0, 0.78);
+  color: #000;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -248,7 +248,7 @@ a {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  background: url("img/PRO00006835_UTY-24-12211399-03_0078_F2D.jpg") 100% center / cover no-repeat;
+  background: url("img/img-hero-section.jpg") 100% center / cover no-repeat;
 }
 
 .hero-inner {
@@ -260,8 +260,8 @@ a {
 }
 
 .hero-content {
-  width: min(100%, 720px);
-  max-width: 720px;
+  width: min(100%, 780px);
+  max-width: 780px;
   padding: clamp(108px, 11vw, 170px) 0 70px clamp(34px, 5vw, 92px);
   margin-top: 4rem;
   display: flex;
@@ -276,7 +276,7 @@ h1 {
   margin: 0;
   color: rgb(0, 0, 0, 0.8);
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(54px, 5.6vw, 76px);
+  font-size: clamp(48px, 5vw, 68px);
   font-weight: 200;
   line-height: 0.94;
   letter-spacing: 0;
@@ -295,8 +295,8 @@ h1 span {
   color: #000;
   font-size: clamp(17px, 1.24vw, 21px);
   line-height: 1.55;
-  font-weight: 200;
-  opacity: .7;
+  font-weight: 400;
+  opacity: 1;
 }
 
 .hero-primary-cta {
@@ -396,7 +396,7 @@ h1 span {
   color: #171717;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(30px, 2.7vw, 48px);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 0.95;
   letter-spacing: 0;
   white-space: nowrap;
@@ -495,7 +495,8 @@ h1 span {
 .advantages-footnote {
   margin: 16px 0 0;
   color: rgba(0,0,0,0.5);
-  font-size: 13px;
+  font-size: 10px;
+  line-height: 1.55;
 }
 
 /* ===================== COMPARE DELAY ===================== */
@@ -743,6 +744,13 @@ h1 span {
   margin-right: auto;
 }
 
+.before-after-content .benefits-tag {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 
 .benefits-heading p {
   max-width: 520px;
@@ -752,6 +760,7 @@ h1 span {
   line-height: 1.55;
   font-weight: 400;
   opacity: .7;
+  text-align: justify;
 }
 
 .benefits-btn {
@@ -843,7 +852,7 @@ h1 span {
 
 .timeline-heading {
   max-width: 760px;
-  margin: 0 auto 72px;
+  margin: 0 auto 44px;
   text-align: center;
 }
 
@@ -856,7 +865,7 @@ h1 span {
   --timeline-axis: 50%;
   position: relative;
   display: grid;
-  gap: 34px;
+  gap: 18px;
 }
 
 .timeline-line {
@@ -879,7 +888,7 @@ h1 span {
 }
 
 .timeline-step {
-  min-height: 120px;
+  min-height: 88px;
   display: grid;
   align-items: center;
   position: relative;
@@ -916,24 +925,24 @@ h1 span {
 }
 
 .timeline-card {
-  padding: 22px 22px 24px;
+  padding: 16px 16px 18px;
   border-radius: 8px;
   background: #f5efe8;
   opacity: 0.35;
-  transform: translateY(24px);
+  transform: translateY(16px);
 }
 
 .timeline-icon {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: var(--gold-dark);
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .timeline-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   color: #171717;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(20px, 1.6vw, 24px);
+  font-size: clamp(18px, 1.35vw, 21px);
   font-weight: 400;
   line-height: 1.08;
 }
@@ -941,13 +950,24 @@ h1 span {
 .timeline-card p {
   margin: 0;
   color: rgba(0, 0, 0, 0.68);
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .timeline-copy {
   display: grid;
-  gap: 12px;
+  gap: 8px;
+}
+
+.timeline-subsection {
+  display: grid;
+  gap: 4px;
+}
+
+.timeline-subtitle {
+  margin: 0;
+  color: #171717;
+  font-weight: 600;
 }
 
 .timeline-step.is-active .timeline-card {
@@ -1086,6 +1106,22 @@ h1 span {
 .cta-heading p {
   margin-left: 0;
   margin-right: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#cta-title {
+  font-size: clamp(30px, 3vw, 40px);
+}
+
+#cta-title .cta-brand {
+  display: block;
+  color: var(--gold);
+  font-weight: 300;
+}
+
+#cta-title .cta-brand-inline {
+  display: inline;
 }
 
 .cta-locator {
@@ -1452,6 +1488,7 @@ h1 span {
   display: block;
   text-align: center;
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28);
+  text-transform: uppercase;
 }
 
 .advantage-card p sup {
@@ -1656,6 +1693,11 @@ h1 span {
   letter-spacing: 0;
 }
 
+#social-proof-title {
+  text-align: left;
+  text-wrap: balance;
+}
+
 .salma-quote > p strong {
   font-weight: 700;
 }
@@ -1754,7 +1796,6 @@ h1 span {
 
 .body-focus-indicator {
   min-height: 520px;
-  margin: 0;
   overflow: visible;
   border-radius: 8px;
   background: transparent;
@@ -1782,12 +1823,12 @@ h1 span {
   z-index: 5;
   display: flex;
   align-items: center;
-  color: #111;
+  color: #c61f1f;
   pointer-events: none;
 }
 
 .body-callout-text {
-  font-size: clamp(14px, 1.15vw, 18px);
+  font-size: clamp(12px, 0.95vw, 16px);
   font-weight: 500;
   line-height: 1.18;
   letter-spacing: 0;
@@ -1800,7 +1841,7 @@ h1 span {
 .body-callout-line {
   height: 1.5px;
   display: block;
-  background: rgba(17, 17, 17, 0.9);
+  background: currentColor;
   transform: scaleX(0);
 }
 
@@ -1809,14 +1850,14 @@ h1 span {
   height: 12px;
   flex: 0 0 12px;
   border-radius: 50%;
-  background: #111;
+  background: currentColor;
   opacity: 0;
   transform: scale(0.5);
 }
 
 .body-callout-arms {
-  top: 54%;
-  left: -10.5%;
+  top: 68%;
+  left: 4.5%;
   gap: 14px;
 }
 
@@ -1825,20 +1866,24 @@ h1 span {
 }
 
 .body-callout-arms .body-callout-line {
-  width: clamp(92px, 8vw, 138px);
+  width: clamp(64px, 5.6vw, 104px);
   transform-origin: right center;
 }
 
 .body-callout-abdomen {
   top: 76.6%;
-  right: -2.2%;
+  right: 3.8%;
   left: auto;
   gap: 14px;
 }
 
 .body-callout-abdomen .body-callout-line {
-  width: clamp(150px, 17vw, 264px);
+  width: clamp(112px, 11.2vw, 180px);
   transform-origin: left center;
+}
+
+.body-callout-abdomen .body-callout-text {
+  text-align: left;
 }
 
 .body-focus-indicator.is-visible .body-callout-dot {
@@ -2019,12 +2064,12 @@ h1 span {
   z-index: 5;
   display: flex;
   align-items: center;
-  color: #111;
+  color: #c61f1f;
   pointer-events: none;
 }
 
 .face-callout-text {
-  font-size: clamp(14px, 1.15vw, 18px);
+  font-size: clamp(12px, 0.95vw, 15px);
   font-weight: 500;
   line-height: 1.18;
   letter-spacing: 0;
@@ -2037,7 +2082,7 @@ h1 span {
 .face-callout-line {
   height: 2px;
   display: block;
-  background: rgba(17, 17, 17, 0.9);
+  background: currentColor;
   transform: scaleX(0);
 }
 
@@ -2046,25 +2091,25 @@ h1 span {
   height: 12px;
   flex: 0 0 12px;
   border-radius: 50%;
-  background: #111;
+  background: currentColor;
   opacity: 0;
   transform: scale(0.5);
 }
 
 .face-callout-brow {
   top: 19.2%;
-  right: 8.6%;
+  right: 11%;
   gap: 14px;
 }
 
 .face-callout-brow .face-callout-line {
-  width: clamp(120px, 18vw, 220px);
+  width: clamp(136px, 19.5vw, 220px);
   transform-origin: left center;
 }
 
 .face-callout-jaw-left {
   top: 30.3%;
-  left: -3.2%;
+  left: 3.5%;
   gap: 14px;
 }
 
@@ -2073,24 +2118,24 @@ h1 span {
 }
 
 .face-callout-jaw-left .face-callout-line {
-  width: clamp(150px, 20vw, 240px);
+  width: clamp(118px, 16vw, 196px);
   transform-origin: right center;
 }
 
 .face-callout-oval {
-  top: 46.8%;
-  right: 12.7%;
+  top: 43.8%;
+  right: 11.8%;
   gap: 14px;
 }
 
 .face-callout-oval .face-callout-line {
-  width: clamp(132px, 18vw, 228px);
+  width: clamp(148px, 19.5vw, 244px);
   transform-origin: left center;
 }
 
 .face-callout-neck {
   top: 54.6%;
-  left: 12%;
+  left: 15%;
   gap: 14px;
 }
 
@@ -2099,7 +2144,7 @@ h1 span {
 }
 
 .face-callout-neck .face-callout-line {
-  width: clamp(84px, 9vw, 120px);
+  width: clamp(96px, 10vw, 136px);
   transform-origin: right center;
 }
 
@@ -2396,7 +2441,7 @@ h1 span {
   }
 
   h1 {
-    font-size: clamp(42px, 11vw, 60px);
+    font-size: clamp(40px, 10vw, 56px);
   }
 
   .stats-inner {
@@ -2778,15 +2823,15 @@ h1 span {
   }
 
   .timeline-heading {
-    margin-bottom: 46px;
+    margin-bottom: 32px;
   }
 
   .timeline-card {
-    padding: 24px 20px;
+    padding: 18px 16px;
   }
 
   .timeline-card h3 {
-    font-size: clamp(24px, 7vw, 30px);
+    font-size: clamp(20px, 6vw, 24px);
   }
 
   .faq-heading {
