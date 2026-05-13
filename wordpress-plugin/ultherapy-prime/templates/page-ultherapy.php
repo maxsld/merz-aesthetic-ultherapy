@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 
-$img = ULTHERAPY_PRIME_URL . 'assets/img';
+$ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -47,14 +47,14 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
       </div>
 
       <p class="hero-proof">
-        <img class="laurel-branch" src="<?php echo $img; ?>/lauriet-gauche.avif" alt="" aria-hidden="true">
+        <img class="laurel-branch" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/lauriet-gauche.avif" alt="" aria-hidden="true">
         <span>95% de satisfaction de <br> nos clients sur 1 an</span>
-        <img class="laurel-branch" src="<?php echo $img; ?>/lauriet-droit.avif" alt="" aria-hidden="true">
+        <img class="laurel-branch" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/lauriet-droit.avif" alt="" aria-hidden="true">
       </p>
     </div>
 
     <div class="hero-signature" aria-hidden="true">
-      <img src="<?php echo $img; ?>/signature-salma.png" alt="">
+      <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/signature-salma.png" alt="">
       <p>Salma Hayek Pinault<br>Actress &amp; Producer</p>
     </div>
   </section>
@@ -99,7 +99,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
         <a class="watch-btn benefit-intro-btn" href="#">Trouver un praticien près de chez moi</a>
       </div>
       <figure class="benefit-intro-visual">
-        <img src="<?php echo $img; ?>/model-sunlee.jpg" alt="Résultats Ultherapy PRIME">
+        <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-sunlee.jpg" alt="Résultats Ultherapy PRIME">
       </figure>
     </div>
   </section>
@@ -117,10 +117,10 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
 
         <div class="express-visuals" aria-label="Zones indiquées : bras et abdomen">
           <figure class="body-zone body-zone-arm">
-            <img src="<?php echo $img; ?>/bras-img.png" alt="Zone des bras traitée par Ultherapy PRIME">
+            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/bras-img.png" alt="Zone des bras traitée par Ultherapy PRIME">
           </figure>
           <figure class="body-zone body-zone-abdomen">
-            <img src="<?php echo $img; ?>/abdomen-img.png" alt="Zone de l'abdomen traitée par Ultherapy PRIME">
+            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/abdomen-img.png" alt="Zone de l'abdomen traitée par Ultherapy PRIME">
           </figure>
         </div>
       </div>
@@ -180,8 +180,8 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
       <div class="compare-grid">
         <article class="compare-card">
           <div class="compare-slider" style="--reveal: 50%;">
-            <img class="compare-img compare-before" src="<?php echo $img; ?>/ba-s01-avant.jpg" alt="Avant traitement des bras">
-            <img class="compare-img compare-after" src="<?php echo $img; ?>/ba-s01-apres.jpg" alt="Après traitement des bras">
+            <img class="compare-img compare-before" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s01-avant.jpg" alt="Avant traitement des bras">
+            <img class="compare-img compare-after" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s01-apres.jpg" alt="Après traitement des bras">
             <span class="compare-label compare-label-before">Avant</span>
             <span class="compare-label compare-label-after">Après</span>
             <span class="compare-handle" aria-hidden="true">
@@ -194,8 +194,8 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
 
         <article class="compare-card">
           <div class="compare-slider" style="--reveal: 50%;">
-            <img class="compare-img compare-before" src="<?php echo $img; ?>/ba-s02-avant.jpg" alt="Avant traitement des bras postérieurs">
-            <img class="compare-img compare-after" src="<?php echo $img; ?>/ba-s02-apres.jpg" alt="Après traitement des bras postérieurs">
+            <img class="compare-img compare-before" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s02-avant.jpg" alt="Avant traitement des bras postérieurs">
+            <img class="compare-img compare-after" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s02-apres.jpg" alt="Après traitement des bras postérieurs">
             <span class="compare-label compare-label-before">Avant</span>
             <span class="compare-label compare-label-after">Après</span>
             <span class="compare-handle" aria-hidden="true">
@@ -208,8 +208,8 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
 
         <article class="compare-card">
           <div class="compare-slider" style="--reveal: 50%;">
-            <img class="compare-img compare-before" src="<?php echo $img; ?>/ba-s03-avant.jpg" alt="Avant traitement de l'abdomen">
-            <img class="compare-img compare-after" src="<?php echo $img; ?>/ba-s03-apres.jpg" alt="Après traitement de l'abdomen">
+            <img class="compare-img compare-before" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s03-avant.jpg" alt="Avant traitement de l'abdomen">
+            <img class="compare-img compare-after" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s03-apres.jpg" alt="Après traitement de l'abdomen">
             <span class="compare-label compare-label-before">Avant</span>
             <span class="compare-label compare-label-after">Après</span>
             <span class="compare-handle" aria-hidden="true">
@@ -228,19 +228,19 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
   <section class="social-proof-section" aria-labelledby="social-proof-title">
     <div class="section-shell social-proof-content">
       <blockquote class="salma-quote">
-        <img class="quote-icon" src="<?php echo $img; ?>/icon-citation.webp" alt="" aria-hidden="true">
+        <img class="quote-icon" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/icon-citation.webp" alt="" aria-hidden="true">
         <p id="social-proof-title">
           Ultherapy<sup>®</sup> PRIME personnalise* mon traitement en atteignant les couches cibles de la peau, pour activer mon potentiel de régénération et stimuler ma propre production de collagène et d'élastine.<sup>2,3,4</sup> Mieux encore, il est non invasif, ne demande qu'une seule séance et ne nécessite aucune interruption de sa vie sociale.<sup>2</sup>
         </p>
         <footer>
-          <img src="<?php echo $img; ?>/signature-salma.png" alt="Signature de Salma Hayek Pinault">
+          <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/signature-salma.png" alt="Signature de Salma Hayek Pinault">
           <span>Salma Hayek Pinault</span>
           <small>Actress &amp; Producer</small>
         </footer>
         <p class="salma-legal">Photo retouchée à des fins esthétiques. La patiente a bénéficié d'un traitement Ultherapy<sup>®</sup> PRIME. Les zones traitées ont été conservées sans modification. Les résultats individuels peuvent varier.</p>
       </blockquote>
       <div class="salma-photo" aria-hidden="true">
-        <img src="<?php echo $img; ?>/model-thaise.jpg" alt="">
+        <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-thaise.jpg" alt="">
       </div>
     </div>
   </section>
@@ -260,7 +260,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
       <div class="body-focus-stack">
         <article class="body-focus-row">
           <figure class="body-focus-visual">
-            <img src="<?php echo $img; ?>/zone-bras-ant.jpg" alt="Bras antérieur traité par Ultherapy PRIME">
+            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-bras-ant.jpg" alt="Bras antérieur traité par Ultherapy PRIME">
           </figure>
           <div class="body-focus-copy">
             <h3>Bras antérieur</h3>
@@ -275,7 +275,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
 
         <article class="body-focus-row body-focus-row-reverse">
           <figure class="body-focus-visual">
-            <img src="<?php echo $img; ?>/zone-bras-post.jpg" alt="Bras postérieur traité par Ultherapy PRIME">
+            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-bras-post.jpg" alt="Bras postérieur traité par Ultherapy PRIME">
           </figure>
           <div class="body-focus-copy">
             <h3>Bras postérieur</h3>
@@ -290,7 +290,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
 
         <article class="body-focus-row">
           <figure class="body-focus-visual">
-            <img src="<?php echo $img; ?>/zone-abdomen.jpg" alt="Abdomen traité par Ultherapy PRIME">
+            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-abdomen.jpg" alt="Abdomen traité par Ultherapy PRIME">
           </figure>
           <div class="body-focus-copy">
             <h3>Abdomen</h3>
@@ -318,7 +318,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
       <div class="face-recap-grid">
         <article class="face-recap-card">
           <figure class="face-recap-visual">
-            <img src="<?php echo $img; ?>/model-sylvie.jpg" alt="Lifting du visage avec Ultherapy PRIME">
+            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-sylvie.jpg" alt="Lifting du visage avec Ultherapy PRIME">
           </figure>
           <div class="face-recap-copy">
             <h3>Redessiner l'ovale</h3>
@@ -328,7 +328,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
 
         <article class="face-recap-card">
           <figure class="face-recap-visual">
-            <img src="<?php echo $img; ?>/model-rafeeka.jpg" alt="Raffermissement du cou avec Ultherapy PRIME">
+            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-rafeeka.jpg" alt="Raffermissement du cou avec Ultherapy PRIME">
           </figure>
           <div class="face-recap-copy">
             <h3>Sculpter le bas du visage</h3>
@@ -338,7 +338,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
 
         <article class="face-recap-card">
           <figure class="face-recap-visual">
-            <img src="<?php echo $img; ?>/model-gabriella.jpg" alt="Redéfinition de l'ovale avec Ultherapy PRIME">
+            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-gabriella.jpg" alt="Redéfinition de l'ovale avec Ultherapy PRIME">
           </figure>
           <div class="face-recap-copy">
             <h3>Rehausser le sourcil &amp; lisser le cou</h3>
@@ -363,12 +363,26 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
       </div>
 
       <div class="benefits-video-block">
-        <video class="benefits-video" controls preload="metadata">
-          <source src="<?php echo $img; ?>/extras-01.mp4" type="video/mp4">
-          <source src="<?php echo $img; ?>/extras-02.mp4" type="video/mp4">
-          <source src="<?php echo $img; ?>/extras-03.mp4" type="video/mp4">
-          Votre navigateur ne prend pas en charge la lecture vidéo.
-        </video>
+        <?php
+        /*
+         * TODO – VIMEO INTEGRATION
+         * Upload extras-01.mp4 / extras-02.mp4 / extras-03.mp4 to the
+         * Merz Aesthetics France folder on Vimeo, then replace the
+         * placeholder IDs below (XXXXXXXXX) with the real Vimeo video IDs.
+         * Privacy setting: "Hide from Vimeo" must be enabled on each video.
+         */
+        $vimeo_id = 'XXXXXXXXX'; // ← replace with real Vimeo ID
+        ?>
+        <div class="benefits-video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <iframe
+            src="https://player.vimeo.com/video/<?php echo esc_attr( $vimeo_id ); ?>?badge=0&autopause=0&player_id=0&app_id=58479"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="Ultherapy PRIME – Traitement">
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -376,7 +390,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
   <section class="personalized-section" aria-labelledby="personalized-title">
     <div class="section-shell personalized-content">
       <figure class="personalized-visual">
-        <img src="<?php echo $img; ?>/machine-system.png" alt="Machine Ultherapy PRIME avec transducteurs">
+        <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/machine-system.png" alt="Machine Ultherapy PRIME avec transducteurs">
       </figure>
 
       <div class="section-heading personalized-copy">
@@ -415,7 +429,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
             <h3>Avant le traitement</h3>
             <p>Une consultation médicale permet d'évaluer votre peau, les zones à traiter et de définir une prise en charge personnalisée.</p>
             <figure class="timeline-photo">
-              <img src="<?php echo $img; ?>/ba-s01-avant.jpg" alt="Photo de la zone avant traitement">
+              <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s01-avant.jpg" alt="Photo de la zone avant traitement">
             </figure>
           </div>
           <span class="timeline-dot" aria-hidden="true"></span>
@@ -427,7 +441,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
             <h3>Pendant le traitement</h3>
             <p>Après nettoyage et gel échographique, Ultherapy® PRIME cible précisément les tissus profonds grâce à la visualisation en temps réel. Les brèves augmentations de température stimulent la néocollagénèse.</p>
             <figure class="timeline-photo">
-              <img src="<?php echo $img; ?>/zone-bras-ant.jpg" alt="Photo du traitement en cours">
+              <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-bras-ant.jpg" alt="Photo du traitement en cours">
             </figure>
           </div>
           <span class="timeline-dot" aria-hidden="true"></span>
@@ -439,7 +453,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
             <h3>Après le traitement</h3>
             <p>Aucune éviction sociale. Les premiers résultats apparaissent progressivement : à 90 jours les effets sont nets, à 1 an ils restent visibles et harmonieux.</p>
             <figure class="timeline-photo">
-              <img src="<?php echo $img; ?>/zone-abdomen.jpg" alt="Photo après le traitement">
+              <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-abdomen.jpg" alt="Photo après le traitement">
             </figure>
           </div>
           <span class="timeline-dot" aria-hidden="true"></span>
@@ -451,7 +465,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
             <h3>À 90 jours et au-delà</h3>
             <p>Les résultats sont à leur plein potentiel. L'effet de fermeté est installé naturellement et peut se maintenir jusqu'à un an ou plus.*</p>
             <figure class="timeline-photo">
-              <img src="<?php echo $img; ?>/ba-s03-apres.jpg" alt="Photo du résultat à 90 jours">
+              <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s03-apres.jpg" alt="Photo du résultat à 90 jours">
             </figure>
           </div>
           <span class="timeline-dot" aria-hidden="true"></span>
@@ -553,13 +567,17 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
             <p class="benefits-tag">Trouver un praticien</p> <br><br>
             <h2 id="cta-title">Découvrez Ultherapy<sup>®</sup> PRIME <span>près de chez vous</span></h2>
             <p>
-              Tous nos praticiens sont formés et certifiés Ultherapy® PRIME. Entrez votre ville ou code postal pour trouver le professionnel le plus proche.
+              Tous nos praticiens sont formés et certifiés Ultherapy® PRIME. Utilisez le DocLocator Merz Aesthetics pour trouver le professionnel le plus proche.
             </p>
           </div>
-          <div class="cta-search-row">
-            <input id="doc-search" type="text" placeholder="ZIP / Lieu">
-            <button class="watch-btn cta-search-btn" type="button">Rechercher</button>
-          </div>
+          <?php
+          /*
+           * TODO – DOCLOCATOR LINK
+           * Replace the href="#" below with the URL of the Merz Aesthetics
+           * France DocLocator / clinic finder page (e.g. /fr/trouver-un-praticien/).
+           */
+          ?>
+          <a class="watch-btn cta-search-btn" href="#">Trouver un praticien près de chez moi</a>
         </div>
 
         <div class="cta-map" aria-hidden="true">
@@ -632,7 +650,7 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
 
     <div class="footer-bottom">
       <div class="footer-brand">
-        <img src="<?php echo $img; ?>/logo-merz-aesthetics.png" alt="Merz Aesthetics Logo">
+        <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/logo-merz-aesthetics.png" alt="Merz Aesthetics Logo">
       </div>
       <p>Copyright © 2026 Merz Aesthetics France. Tous droits réservés. PUB-ULT.PRIME-2024072-Rev03_Avril2025</p>
     </div>

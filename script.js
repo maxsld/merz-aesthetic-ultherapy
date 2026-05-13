@@ -1,6 +1,63 @@
 const compareRanges = document.querySelectorAll(".compare-range");
 const siteHeader = document.querySelector(".site-header");
 const siteMenuLinks = Array.from(document.querySelectorAll(".site-menu-item"));
+const siteMenuToggle = document.querySelector(".site-menu-toggle");
+const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
+const heroProgressFill = document.querySelector(".hero-progress-fill");
+
+if (siteHeader && siteMenuToggle) {
+  const syncMenuState = (isOpen) => {
+    siteHeader.classList.toggle("is-menu-open", isOpen);
+    siteMenuToggle.setAttribute("aria-expanded", String(isOpen));
+  };
+
+  siteMenuToggle.addEventListener("click", () => {
+    syncMenuState(!siteHeader.classList.contains("is-menu-open"));
+  });
+
+  siteMenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      syncMenuState(false);
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      syncMenuState(false);
+    }
+  });
+}
+
+if (heroSlides.length > 1 && heroProgressFill) {
+  const heroSlideDuration = 8000;
+  let currentHeroSlideIndex = 0;
+  let heroCycleStart = performance.now();
+
+  const setHeroSlide = (nextIndex) => {
+    currentHeroSlideIndex = nextIndex;
+    heroSlides.forEach((slide, index) => {
+      slide.classList.toggle("is-active", index === nextIndex);
+    });
+    heroCycleStart = performance.now();
+    heroProgressFill.style.setProperty("--hero-progress", "0");
+  };
+
+  const tickHeroSlider = (now) => {
+    const elapsed = now - heroCycleStart;
+    const progress = Math.min(elapsed / heroSlideDuration, 1);
+
+    heroProgressFill.style.setProperty("--hero-progress", `${progress * 100}`);
+
+    if (elapsed >= heroSlideDuration) {
+      setHeroSlide((currentHeroSlideIndex + 1) % heroSlides.length);
+    }
+
+    window.requestAnimationFrame(tickHeroSlider);
+  };
+
+  setHeroSlide(0);
+  window.requestAnimationFrame(tickHeroSlider);
+}
 
 if (siteMenuLinks.length) {
   const menuTargets = siteMenuLinks
@@ -209,8 +266,8 @@ if (benefitsSection && benefitsVideoBlock && benefitsVideo) {
     const nextIndex = currentBenefitsVideoIndex + 1;
 
     if (nextIndex >= benefitsPlaylist.length) {
-      currentBenefitsVideoIndex = 0;
-      updatePlayState();
+      setBenefitsVideoSource(0);
+      playBenefitsVideo();
       return;
     }
 

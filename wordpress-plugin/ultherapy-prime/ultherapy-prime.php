@@ -1,9 +1,11 @@
 <?php
 /**
  * Plugin Name:  Ultherapy PRIME – Landing Page
- * Description:  Ajoute un template de page isolé pour la landing page Ultherapy PRIME France. N'interfère pas avec le thème actif.
+ * Description:  Standalone page template for the Ultherapy PRIME France landing page. Does not interfere with the active theme.
  * Version:      1.0.0
  * Author:       Merz Aesthetics France
+ * License:      GPL-2.0-or-later
+ * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -11,13 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 define( 'ULTHERAPY_PRIME_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ULTHERAPY_PRIME_URL', plugin_dir_url( __FILE__ ) );
 
-// ── 1. Enregistrer le template dans la liste des templates de page ──────────
+// ── 1. Register page template ───────────────────────────────────────────────
 add_filter( 'theme_page_templates', function ( $templates ) {
     $templates['ultherapy-prime'] = 'Ultherapy PRIME';
     return $templates;
 } );
 
-// ── 2. Charger notre fichier template quand la page l'utilise ───────────────
+// ── 2. Load our template file when the page uses it ─────────────────────────
 add_filter( 'template_include', function ( $template ) {
     if ( is_page() ) {
         $tpl = get_post_meta( get_the_ID(), '_wp_page_template', true );
@@ -31,7 +33,7 @@ add_filter( 'template_include', function ( $template ) {
     return $template;
 } );
 
-// ── 3. Charger CSS / JS uniquement sur cette page ───────────────────────────
+// ── 3. Enqueue assets only on this page (all local — no external CDN) ───────
 add_action( 'wp_enqueue_scripts', function () {
     if ( ! is_page() ) return;
     $tpl = get_post_meta( get_the_ID(), '_wp_page_template', true );
@@ -40,33 +42,41 @@ add_action( 'wp_enqueue_scripts', function () {
     $url = ULTHERAPY_PRIME_URL;
     $v   = '1.0.0';
 
+    // Fonts — self-hosted
     wp_enqueue_style( 'ultherapy-fonts',
-        'https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap',
-        [], null
+        $url . 'assets/vendor/google-fonts.css',
+        [], $v
     );
-    wp_enqueue_style( 'font-awesome',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css',
+
+    // Font Awesome 7 — self-hosted
+    wp_enqueue_style( 'ultherapy-font-awesome',
+        $url . 'assets/vendor/font-awesome.min.css',
         [], '7.0.1'
     );
+
+    // Main stylesheet
     wp_enqueue_style( 'ultherapy-main',
         $url . 'assets/ultherapy.css',
-        [ 'ultherapy-fonts', 'font-awesome' ], $v
+        [ 'ultherapy-fonts', 'ultherapy-font-awesome' ], $v
     );
 
-    wp_enqueue_script( 'gsap',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js',
+    // GSAP — self-hosted
+    wp_enqueue_script( 'ultherapy-gsap',
+        $url . 'assets/vendor/gsap.min.js',
         [], '3.12.7', true
     );
-    wp_enqueue_script( 'gsap-st',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js',
-        [ 'gsap' ], '3.12.7', true
-    );
-    wp_enqueue_script( 'ultherapy-script',
-        $url . 'assets/ultherapy.js',
-        [ 'gsap', 'gsap-st' ], $v, true
+    wp_enqueue_script( 'ultherapy-gsap-st',
+        $url . 'assets/vendor/ScrollTrigger.min.js',
+        [ 'ultherapy-gsap' ], '3.12.7', true
     );
 
-    // Supprimer les styles WordPress qui pourraient interférer
+    // Main script
+    wp_enqueue_script( 'ultherapy-script',
+        $url . 'assets/ultherapy.js',
+        [ 'ultherapy-gsap', 'ultherapy-gsap-st' ], $v, true
+    );
+
+    // Remove WP styles that could interfere
     wp_dequeue_style( 'wp-block-library' );
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'classic-theme-styles' );

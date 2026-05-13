@@ -4,7 +4,21 @@
       "Bash(grep -v \"^/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy$\")",
       "Bash(sips -Z 1600 '/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/OneDrive_4_03-05-2026 \\(1\\)/PRO00006835_UTY-24-12211399-02_0329_F2F.jpg' --out /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-theme/assets/img/ba-s02-apres.jpg)",
       "Bash(cp /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-theme/assets/ultherapy.css /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/ultherapy.css *)",
-      "Bash(zip -r ultherapy-prime-plugin.zip ultherapy-prime/ INSTALLATION-DOCCHECK.md)"
+      "Bash(zip -r ultherapy-prime-plugin.zip ultherapy-prime/ INSTALLATION-DOCCHECK.md)",
+      "Bash(grep -n 'esc_url\\\\|$img\\\\|video\\\\|href=\"#\"' /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/templates/page-ultherapy.php)",
+      "Bash(curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js\" -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/gsap.min.js)",
+      "Bash(curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js\" -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/ScrollTrigger.min.js)",
+      "Bash(curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css\" -o /tmp/fa-all.min.css)",
+      "Read(//tmp/**)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/124.0 Safari/537.36' 'https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap' -o /tmp/google-fonts.css)",
+      "Bash(sed -i '' 's/^\\\\$img = /\\\\$ultherapy_prime_img_url = /' /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/templates/page-ultherapy.php)",
+      "Bash(sed -i '' 's/<?php echo $img; ?>/<?php echo esc_url\\( $ultherapy_prime_img_url \\); ?>/g' /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/templates/page-ultherapy.php)",
+      "Bash(grep -c '\\\\$img[^_]' /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/templates/page-ultherapy.php)",
+      "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/extras-01.mp4)",
+      "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/extras-02.mp4)",
+      "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/extras-03.mp4)",
+      "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/ultherapy-video-hq.mp4)",
+      "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/ultherapy-video-mq.mp4)"
     ],
     "additionalDirectories": [
       "/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/img",
