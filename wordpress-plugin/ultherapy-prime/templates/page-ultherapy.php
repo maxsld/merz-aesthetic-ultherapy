@@ -364,24 +364,24 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
 
       <div class="benefits-video-block">
         <?php
-        /*
-         * TODO – VIMEO INTEGRATION
-         * Upload extras-01.mp4 / extras-02.mp4 / extras-03.mp4 to the
-         * Merz Aesthetics France folder on Vimeo, then replace the
-         * placeholder IDs below (XXXXXXXXX) with the real Vimeo video IDs.
-         * Privacy setting: "Hide from Vimeo" must be enabled on each video.
-         */
-        $vimeo_id = 'XXXXXXXXX'; // ← replace with real Vimeo ID
+        $ultherapy_v1 = esc_url( $ultherapy_prime_img_url . '/extras-01.mp4' );
+        $ultherapy_v2 = esc_url( $ultherapy_prime_img_url . '/extras-02.mp4' );
+        $ultherapy_v3 = esc_url( $ultherapy_prime_img_url . '/video-hifu.mp4' );
         ?>
-        <div class="benefits-video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-          <iframe
-            src="https://player.vimeo.com/video/<?php echo esc_attr( $vimeo_id ); ?>?badge=0&autopause=0&player_id=0&app_id=58479"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-            title="Ultherapy PRIME – Traitement">
-          </iframe>
+        <video class="benefits-video" controls muted playsinline preload="auto"
+          aria-label="Animation Ultherapy sous la peau"
+          data-playlist="<?php echo esc_attr( $ultherapy_v1 . ',' . $ultherapy_v2 . ',' . $ultherapy_v3 ); ?>">
+          <source src="<?php echo $ultherapy_v1; ?>" type="video/mp4">
+          Votre navigateur ne prend pas en charge la lecture vidéo.
+        </video>
+        <div class="benefits-video-controls" aria-label="Contrôles vidéo">
+          <button class="video-control-btn video-toggle" type="button" aria-label="Lire la vidéo"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+          <label class="video-progress-wrap">
+            <span class="sr-only">Progression de la vidéo</span>
+            <input class="video-progress" type="range" min="0" max="100" value="0" step="0.1">
+          </label>
+          <span class="video-time" aria-live="off">0:00</span>
+          <button class="video-control-btn video-mute" type="button" aria-label="Activer le son"><i class="fa-solid fa-volume-xmark" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>

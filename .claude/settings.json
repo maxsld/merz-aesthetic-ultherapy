@@ -18,7 +18,12 @@
       "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/extras-02.mp4)",
       "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/extras-03.mp4)",
       "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/ultherapy-video-hq.mp4)",
-      "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/ultherapy-video-mq.mp4)"
+      "Bash(rm /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/img/ultherapy-video-mq.mp4)",
+      "Bash(ffmpeg -version)",
+      "Bash(brew list *)",
+      "Bash(sips --getProperty pixelWidth /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/img/avant-apres/1.png)",
+      "Bash([ -f \"$SRC/$f\" ])",
+      "Bash(zip -r ultherapy-prime-plugin.zip ultherapy-prime/ -x \"*.DS_Store\")"
     ],
     "additionalDirectories": [
       "/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/img",
