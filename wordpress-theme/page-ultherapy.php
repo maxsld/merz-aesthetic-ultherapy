@@ -81,7 +81,7 @@ get_header();
           <span>de satisfaction</span>
         </article>
         <article class="stat-item">
-          <strong>80</strong>
+          <strong>Dans +80</strong>
           <span>pays</span>
         </article>
         <article class="stat-item">
@@ -116,17 +116,17 @@ get_header();
         <div class="express-copy">
           <h2 id="indications-title">
             Ultherapy<sup>®</sup> PRIME, désormais indiqué pour raffermir
-            <strong>les bras et l'abdomen</strong>
+            <strong>les bras et le ventre</strong>
           </h2>
           <a class="express-btn watch-btn" href="#">Découvrir les nouvelles indications</a>
         </div>
 
-        <div class="express-visuals" aria-label="Zones indiquées : bras et abdomen">
+        <div class="express-visuals" aria-label="Zones indiquées : bras et ventre">
           <figure class="body-zone body-zone-arm">
             <img src="<?php echo $img; ?>/bras-img.png" alt="Zone des bras traitée par Ultherapy PRIME">
           </figure>
           <figure class="body-zone body-zone-abdomen">
-            <img src="<?php echo $img; ?>/abdomen-img.png" alt="Zone de l'abdomen traitée par Ultherapy PRIME">
+            <img src="<?php echo $img; ?>/abdomen-img.png" alt="Zone du ventre traitée par Ultherapy PRIME">
           </figure>
         </div>
       </div>
@@ -214,14 +214,14 @@ get_header();
 
         <article class="compare-card">
           <div class="compare-slider" style="--reveal: 50%;">
-            <img class="compare-img compare-before" src="<?php echo $img; ?>/ba-s03-avant.jpg" alt="Avant traitement de l'abdomen">
-            <img class="compare-img compare-after" src="<?php echo $img; ?>/ba-s03-apres.jpg" alt="Après traitement de l'abdomen">
+            <img class="compare-img compare-before" src="<?php echo $img; ?>/ba-s03-avant.jpg" alt="Avant traitement du ventre">
+            <img class="compare-img compare-after" src="<?php echo $img; ?>/ba-s03-apres.jpg" alt="Après traitement du ventre">
             <span class="compare-label compare-label-before">Avant</span>
             <span class="compare-label compare-label-after">Après</span>
             <span class="compare-handle" aria-hidden="true">
               <svg viewBox="0 0 28 14" focusable="false"><path d="M9 2 3 7l6 5M3 7h22M19 2l6 5-6 5"/></svg>
             </span>
-            <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour l'abdomen">
+            <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour le ventre">
           </div>
           <p class="compare-delay">Après 3 mois</p>
         </article>
@@ -296,10 +296,10 @@ get_header();
 
         <article class="body-focus-row">
           <figure class="body-focus-visual">
-            <img src="<?php echo $img; ?>/zone-abdomen.jpg" alt="Abdomen traité par Ultherapy PRIME">
+            <img src="<?php echo $img; ?>/zone-abdomen.jpg" alt="Ventre traité par Ultherapy PRIME">
           </figure>
           <div class="body-focus-copy">
-            <h3>Abdomen</h3>
+            <h3>Ventre</h3>
             <p>
               Après une grossesse, une perte de poids ou la ménopause : le relâchement s'installe
               différemment. Ultherapy® PRIME cible le ventre pour raffermir ce qui a changé, sans abdominoplastie.
@@ -514,7 +514,7 @@ get_header();
             <span class="faq-toggle" aria-hidden="true"></span>
           </button>
           <div class="faq-panel">
-            <div class="faq-answer">Ultherapy® PRIME traite le visage, le cou, le décolleté, les bras (face antérieure et postérieure) et l'abdomen. Le praticien détermine les zones adaptées lors de la consultation.</div>
+            <div class="faq-answer">Ultherapy® PRIME traite le visage, le cou, le décolleté, les bras (face antérieure et postérieure) et le ventre. Le praticien détermine les zones adaptées lors de la consultation.</div>
           </div>
         </article>
 
