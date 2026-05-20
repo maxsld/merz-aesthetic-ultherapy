@@ -345,6 +345,7 @@ h1 span {
 .benefit-intro-footnote {
   font-size: 13px !important;
   opacity: 0.6;
+  text-align: justify;
 }
 .benefit-intro-btn {
   margin-top: 28px;

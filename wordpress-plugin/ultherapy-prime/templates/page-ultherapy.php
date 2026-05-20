@@ -94,8 +94,9 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
         <h2 id="benefit-intro-title">Le futur de la beauté <span>est là</span></h2>
         <p>Une technologie non invasive pour raffermir et redéfinir le visage et le corps.</p>
         <p>Ultherapy<sup>®</sup> PRIME stimule la production naturelle de collagène et d'élastine en profondeur, là où le relâchement s'installe.</p>
-        <p>Les résultats sont naturels<sup>3,4</sup>, progressifs et durables, et peuvent être visibles jusqu'à un an ou plus.*</p>
+        <p>Les résultats sont naturels<sup>3,4</sup>, progressifs et durables <sup>+</sup>, et peuvent être visibles jusqu'à un an ou plus.*</p>
         <p class="benefit-intro-footnote">* Les résultats s'améliorent en 90 à 180 jours et peuvent durer jusqu'à un an.<sup>1,3,4,5,6,7</sup></p>
+        <p class="benefit-intro-footnote">+ Les résultats d'Ultherapy® PRIME peuvent durer jusqu'à 6 mois pour les bras et l'abdomen, et un an ou plus pour le visage. Le terme visage fait référence aux indications autorisées pour Ultherapy® PRIME</p>
         <a class="watch-btn benefit-intro-btn" href="#">Trouver un praticien près de chez moi</a>
       </div>
       <figure class="benefit-intro-visual">
@@ -161,6 +162,7 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
       <div class="advantages-cta">
         <a class="watch-btn" href="#">Découvrez Ultherapy<sup>®</sup> PRIME autour de chez vous</a>
         <p class="advantages-footnote">* Les résultats s'améliorent en 90 à 180 jours et peuvent durer jusqu'à un an.<sup>1,3,4,5,6,7</sup></p>
+        <p class="benefit-intro-footnote" style="text-align: center;">+ Les résultats d'Ultherapy® PRIME peuvent durer jusqu'à 6 mois pour les bras et l'abdomen, et un an ou plus pour le visage. <br> Le terme visage fait référence aux indications autorisées pour Ultherapy® PRIME</p>
       </div>
     </div>
   </section>
@@ -625,25 +627,32 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
       <div class="footer-column">
         <h3>Navigation</h3>
         <ul class="footer-link-list">
-          <li><a href="#">À propos de nous</a></li>
-          <li><a href="#">Médecine esthétique</a></li>
-          <li><a href="#">Les zones de traitement</a></li>
-          <li><a href="#">La force du collagène</a></li>
-          <li><a href="#">Bien vieillir</a></li>
-          <li><a href="#">Qualité de la peau</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#avantages">Bénéfices</a></li>
+          <li><a href="#avant-apres">Avant / Après</a></li>
+          <li><a href="#indications-corps">Corps</a></li>
+          <li><a href="#visage">Visage</a></li>
+          <li><a href="#comment-ca-marche">Comment ça fonctionne ?</a></li>
+          <li><a href="#timeline">Votre traitement</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#praticien">Trouver un praticien</a></li>
+          <li><a href="#references-title">Références</a></li>
         </ul>
       </div>
 
       <div class="footer-column">
         <h3>Produits et services</h3>
         <ul class="footer-link-list">
-          <li><a href="#">ULTHERAPY® PRIME</a></li>
-          <li><a href="#">DocLocator</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Politique de confidentialité</a></li>
-          <li><a href="#">Mentions légales</a></li>
-          <li><a href="#">Conditions générales d'utilisation</a></li>
-          <li><a href="#">Politique de gestion des cookies</a></li>
+          <li><a href="https://merzaesthetics.fr/produits/" target="_blank" rel="noopener noreferrer">Nos produits</a></li>
+          <li><a href="https://merzaesthetics.fr/produits/ultherapyprime/" target="_blank" rel="noopener noreferrer">ULTHERAPY<sup>®</sup> PRIME</a></li>
+          <li><a href="https://merzaesthetics.fr/doclocator/" target="_blank" rel="noopener noreferrer">DocLocator</a></li>
+          <li><a href="https://merzaesthetics.fr/nos-services/" target="_blank" rel="noopener noreferrer">Nos services MAX</a></li>
+          <li><a href="https://merzaesthetics.fr/zero-dechet-by-merz-aesthetics/" target="_blank" rel="noopener noreferrer">Zéro Déchet by Merz Aesthetics<sup>®</sup></a></li>
+          <li><a href="https://merzaesthetics.fr/contact/" target="_blank" rel="noopener noreferrer">Contact</a></li>
+          <li><a href="https://merzaesthetics.fr/politique-de-confidentialite/" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a></li>
+          <li><a href="https://merzaesthetics.fr/mentions-legales/" target="_blank" rel="noopener noreferrer">Mentions légales</a></li>
+          <li><a href="https://merzaesthetics.fr/conditions-generales-dutilisation/" target="_blank" rel="noopener noreferrer">Conditions générales d'utilisation</a></li>
+          <li><a href="https://merzaesthetics.fr/politique-de-gestion-des-cookies/" target="_blank" rel="noopener noreferrer">Politique de gestion des cookies</a></li>
         </ul>
       </div>
     </div>

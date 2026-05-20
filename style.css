@@ -606,6 +606,7 @@ h1 sup {
   font-size: 10px !important;
   opacity: 0.6;
   line-height: 1.55;
+  text-align: justify;
 }
 .benefit-intro-visual {
   margin: 0;
