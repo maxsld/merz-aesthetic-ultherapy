@@ -23,7 +23,12 @@
       "Bash(brew list *)",
       "Bash(sips --getProperty pixelWidth /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/img/avant-apres/1.png)",
       "Bash([ -f \"$SRC/$f\" ])",
-      "Bash(zip -r ultherapy-prime-plugin.zip ultherapy-prime/ -x \"*.DS_Store\")"
+      "Bash(zip -r ultherapy-prime-plugin.zip ultherapy-prime/ -x \"*.DS_Store\")",
+      "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/leaflet.min.js -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/leaflet.min.js)",
+      "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/leaflet.min.css -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/leaflet.min.css)",
+      "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/images/marker-shadow.png)",
+      "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/layers.png -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/images/layers.png)",
+      "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/layers-2x.png -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/images/layers-2x.png)"
     ],
     "additionalDirectories": [
       "/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/img",

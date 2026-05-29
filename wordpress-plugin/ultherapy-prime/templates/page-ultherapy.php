@@ -365,25 +365,11 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
       </div>
 
       <div class="benefits-video-block">
-        <?php
-        $ultherapy_v1 = esc_url( $ultherapy_prime_img_url . '/extras-01.mp4' );
-        $ultherapy_v2 = esc_url( $ultherapy_prime_img_url . '/extras-02.mp4' );
-        $ultherapy_v3 = esc_url( $ultherapy_prime_img_url . '/video-hifu.mp4' );
-        ?>
-        <video class="benefits-video" controls muted playsinline preload="auto"
-          aria-label="Animation Ultherapy sous la peau"
-          data-playlist="<?php echo esc_attr( $ultherapy_v1 . ',' . $ultherapy_v2 . ',' . $ultherapy_v3 ); ?>">
-          <source src="<?php echo $ultherapy_v1; ?>" type="video/mp4">
-          Votre navigateur ne prend pas en charge la lecture vidéo.
-        </video>
-        <div class="benefits-video-controls" aria-label="Contrôles vidéo">
-          <button class="video-control-btn video-toggle" type="button" aria-label="Lire la vidéo"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-          <label class="video-progress-wrap">
-            <span class="sr-only">Progression de la vidéo</span>
-            <input class="video-progress" type="range" min="0" max="100" value="0" step="0.1">
-          </label>
-          <span class="video-time" aria-live="off">0:00</span>
-          <button class="video-control-btn video-mute" type="button" aria-label="Activer le son"><i class="fa-solid fa-volume-xmark" aria-hidden="true"></i></button>
+        <div class="benefits-video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <iframe src="https://player.vimeo.com/video/1196354896?badge=0&autopause=0&player_id=0&app_id=58479"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+            title="Ultherapy PRIME – Comment ça fonctionne"></iframe>
         </div>
       </div>
     </div>
@@ -563,36 +549,150 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
 
   <section id="praticien" class="cta-section" aria-labelledby="cta-title">
     <div class="section-shell cta-shell">
-      <div class="cta-locator">
-        <div class="cta-search">
-          <div class="section-heading cta-heading">
-            <p class="benefits-tag">Trouver un praticien</p> <br><br>
-            <h2 id="cta-title">Découvrez Ultherapy<sup>®</sup> PRIME <span>près de chez vous</span></h2>
-            <p>
-              Tous nos praticiens sont formés et certifiés Ultherapy® PRIME. Utilisez le DocLocator Merz Aesthetics pour trouver le professionnel le plus proche.
-            </p>
-          </div>
-          <?php
-          /*
-           * TODO – DOCLOCATOR LINK
-           * Replace the href="#" below with the URL of the Merz Aesthetics
-           * France DocLocator / clinic finder page (e.g. /fr/trouver-un-praticien/).
-           */
-          ?>
-          <a class="watch-btn cta-search-btn" href="#">Trouver un praticien près de chez moi</a>
-        </div>
+      <div class="section-heading cta-heading" style="text-align:center;margin-bottom:32px;">
+        <p class="benefits-tag">Trouver un praticien</p><br><br>
+        <h2 id="cta-title">Découvrez Ultherapy<sup>®</sup> PRIME <span>près de chez vous</span></h2>
+        <p>Tous nos praticiens sont formés et certifiés Ultherapy<sup>®</sup> PRIME.</p>
+      </div>
 
-        <div class="cta-map" aria-hidden="true">
-          <iframe
-            class="cta-map-frame"
-            src="https://www.google.com/maps?q=Courbevoie%20France&z=12&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Carte Google Maps de praticiens près de Courbevoie">
-          </iframe>
-        </div>
+      <div class="doclocator-search-bar" style="display:flex;gap:12px;max-width:480px;margin:0 auto 28px;">
+        <input id="doclocator-input" type="text" placeholder="Ville ou code postal…"
+          style="flex:1;padding:14px 18px;border:2px solid #e5a72d;border-radius:8px;font-size:16px;outline:none;font-family:inherit;"
+          aria-label="Rechercher une ville ou un code postal">
+        <button id="doclocator-btn" type="button"
+          style="padding:14px 22px;background:#e5a72d;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;">
+          Rechercher
+        </button>
+      </div>
+
+      <div id="doclocator-map" style="width:100%;height:520px;border-radius:12px;overflow:hidden;border:1px solid rgba(229,167,45,0.3);"></div>
+
+      <div id="doclocator-results" style="margin-top:20px;display:none;">
+        <p id="doclocator-count" style="font-size:14px;opacity:0.7;margin-bottom:12px;"></p>
+        <ul id="doclocator-list" style="list-style:none;padding:0;margin:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));"></ul>
       </div>
     </div>
+
+    <?php
+    $doclocator_practitioners = [
+      ["name"=>"Clinique esthétique de Corbiac","city"=>"Saint-Médard-en-Jalles","zip"=>"33160","lat"=>44.876705,"lng"=>-0.696811],
+      ["name"=>"CSHP Centre Saint Honoré Ponthieu","city"=>"Paris","zip"=>"75008","lat"=>48.870477,"lng"=>2.310511],
+      ["name"=>"DBC Esthetic","city"=>"Paris","zip"=>"75001","lat"=>48.866214,"lng"=>2.329198],
+      ["name"=>"Centre Laser Clipp","city"=>"Paris","zip"=>"75007","lat"=>48.856138,"lng"=>2.302764],
+      ["name"=>"Cabinet médical Chantilly","city"=>"Chantilly","zip"=>"60500","lat"=>49.192687,"lng"=>2.463905],
+      ["name"=>"Cabinet Boulevard Saint-Germain","city"=>"Paris","zip"=>"75006","lat"=>48.852399,"lng"=>2.339677],
+      ["name"=>"Cabinet Marseille Rodocanachi","city"=>"Marseille","zip"=>"13008","lat"=>43.274374,"lng"=>5.385837],
+      ["name"=>"Cabinet Lyon – Quai Jean Moulin","city"=>"Lyon","zip"=>"69001","lat"=>45.766576,"lng"=>4.837887],
+      ["name"=>"Centre CLEMA","city"=>"Angers","zip"=>"49000","lat"=>47.444203,"lng"=>-0.543031],
+      ["name"=>"CLDE – Centre Laser Dermatologique","city"=>"Viry-Châtillon","zip"=>"91170","lat"=>48.670938,"lng"=>2.376374],
+      ["name"=>"Cabinet Montbazon","city"=>"Montbazon","zip"=>"37250","lat"=>47.275244,"lng"=>0.708017],
+      ["name"=>"Cabinet Fréjus","city"=>"Fréjus","zip"=>"83600","lat"=>43.421569,"lng"=>6.745674],
+      ["name"=>"Cabinet Paris – Chasseloup Laubat","city"=>"Paris","zip"=>"75015","lat"=>48.847502,"lng"=>2.305144],
+      ["name"=>"CLEME 37","city"=>"Tours","zip"=>"37000","lat"=>47.388074,"lng"=>0.688381],
+      ["name"=>"Cabinet Amiens","city"=>"Amiens","zip"=>"80000","lat"=>49.894379,"lng"=>2.292921],
+      ["name"=>"Cabinet Thionville","city"=>"Thionville","zip"=>"57100","lat"=>49.358019,"lng"=>6.164896],
+      ["name"=>"Dermatologie Esthétique Caen","city"=>"Caen","zip"=>"14000","lat"=>49.179074,"lng"=>-0.361873],
+      ["name"=>"Centre CLEO","city"=>"Bordeaux","zip"=>"33200","lat"=>44.856182,"lng"=>-0.615268],
+      ["name"=>"Maison Elixience","city"=>"Metz","zip"=>"57000","lat"=>49.107022,"lng"=>6.163254],
+      ["name"=>"Cabinet Montpellier","city"=>"Montpellier","zip"=>"34000","lat"=>43.600264,"lng"=>3.898424],
+      ["name"=>"Clinique Del Mar","city"=>"Antibes","zip"=>"06160","lat"=>43.558947,"lng"=>7.128187],
+      ["name"=>"Cabinet Prigonrieux","city"=>"Prigonrieux","zip"=>"24130","lat"=>44.850606,"lng"=>0.437918],
+      ["name"=>"IEMCEP Marseille","city"=>"Marseille","zip"=>"13006","lat"=>43.289532,"lng"=>5.374693],
+      ["name"=>"Cabinet Paris – Rue de la Trémoille","city"=>"Paris","zip"=>"75008","lat"=>48.867085,"lng"=>2.302883],
+      ["name"=>"Cabinet Laser Médical Paris","city"=>"Paris","zip"=>"75017","lat"=>48.882461,"lng"=>2.309578],
+      ["name"=>"Centre de la Femme","city"=>"Nantes","zip"=>"44000","lat"=>47.217029,"lng"=>-1.563169],
+      ["name"=>"Centre Médical International de Monaco","city"=>"Monaco","zip"=>"98000","lat"=>43.733488,"lng"=>7.415655],
+      ["name"=>"Cabinet Audenge","city"=>"Audenge","zip"=>"33980","lat"=>44.690262,"lng"=>-1.020797],
+      ["name"=>"Cabinet Paris – Rue de l'Arcade","city"=>"Paris","zip"=>"75008","lat"=>48.870846,"lng"=>2.323371],
+      ["name"=>"Cabinet Square Moncey","city"=>"Paris","zip"=>"75009","lat"=>48.880500,"lng"=>2.330073],
+      ["name"=>"Cabinet Cagnes-sur-Mer","city"=>"Cagnes-sur-Mer","zip"=>"06800","lat"=>43.658278,"lng"=>7.163023],
+      ["name"=>"SKIN AESTHETICS","city"=>"Limoges","zip"=>"87100","lat"=>45.843250,"lng"=>1.192997],
+      ["name"=>"Cabinet Coutances","city"=>"Coutances","zip"=>"50200","lat"=>49.051507,"lng"=>-1.442467],
+      ["name"=>"OPHTA 34","city"=>"Mauguio","zip"=>"34130","lat"=>43.589854,"lng"=>3.935367],
+      ["name"=>"Clinique esthétique Villa Ermitage","city"=>"Lambersart","zip"=>"59130","lat"=>50.644465,"lng"=>3.031826],
+      ["name"=>"Cabinet Cournon-d'Auvergne","city"=>"Cournon-d'Auvergne","zip"=>"63800","lat"=>45.741463,"lng"=>3.159245],
+      ["name"=>"Cabinet Marseille – Avenue du Prado","city"=>"Marseille","zip"=>"13008","lat"=>43.274374,"lng"=>5.390671],
+      ["name"=>"Cabinet Aix-en-Provence","city"=>"Aix-en-Provence","zip"=>"13090","lat"=>43.539966,"lng"=>5.407771],
+    ];
+    ?>
+    <script>
+    (function(){
+      var PRACTITIONERS = <?php echo wp_json_encode( $doclocator_practitioners ); ?>;
+      var leafletUrl    = '<?php echo esc_url( ULTHERAPY_PRIME_URL . 'assets/vendor/leaflet/' ); ?>';
+
+      function initMap() {
+        var map = L.map('doclocator-map', { zoomControl: true }).setView([46.8, 2.3], 6);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          maxZoom: 18
+        }).addTo(map);
+        setTimeout(function(){ map.invalidateSize(); }, 50);
+
+        var goldIcon = L.divIcon({
+          className: '',
+          html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.5 14 24 14 24S28 23.5 28 14C28 6.268 21.732 0 14 0z" fill="#e5a72d" stroke="#b8861e" stroke-width="1.5"/><circle cx="14" cy="14" r="6" fill="#fff" opacity="0.9"/></svg>',
+          iconSize: [28, 38],
+          iconAnchor: [14, 38],
+          popupAnchor: [0, -40]
+        });
+
+        var markers = PRACTITIONERS.map(function(p) {
+          var m = L.marker([p.lat, p.lng], { icon: goldIcon }).addTo(map);
+          m.bindPopup('<strong>' + p.name + '</strong><br>' + p.zip + ' ' + p.city);
+          m._practitioner = p;
+          return m;
+        });
+
+        var input  = document.getElementById('doclocator-input');
+        var btn    = document.getElementById('doclocator-btn');
+        var resultsBox = document.getElementById('doclocator-results');
+        var countEl    = document.getElementById('doclocator-count');
+        var listEl     = document.getElementById('doclocator-list');
+
+        function doSearch() {
+          var q = input.value.trim().toLowerCase();
+          if (!q) return;
+          var matched = PRACTITIONERS.filter(function(p) {
+            return p.city.toLowerCase().indexOf(q) !== -1 || p.zip.indexOf(q) !== -1 || p.name.toLowerCase().indexOf(q) !== -1;
+          });
+
+          listEl.innerHTML = '';
+          if (matched.length === 0) {
+            countEl.textContent = 'Aucun praticien trouvé pour "' + input.value + '".';
+            resultsBox.style.display = 'block';
+            return;
+          }
+
+          var bounds = L.latLngBounds(matched.map(function(p){ return [p.lat, p.lng]; }));
+          map.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
+
+          countEl.textContent = matched.length + ' praticien' + (matched.length > 1 ? 's' : '') + ' trouvé' + (matched.length > 1 ? 's' : '') + ' pour "' + input.value + '"';
+          matched.forEach(function(p) {
+            var li = document.createElement('li');
+            li.style.cssText = 'background:#fff;border:1px solid rgba(229,167,45,0.4);border-radius:8px;padding:12px 16px;cursor:pointer;transition:box-shadow .2s;';
+            li.innerHTML = '<strong style="display:block;font-size:14px;">' + p.name + '</strong><span style="font-size:13px;opacity:0.65;">' + p.zip + ' ' + p.city + '</span>';
+            li.addEventListener('click', function() {
+              map.setView([p.lat, p.lng], 15);
+              markers.find(function(m){ return m._practitioner === p; }).openPopup();
+            });
+            li.addEventListener('mouseenter', function(){ this.style.boxShadow = '0 4px 16px rgba(229,167,45,0.25)'; });
+            li.addEventListener('mouseleave', function(){ this.style.boxShadow = ''; });
+            listEl.appendChild(li);
+          });
+          resultsBox.style.display = 'block';
+        }
+
+        btn.addEventListener('click', doSearch);
+        input.addEventListener('keydown', function(e){ if (e.key === 'Enter') doSearch(); });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMap);
+      } else {
+        initMap();
+      }
+    })();
+    </script>
   </section>
 </main>
 

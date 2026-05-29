@@ -54,10 +54,20 @@ add_action( 'wp_enqueue_scripts', function () {
         [], '7.0.1'
     );
 
+    // Leaflet — self-hosted
+    wp_enqueue_style( 'ultherapy-leaflet',
+        $url . 'assets/vendor/leaflet/leaflet.min.css',
+        [], '1.9.4'
+    );
+    wp_enqueue_script( 'ultherapy-leaflet-js',
+        $url . 'assets/vendor/leaflet/leaflet.min.js',
+        [], '1.9.4', true
+    );
+
     // Main stylesheet
     wp_enqueue_style( 'ultherapy-main',
         $url . 'assets/ultherapy.css',
-        [ 'ultherapy-fonts', 'ultherapy-font-awesome' ], $v
+        [ 'ultherapy-fonts', 'ultherapy-font-awesome', 'ultherapy-leaflet' ], $v
     );
 
     // GSAP — self-hosted

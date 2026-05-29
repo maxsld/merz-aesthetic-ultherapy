@@ -3,7 +3,7 @@
 .sticky-nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 2000;
   background: linear-gradient(180deg, #f5bb3a 0%, #df9f2f 100%);
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
