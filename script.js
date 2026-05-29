@@ -4,6 +4,8 @@ const siteMenuLinks = Array.from(document.querySelectorAll(".site-menu-item"));
 const siteMenuToggle = document.querySelector(".site-menu-toggle");
 const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
 const heroProgressFill = document.querySelector(".hero-progress-fill");
+const heroPrevButton = document.querySelector("[data-hero-prev]");
+const heroNextButton = document.querySelector("[data-hero-next]");
 
 if (siteHeader && siteMenuToggle) {
   const syncMenuState = (isOpen) => {
@@ -54,6 +56,14 @@ if (heroSlides.length > 1 && heroProgressFill) {
 
     window.requestAnimationFrame(tickHeroSlider);
   };
+
+  heroPrevButton?.addEventListener("click", () => {
+    setHeroSlide((currentHeroSlideIndex - 1 + heroSlides.length) % heroSlides.length);
+  });
+
+  heroNextButton?.addEventListener("click", () => {
+    setHeroSlide((currentHeroSlideIndex + 1) % heroSlides.length);
+  });
 
   setHeroSlide(0);
   window.requestAnimationFrame(tickHeroSlider);

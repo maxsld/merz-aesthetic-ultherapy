@@ -555,13 +555,19 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
         <p>Tous nos praticiens sont formés et certifiés Ultherapy<sup>®</sup> PRIME.</p>
       </div>
 
-      <div class="doclocator-search-bar" style="display:flex;gap:12px;max-width:480px;margin:0 auto 28px;">
+      <div class="doclocator-search-bar" style="display:flex;gap:12px;max-width:480px;margin:0 auto 12px;">
         <input id="doclocator-input" type="text" placeholder="Ville ou code postal…"
           style="flex:1;padding:14px 18px;border:2px solid #e5a72d;border-radius:8px;font-size:16px;outline:none;font-family:inherit;"
           aria-label="Rechercher une ville ou un code postal">
         <button id="doclocator-btn" type="button"
           style="padding:14px 22px;background:#e5a72d;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;">
           Rechercher
+        </button>
+      </div>
+      <div style="max-width:480px;margin:0 auto 28px;">
+        <button id="geolocate-btn" type="button"
+          style="display:flex;align-items:center;gap:8px;background:none;border:2px solid #e5a72d;color:#e5a72d;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;width:100%;">
+          <i class="fa-solid fa-location-dot"></i> Utiliser ma position
         </button>
       </div>
 
@@ -684,6 +690,71 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
 
         btn.addEventListener('click', doSearch);
         input.addEventListener('keydown', function(e){ if (e.key === 'Enter') doSearch(); });
+
+        function haversine(lat1, lng1, lat2, lng2) {
+          var R = 6371;
+          var dLat = (lat2 - lat1) * Math.PI / 180;
+          var dLng = (lng2 - lng1) * Math.PI / 180;
+          var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                  Math.sin(dLng/2) * Math.sin(dLng/2);
+          return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        }
+
+        function showNearest(userLat, userLng) {
+          L.circleMarker([userLat, userLng], {
+            radius: 8, fillColor: '#fff', color: '#e5a72d', weight: 3, fillOpacity: 1
+          }).addTo(map).bindPopup('Votre position');
+
+          var sorted = PRACTITIONERS.slice().map(function(p) {
+            return Object.assign({}, p, { dist: haversine(userLat, userLng, p.lat, p.lng) });
+          }).sort(function(a, b) { return a.dist - b.dist; }).slice(0, 5);
+
+          var bounds = [[userLat, userLng]].concat(sorted.map(function(p){ return [p.lat, p.lng]; }));
+          map.fitBounds(L.latLngBounds(bounds), { padding: [40, 40], maxZoom: 13 });
+
+          listEl.innerHTML = '';
+          countEl.textContent = '5 praticiens Ultherapy® PRIME les plus proches de vous';
+          sorted.forEach(function(p) {
+            var li = document.createElement('li');
+            li.style.cssText = 'background:#fff;border:1px solid rgba(229,167,45,0.4);border-radius:8px;padding:12px 16px;cursor:pointer;transition:box-shadow .2s;';
+            li.innerHTML = '<strong style="display:block;font-size:14px;">' + p.name + '</strong>' +
+              '<span style="font-size:13px;opacity:0.65;">' + p.zip + ' ' + p.city + '</span>' +
+              '<span style="display:block;font-size:12px;color:#e5a72d;font-weight:600;margin-top:4px;">' + Math.round(p.dist) + ' km</span>';
+            li.addEventListener('click', function() {
+              map.setView([p.lat, p.lng], 15);
+              markers.find(function(m){ return m._practitioner === p; }).openPopup();
+            });
+            li.addEventListener('mouseenter', function(){ this.style.boxShadow = '0 4px 16px rgba(229,167,45,0.25)'; });
+            li.addEventListener('mouseleave', function(){ this.style.boxShadow = ''; });
+            listEl.appendChild(li);
+          });
+          resultsBox.style.display = 'block';
+        }
+
+        var geoBtn = document.getElementById('geolocate-btn');
+        geoBtn.addEventListener('click', function() {
+          if (!navigator.geolocation) {
+            countEl.textContent = 'La géolocalisation n\'est pas supportée par votre navigateur.';
+            resultsBox.style.display = 'block';
+            return;
+          }
+          geoBtn.innerHTML = 'Localisation en cours…';
+          geoBtn.disabled = true;
+          navigator.geolocation.getCurrentPosition(
+            function(pos) {
+              geoBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Utiliser ma position';
+              geoBtn.disabled = false;
+              showNearest(pos.coords.latitude, pos.coords.longitude);
+            },
+            function() {
+              geoBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Utiliser ma position';
+              geoBtn.disabled = false;
+              countEl.textContent = 'Position non disponible. Essayez de rechercher par ville ou code postal.';
+              resultsBox.style.display = 'block';
+            }
+          );
+        });
       }
 
       if (document.readyState === 'loading') {
