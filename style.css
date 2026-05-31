@@ -324,6 +324,17 @@ a {
   background-image: url("img/img-hero-section.png");
 }
 
+.hero-inline-visual {
+  display: none;
+}
+
+.hero-inline-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: inherit;
+}
+
 .hero-slide-bg-body {
   background:
     url("img/bg-hero2.png") 86% center / contain no-repeat,
@@ -2708,6 +2719,7 @@ h1 sup {
   .site-menu-item {
     width: 100%;
     padding: 14px 0;
+    color: #111;
     font-size: 12px;
     letter-spacing: 0.08em;
     text-align: left;
@@ -2727,6 +2739,14 @@ h1 sup {
 
   .site-menu-item:last-child {
     border-bottom: 0;
+  }
+
+  .site-header.is-scrolled .site-menu-item {
+    color: #111;
+  }
+
+  .site-header.is-scrolled .site-menu-item-highlight {
+    color: #fff;
   }
 
   .hero {
@@ -2750,8 +2770,7 @@ h1 sup {
   }
 
   .hero-slide-bg-main {
-    background-position: center 30%;
-    background-size: cover;
+    background: none;
   }
 
   .hero-slide-bg-body {
@@ -2763,7 +2782,7 @@ h1 sup {
   .hero-content {
     width: 100%;
     max-width: none;
-    padding: 88px 22px 332px;
+    padding: 88px 22px 430px;
     gap: 22px;
   }
 
@@ -2963,14 +2982,32 @@ h1 sup {
     max-width: 100%;
   }
 
+  .hero-slide:first-child .hero-content {
+    padding-bottom: 120px;
+  }
+
+  .hero-inline-visual-main {
+    width: 100%;
+    display: block;
+    margin-top: 4px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e9dfd2;
+  }
+
+  .hero-inline-visual-main img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center top;
+  }
+
   .hero-slide-bg-main {
-    background-position: center bottom;
-    background-size: auto 300px;
+    display: none;
   }
 
   .hero-slide-bg-body {
     background:
-      url("img/bg-hero2.png") center bottom / auto 300px no-repeat,
+      url("img/bg-hero2.png") center bottom / auto 380px no-repeat,
       #f7f2e8;
   }
 
@@ -3105,8 +3142,8 @@ h1 sup {
   }
 
   .body-callout-arms {
-    top: 62%;
-    left: 0%;
+    top: 56%;
+    left: -1%;
     gap: 8px;
   }
 
@@ -3120,8 +3157,8 @@ h1 sup {
   }
 
   .body-callout-decollete {
-    top: 34%;
-    left: 2%;
+    top: 32%;
+    left: 5%;
     gap: 8px;
   }
 
@@ -3136,7 +3173,7 @@ h1 sup {
 
   .body-callout-abdomen {
     top: 74%;
-    right: 1%;
+    right: 8%;
     gap: 8px;
   }
 
@@ -3343,8 +3380,8 @@ h1 sup {
 
   .advantage-card {
     width: 270px;
-    min-height: 200px;
-    padding: 24px 20px;
+    min-height: 250px;
+    padding: 0;
   }
 
   .compare-label {
