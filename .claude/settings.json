@@ -28,7 +28,13 @@
       "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/leaflet.min.css -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/leaflet.min.css)",
       "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/images/marker-shadow.png)",
       "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/layers.png -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/images/layers.png)",
-      "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/layers-2x.png -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/images/layers-2x.png)"
+      "Bash(curl -sL https://unpkg.com/leaflet@1.9.4/dist/images/layers-2x.png -o /Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/wordpress-plugin/ultherapy-prime/assets/vendor/leaflet/images/layers-2x.png)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ],
     "additionalDirectories": [
       "/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/img",
