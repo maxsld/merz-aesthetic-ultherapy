@@ -5,9 +5,9 @@
   left: 0;
   right: 0;
   z-index: 2000;
-  background: #000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  transition: border-color 180ms ease, box-shadow 180ms ease;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .site-header-inner {
@@ -32,7 +32,7 @@
   width: 150px;
   height: auto;
   display: block;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
   transition: filter 180ms ease;
 }
 
@@ -68,7 +68,7 @@
   display: inline-flex;
   position: relative;
   padding: 22px 0 20px;
-  color: #fff;
+  color: #111;
   font-size: clamp(10px, 0.76vw, 12px);
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -85,6 +85,7 @@
   background: var(--gold);
   color: #fff;
   text-align: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -123,8 +124,17 @@
 }
 
 .site-header.is-scrolled {
+  background: #000;
   border-bottom-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.site-header.is-scrolled .site-brand img {
+  filter: brightness(0) invert(1);
+}
+
+.site-header.is-scrolled .site-menu-item {
+  color: #fff;
 }
 
 .site-header.is-scrolled .site-menu-toggle {
