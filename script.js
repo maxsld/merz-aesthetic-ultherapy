@@ -1,16 +1,27 @@
 const compareRanges = document.querySelectorAll(".compare-range");
 const siteHeader = document.querySelector(".site-header");
-const siteMenuLinks = Array.from(document.querySelectorAll(".site-menu .site-menu-item"));
+const siteMenuLinks = Array.from(document.querySelectorAll(".site-menu .site-menu-link"));
 const siteMenuToggle = document.querySelector(".site-menu-toggle");
+const siteMenuSubmenuEntries = Array.from(document.querySelectorAll(".site-menu-entry-submenu"));
 const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
 const heroProgressFill = document.querySelector(".hero-progress-fill");
 const heroPrevButton = document.querySelector("[data-hero-prev]");
 const heroNextButton = document.querySelector("[data-hero-next]");
 
 if (siteHeader && siteMenuToggle) {
+  const closeSubmenus = () => {
+    siteMenuSubmenuEntries.forEach((entry) => {
+      entry.classList.remove("is-open");
+      entry.querySelector(".site-menu-submenu-toggle")?.setAttribute("aria-expanded", "false");
+    });
+  };
+
   const syncMenuState = (isOpen) => {
     siteHeader.classList.toggle("is-menu-open", isOpen);
     siteMenuToggle.setAttribute("aria-expanded", String(isOpen));
+    if (!isOpen) {
+      closeSubmenus();
+    }
   };
 
   siteMenuToggle.addEventListener("click", () => {
@@ -23,9 +34,34 @@ if (siteHeader && siteMenuToggle) {
     });
   });
 
+  siteMenuSubmenuEntries.forEach((entry) => {
+    const toggle = entry.querySelector(".site-menu-submenu-toggle");
+
+    toggle?.addEventListener("click", (event) => {
+      event.preventDefault();
+      const nextState = !entry.classList.contains("is-open");
+
+      if (window.innerWidth <= 1120) {
+        closeSubmenus();
+        entry.classList.toggle("is-open", nextState);
+      } else {
+        entry.classList.toggle("is-open", nextState);
+      }
+
+      toggle.setAttribute("aria-expanded", String(entry.classList.contains("is-open")));
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".site-menu")) {
+      closeSubmenus();
+    }
+  });
+
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 820) {
+    if (window.innerWidth > 1120) {
       syncMenuState(false);
+      closeSubmenus();
     }
   });
 }
@@ -152,26 +188,9 @@ if (benefitsSection && benefitsVideoBlock && benefitsVideo) {
   const time = benefitsVideoBlock.querySelector(".video-time");
   const toggleIcon = toggleButton?.querySelector("i");
   const muteIcon = muteButton?.querySelector("i");
-  const benefitsPlaylist = (benefitsVideo.dataset.playlist || "")
-    .split(",")
-    .map((item) => item.trim())
-    .filter(Boolean);
-  let currentBenefitsVideoIndex = 0;
   let controlsTimer;
 
   benefitsVideo.removeAttribute("controls");
-
-  const setBenefitsVideoSource = (index) => {
-    const nextSource = benefitsPlaylist[index];
-
-    if (!nextSource || benefitsVideo.currentSrc.endsWith(nextSource)) {
-      return;
-    }
-
-    currentBenefitsVideoIndex = index;
-    benefitsVideo.src = nextSource;
-    benefitsVideo.load();
-  };
 
   const showControlsBriefly = () => {
     benefitsVideoBlock.classList.add("is-controls-visible");
@@ -273,21 +292,10 @@ if (benefitsSection && benefitsVideoBlock && benefitsVideo) {
   benefitsVideo.addEventListener("loadedmetadata", updateProgress);
   benefitsVideo.addEventListener("volumechange", updateMuteState);
   benefitsVideo.addEventListener("ended", () => {
-    const nextIndex = currentBenefitsVideoIndex + 1;
-
-    if (nextIndex >= benefitsPlaylist.length) {
-      setBenefitsVideoSource(0);
-      playBenefitsVideo();
-      return;
-    }
-
-    setBenefitsVideoSource(nextIndex);
-    playBenefitsVideo();
+    benefitsVideo.currentTime = 0;
+    updatePlayState();
+    updateProgress();
   });
-
-  if (benefitsPlaylist.length) {
-    setBenefitsVideoSource(0);
-  }
 
   if ("IntersectionObserver" in window) {
     const videoObserver = new IntersectionObserver((entries) => {
