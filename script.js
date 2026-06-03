@@ -1,6 +1,6 @@
 const compareRanges = document.querySelectorAll(".compare-range");
 const siteHeader = document.querySelector(".site-header");
-const siteMenuLinks = Array.from(document.querySelectorAll(".site-menu-item"));
+const siteMenuLinks = Array.from(document.querySelectorAll(".site-menu .site-menu-item"));
 const siteMenuToggle = document.querySelector(".site-menu-toggle");
 const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
 const heroProgressFill = document.querySelector(".hero-progress-fill");
@@ -432,3 +432,36 @@ window.addEventListener("resize", () => {
     }
   });
 });
+
+const welcomeModal = document.querySelector("[data-welcome-modal]");
+const welcomeModalCloseControls = document.querySelectorAll("[data-welcome-close]");
+
+if (welcomeModal) {
+  const openWelcomeModal = () => {
+    welcomeModal.classList.add("is-visible");
+    welcomeModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("has-welcome-modal");
+  };
+
+  const closeWelcomeModal = () => {
+    welcomeModal.classList.remove("is-visible");
+    welcomeModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("has-welcome-modal");
+  };
+
+  const welcomeModalTimer = window.setTimeout(openWelcomeModal, 1500);
+
+  welcomeModalCloseControls.forEach((control) => {
+    control.addEventListener("click", closeWelcomeModal);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && welcomeModal.classList.contains("is-visible")) {
+      closeWelcomeModal();
+    }
+  });
+
+  window.addEventListener("beforeunload", () => {
+    window.clearTimeout(welcomeModalTimer);
+  });
+}
