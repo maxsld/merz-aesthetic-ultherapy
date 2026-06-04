@@ -658,6 +658,8 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
         function doSearch() {
           var q = input.value.trim().toLowerCase();
           if (!q) return;
+          window._mtm = window._mtm || [];
+          window._mtm.push({'event': 'docsearch_searchbar'});
           var matched = PRACTITIONERS.filter(function(p) {
             return p.city.toLowerCase().indexOf(q) !== -1 || p.zip.indexOf(q) !== -1 || p.name.toLowerCase().indexOf(q) !== -1;
           });
@@ -680,6 +682,8 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
             li.addEventListener('click', function() {
               map.setView([p.lat, p.lng], 15);
               markers.find(function(m){ return m._practitioner === p; }).openPopup();
+              window._mtm = window._mtm || [];
+              window._mtm.push({'event': 'docsearch_contact'});
             });
             li.addEventListener('mouseenter', function(){ this.style.boxShadow = '0 4px 16px rgba(229,167,45,0.25)'; });
             li.addEventListener('mouseleave', function(){ this.style.boxShadow = ''; });
@@ -724,6 +728,8 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
             li.addEventListener('click', function() {
               map.setView([p.lat, p.lng], 15);
               markers.find(function(m){ return m._practitioner === p; }).openPopup();
+              window._mtm = window._mtm || [];
+              window._mtm.push({'event': 'docsearch_contact'});
             });
             li.addEventListener('mouseenter', function(){ this.style.boxShadow = '0 4px 16px rgba(229,167,45,0.25)'; });
             li.addEventListener('mouseleave', function(){ this.style.boxShadow = ''; });

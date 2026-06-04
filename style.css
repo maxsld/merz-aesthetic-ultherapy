@@ -242,7 +242,6 @@
 
 :root {
   --gold: #f6b23d;
-  --gold-dark: #e0a131;
   --ink: #171717;
   --muted: #6f6c68;
   --cream: #f1efed;
@@ -625,12 +624,12 @@ h1 sup {
 
 .hero-arrow:hover,
 .hero-arrow:focus-visible {
-  background: #d89a22;
-  border-color: #d89a22;
+  background: var(--gold);
+  border-color: var(--gold);
 }
 
 .hero-arrow:focus-visible {
-  outline: 2px solid rgba(229, 167, 45, 0.4);
+  outline: 2px solid rgba(246, 178, 61, 0.4);
   outline-offset: 2px;
 }
 
@@ -914,6 +913,12 @@ h1 sup {
   margin-top: 40px;
   text-align: center;
 }
+
+.advantages-cta .watch-btn {
+  background: #f3f3f1;
+  color: #171717;
+}
+
 .advantages-footnote {
   margin: 16px 0 0;
   color: rgba(0,0,0,0.5);
@@ -946,7 +951,7 @@ h1 sup {
   font-style: normal;
   font-size: clamp(22px, 2vw, 30px);
   font-weight: 200;
-  color: var(--gold-dark);
+  color: var(--gold);
   margin: 0 0 48px;
   text-align: center;
 }
@@ -1163,7 +1168,7 @@ h1 sup {
   height: 2px;
   display: block;
   margin: 8px 0 0;
-  background: linear-gradient(90deg, var(--gold) 0 62%, rgba(229, 167, 45, 0.3) 100%);
+  background: linear-gradient(90deg, var(--gold) 0 62%, rgba(246, 178, 61, 0.3) 100%);
 }
 
 .before-after-content .benefits-tag::after,
@@ -1336,7 +1341,7 @@ h1 sup {
   width: 100%;
   height: 100%;
   display: block;
-  background: linear-gradient(180deg, var(--gold) 0%, rgba(229, 167, 45, 0.35) 100%);
+  background: linear-gradient(180deg, var(--gold) 0%, rgba(246, 178, 61, 0.35) 100%);
   transform: scaleY(0);
   transform-origin: top center;
 }
@@ -1388,7 +1393,7 @@ h1 sup {
 
 .timeline-icon {
   margin-bottom: 8px;
-  color: var(--gold-dark);
+  color: var(--gold);
   font-size: 20px;
 }
 
@@ -1431,7 +1436,7 @@ h1 sup {
 
 .timeline-step.is-active .timeline-dot {
   transform: translate(-50%, -50%) scale(1.08);
-  box-shadow: 0 0 0 8px rgba(229, 167, 45, 0.12);
+  box-shadow: 0 0 0 8px rgba(246, 178, 61, 0.12);
 }
 
 .faq-section {
@@ -1507,7 +1512,7 @@ h1 sup {
   left: 50%;
   top: 50%;
   border-radius: 999px;
-  background: var(--gold-dark);
+  background: var(--gold);
   transform: translate(-50%, -50%);
   transition: transform 220ms ease, opacity 220ms ease, background-color 220ms ease;
 }
@@ -1647,15 +1652,15 @@ h1 sup {
 
 .doclocator-item {
   padding: 14px 16px;
-  border: 1px solid rgba(229, 167, 45, 0.35);
+  border: 1px solid rgba(246, 178, 61, 0.35);
   border-radius: 10px;
   background: #fff;
   transition: box-shadow .2s ease, border-color .2s ease;
 }
 
 .doclocator-item:hover {
-  box-shadow: 0 6px 18px rgba(229, 167, 45, 0.18);
-  border-color: rgba(229, 167, 45, 0.58);
+  box-shadow: 0 6px 18px rgba(246, 178, 61, 0.18);
+  border-color: rgba(246, 178, 61, 0.58);
 }
 
 .doclocator-item-header {
@@ -1683,7 +1688,7 @@ h1 sup {
 .doclocator-item-distance {
   display: block;
   margin-top: 6px;
-  color: #e5a72d;
+  color: var(--gold);
   font-size: 12px;
   font-weight: 700;
 }
@@ -1713,9 +1718,9 @@ h1 sup {
 }
 
 .doclocator-action-primary {
-  border-color: #e5a72d;
-  background: rgba(229, 167, 45, 0.12);
-  color: #9c6810;
+  border-color: var(--gold);
+  background: rgba(246, 178, 61, 0.12);
+  color: var(--gold);
 }
 
 .doclocator-badge {
@@ -1734,7 +1739,7 @@ h1 sup {
 }
 
 .doclocator-badge-prime {
-  background: #e5a72d;
+  background: var(--gold);
   color: #fff;
 }
 
@@ -1967,7 +1972,7 @@ h1 sup {
   border: 0;
   border-radius: 50%;
   background: #fff;
-  color: var(--gold-dark);
+  color: var(--gold);
   font-size: 11px;
   cursor: pointer;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease;
@@ -2090,6 +2095,10 @@ h1 sup {
   object-position: center;
 }
 
+.advantage-image-social {
+  object-position: center 4%;
+}
+
 .advantage-card p {
   margin: 0;
   padding: 12px 14px 14px;
@@ -2104,7 +2113,7 @@ h1 sup {
   text-align: center;
   text-shadow: none;
   text-transform: uppercase;
-  background: #e5a72d;
+  background: var(--gold);
   border-radius: 8px 8px 0 0;
 }
 
@@ -2374,6 +2383,13 @@ h1 sup {
   opacity: .8;
 }
 
+.salma-quote-mark {
+  width: 68px !important;
+  opacity: 1 !important;
+  filter: brightness(0) saturate(100%) invert(77%) sepia(67%) saturate(1065%) hue-rotate(339deg) brightness(101%) contrast(93%) !important;
+  margin-bottom: 2rem;
+}
+
 .salma-quote .quote-icon {
   opacity: 1;
 }
@@ -2515,11 +2531,11 @@ h1 sup {
 }
 
 .body-callout-arms .body-callout-badge {
-  right: calc(clamp(24px, 4.96cqw, 72px) + 14px + 20px);
+  right: 106px;
 }
 
 .body-callout-arms .body-callout-line {
-  width: clamp(24px, 4.96cqw, 72px);
+  width: 72px;
   transform-origin: right center;
 }
 
@@ -2534,7 +2550,7 @@ h1 sup {
 }
 
 .body-callout-decollete .body-callout-line {
-  width: clamp(100px, 19.4cqw, 248px);
+  width: 248px;
   height: 1.5px;
   flex: 0 0 auto;
   transform-origin: right center;
@@ -2548,7 +2564,7 @@ h1 sup {
 }
 
 .body-callout-abdomen .body-callout-line {
-  width: clamp(30px, 13.72cqw, 112px);
+  width: 112px;
   transform-origin: left center;
 }
 
@@ -2713,7 +2729,7 @@ h1 sup {
 
 .face-recap-kicker {
   margin: 0 0 22px;
-  color: var(--gold-dark);
+  color: var(--gold);
   font-family: "Montserrat", sans-serif;
   font-size: clamp(18px, 1.9vw, 26px);
   font-weight: 300;
@@ -2799,7 +2815,7 @@ h1 sup {
 
 .face-callout-brow {
   top: 19.2%;
-  right: 11%;
+  right: 14%;
   gap: 14px;
 }
 
@@ -2810,7 +2826,7 @@ h1 sup {
 
 .face-callout-jaw-left {
   top: 30.3%;
-  left: 3.5%;
+  left: 5%;
   gap: 14px;
 }
 
@@ -2825,7 +2841,7 @@ h1 sup {
 
 .face-callout-oval {
   top: 43.8%;
-  right: 11.8%;
+  right: 13.8%;
   gap: 14px;
 }
 
@@ -2840,7 +2856,7 @@ h1 sup {
 
 .face-callout-neck {
   top: 54.6%;
-  left: 15%;
+  left: 17%;
   gap: 14px;
 }
 
@@ -3584,6 +3600,24 @@ h1 sup {
 
   .footer-meta-links {
     column-gap: 22px;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 1120px) {
+  .hero-slide-bg-main {
+    display: block;
+    background: url("img/img-hero-section.png") 70% center / cover no-repeat;
+  }
+
+  .hero-slide:first-child .hero-content {
+    padding-bottom: 180px;
+  }
+
+  .hero-slide:first-child .hero-description {
+  }
+
+  .hero-inline-visual-main {
+    display: none;
   }
 }
 
