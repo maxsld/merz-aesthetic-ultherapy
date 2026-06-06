@@ -1017,6 +1017,14 @@ bras et l’abdomen.<sup>3,5</sup></figcaption>
       requestNearestPractitioners({ silentError: false });
     });
   });
+
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href="#praticien"]');
+    if (a) {
+      window._mtm = window._mtm || [];
+      window._mtm.push({'event': 'doclocator_open'});
+    }
+  });
   </script>
   <script src="script.js"></script>
 </body>

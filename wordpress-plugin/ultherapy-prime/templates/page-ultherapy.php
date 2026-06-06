@@ -768,6 +768,14 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
       } else {
         initMap();
       }
+
+      document.addEventListener('click', function(e) {
+        var a = e.target.closest('a[href="#praticien"]');
+        if (a) {
+          window._mtm = window._mtm || [];
+          window._mtm.push({'event': 'doclocator_open'});
+        }
+      });
     })();
     </script>
   </section>
