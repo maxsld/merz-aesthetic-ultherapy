@@ -182,138 +182,90 @@ const benefitsVideoBlock = document.querySelector(".benefits-video-block");
 const benefitsVideo = document.querySelector(".benefits-video");
 
 if (benefitsSection && benefitsVideoBlock && benefitsVideo) {
-  const toggleButton = benefitsVideoBlock.querySelector(".video-toggle");
-  const muteButton = benefitsVideoBlock.querySelector(".video-mute");
-  const progress = benefitsVideoBlock.querySelector(".video-progress");
-  const time = benefitsVideoBlock.querySelector(".video-time");
-  const toggleIcon = toggleButton?.querySelector("i");
-  const muteIcon = muteButton?.querySelector("i");
-  let controlsTimer;
+  const startSeconds = Number(benefitsVideo.dataset.startSeconds || 0);
+  const endTrimSeconds = Number(benefitsVideo.dataset.endTrimSeconds || 0);
+  const VimeoPlayer = window.Vimeo && window.Vimeo.Player;
 
-  benefitsVideo.removeAttribute("controls");
+  if (VimeoPlayer) {
+    const player = new VimeoPlayer(benefitsVideo);
+    let duration = 0;
+    let effectiveEndTime = 0;
+    let hasAppliedInitialSeek = false;
 
-  const showControlsBriefly = () => {
-    benefitsVideoBlock.classList.add("is-controls-visible");
-    window.clearTimeout(controlsTimer);
+    const syncEffectiveEndTime = () => {
+      effectiveEndTime = duration > endTrimSeconds
+        ? Math.max(startSeconds, duration - endTrimSeconds)
+        : duration;
+    };
 
-    if (!benefitsVideo.paused) {
-      controlsTimer = window.setTimeout(() => {
-        benefitsVideoBlock.classList.remove("is-controls-visible");
-      }, 1600);
-    }
-  };
+    const seekToTrimmedStart = () => player.setCurrentTime(startSeconds).catch(() => {});
 
-  const formatVideoTime = (seconds) => {
-    if (!Number.isFinite(seconds)) {
-      return "0:00";
-    }
+    const playBenefitsVideo = async () => {
+      try {
+        const currentTime = await player.getCurrentTime();
 
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, "0");
-
-    return `${minutes}:${remainingSeconds}`;
-  };
-
-  const updatePlayState = () => {
-    const isPaused = benefitsVideo.paused;
-
-    benefitsVideoBlock.classList.toggle("is-video-paused", isPaused);
-    toggleButton?.setAttribute("aria-label", isPaused ? "Lire la vidéo" : "Mettre la vidéo en pause");
-    toggleIcon?.classList.toggle("fa-play", isPaused);
-    toggleIcon?.classList.toggle("fa-pause", !isPaused);
-  };
-
-  const updateMuteState = () => {
-    const isMuted = benefitsVideo.muted;
-
-    muteButton?.setAttribute("aria-label", isMuted ? "Activer le son" : "Couper le son");
-    muteIcon?.classList.toggle("fa-volume-xmark", isMuted);
-    muteIcon?.classList.toggle("fa-volume-high", !isMuted);
-  };
-
-  const updateProgress = () => {
-    const duration = benefitsVideo.duration || 0;
-    const percent = duration ? (benefitsVideo.currentTime / duration) * 100 : 0;
-
-    if (progress) {
-      progress.value = String(percent);
-      progress.style.setProperty("--progress", `${percent}%`);
-    }
-
-    if (time) {
-      time.textContent = formatVideoTime(benefitsVideo.currentTime);
-    }
-  };
-
-  const playBenefitsVideo = () => {
-    benefitsVideo.muted = true;
-    benefitsVideo.play().catch(() => {
-      updatePlayState();
-    });
-    updateMuteState();
-  };
-
-  toggleButton?.addEventListener("click", () => {
-    if (benefitsVideo.paused) {
-      benefitsVideo.play().catch(() => {});
-    } else {
-      benefitsVideo.pause();
-    }
-  });
-
-  muteButton?.addEventListener("click", () => {
-    benefitsVideo.muted = !benefitsVideo.muted;
-    updateMuteState();
-  });
-
-  benefitsVideo.addEventListener("click", () => {
-    showControlsBriefly();
-
-    if (benefitsVideo.paused) {
-      benefitsVideo.play().catch(() => {});
-    } else {
-      benefitsVideo.pause();
-    }
-  });
-
-  progress?.addEventListener("input", () => {
-    const duration = benefitsVideo.duration || 0;
-
-    if (duration) {
-      benefitsVideo.currentTime = (Number(progress.value) / 100) * duration;
-    }
-  });
-
-  benefitsVideoBlock.addEventListener("mousemove", showControlsBriefly);
-  benefitsVideoBlock.addEventListener("touchstart", showControlsBriefly, { passive: true });
-  benefitsVideo.addEventListener("play", updatePlayState);
-  benefitsVideo.addEventListener("pause", updatePlayState);
-  benefitsVideo.addEventListener("timeupdate", updateProgress);
-  benefitsVideo.addEventListener("loadedmetadata", updateProgress);
-  benefitsVideo.addEventListener("volumechange", updateMuteState);
-  benefitsVideo.addEventListener("ended", () => {
-    benefitsVideo.currentTime = 0;
-    updatePlayState();
-    updateProgress();
-  });
-
-  if ("IntersectionObserver" in window) {
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          playBenefitsVideo();
-        } else {
-          benefitsVideo.pause();
+        if (currentTime < startSeconds || (effectiveEndTime && currentTime >= effectiveEndTime)) {
+          await seekToTrimmedStart();
         }
-      });
-    }, { threshold: 0.48 });
 
-    videoObserver.observe(benefitsSection);
+        await player.play();
+      } catch (_) {
+        // Ignore autoplay and seek failures from the embed.
+      }
+    };
+
+    player.ready().then(async () => {
+      try {
+        duration = await player.getDuration();
+        syncEffectiveEndTime();
+        await player.setMuted(true);
+        await seekToTrimmedStart();
+        hasAppliedInitialSeek = true;
+      } catch (_) {
+        // Ignore player readiness failures.
+      }
+    }).catch(() => {});
+
+    player.on("loaded", async () => {
+      if (duration) {
+        return;
+      }
+
+      try {
+        duration = await player.getDuration();
+        syncEffectiveEndTime();
+      } catch (_) {
+        // Ignore metadata read failures.
+      }
+    });
+
+    player.on("timeupdate", (event) => {
+      if (!hasAppliedInitialSeek && event.seconds < startSeconds) {
+        seekToTrimmedStart();
+        hasAppliedInitialSeek = true;
+        return;
+      }
+
+      if (effectiveEndTime && event.seconds >= effectiveEndTime) {
+        player.pause().catch(() => {});
+        seekToTrimmedStart();
+      }
+    });
+
+    if ("IntersectionObserver" in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            playBenefitsVideo();
+          } else {
+            player.pause().catch(() => {});
+          }
+        });
+      }, { threshold: 0.48 });
+
+      videoObserver.observe(benefitsSection);
+    }
   }
-
-  updatePlayState();
-  updateMuteState();
-  updateProgress();
 }
 
 if (window.gsap && window.ScrollTrigger) {

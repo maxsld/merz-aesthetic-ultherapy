@@ -799,6 +799,7 @@ h1 sup {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 24px;
+  align-items: start;
   text-align: center;
 }
 
@@ -808,11 +809,14 @@ h1 sup {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-self: start;
   gap: 6px;
 }
 
 .stat-item strong {
+  display: block;
+  min-height: 0.95em;
   color: #171717;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(30px, 2.7vw, 48px);
@@ -917,6 +921,7 @@ h1 sup {
 .advantages-cta .watch-btn {
   background: #f3f3f1;
   color: #171717;
+  border: 1px solid var(--gold);
 }
 
 .advantages-footnote {
@@ -1648,6 +1653,10 @@ h1 sup {
   min-height: 340px;
   display: block;
   border: 0;
+}
+
+#doclocator-map .leaflet-tile {
+  filter: grayscale(1) contrast(1.05) brightness(1.02);
 }
 
 .doclocator-item {
