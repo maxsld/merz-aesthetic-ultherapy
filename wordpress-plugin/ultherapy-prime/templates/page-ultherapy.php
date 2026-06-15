@@ -97,17 +97,17 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
               <a class="watch-btn hero-primary-cta" href="#praticien">Trouvez <span class="nowrap-brand">Ultherapy<sup>®</sup> PRIME</span> près de chez vous</a>
 
               <p class="hero-description">
-                Ultherapy<sup>®</sup> PRIME lutte contre le relâchement<br>cutané, maintenant pour le corps<span class="hero-new-badge">Nouveau</span>
+                Ultherapy<sup>®</sup> PRIME lutte contre le relâchement cutané, désormais aussi pour le corps.<span class="hero-new-badge">Nouveau</span>
               </p>
 
               <a class="secondary-btn hero-secondary-cta" href="#a-propos">En savoir plus</a>
+              <p class="hero-legal">Photo retouchée à des fins esthétiques. <br> Les résultats individuels peuvent varier.</p>
 
               <div class="hero-inline-visual hero-inline-visual-main" aria-hidden="true">
                 <img src="<?php echo esc_url($img); ?>/img-hero-section.png" alt="">
               </div>
             </div>
           </div>
-          <p class="hero-legal">Photo retouchée à des fins esthétiques. <br> Les résultats individuels peuvent varier.</p>
         </article>
 
         <article class="hero-slide" aria-labelledby="hero-title-body" data-hero-slide>
@@ -121,14 +121,14 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
                 <a class="watch-btn hero-primary-cta" href="#praticien"><span class="nowrap-brand">Ultherapy<sup>®</sup> PRIME</span> dans votre région</a>
 
               <p class="hero-description">
-                Raffermissez les bras et le ventre en stimulant <br> naturellement le collagène et l'élastine.
+                Raffermissez les bras et le ventre en stimulant <br> naturellement le collagène et l’élastine.
               </p>
 
               <a class="secondary-btn hero-secondary-cta" href="#indications-corps">Découvrir</a>
+              <p class="hero-legal">Photo retouchée à des fins esthétiques. <br> Les résultats individuels peuvent varier.</p>
 
             </div>
           </div>
-          <p class="hero-legal">Photo retouchée à des fins esthétiques. <br> Les résultats individuels peuvent varier.</p>
         </article>
       </div>
 
@@ -172,8 +172,8 @@ $img = ULTHERAPY_PRIME_URL . 'assets/img';
         </div>
         <figure class="benefit-intro-visual">
           <img src="<?php echo esc_url($img); ?>/img-section-futur-est-la.png" alt="Résultats Ultherapy PRIME">
-          <figcaption class="benefit-intro-footnote">* Les résultats s'améliorent en 90 à 180 jours et peuvent durer jusqu'à un an ou plus pour le visage et jusqu'à 6 mois ou plus pour les
-bras et l'abdomen.<sup>3,5</sup></figcaption>
+          <figcaption class="benefit-intro-footnote">* Les résultats s’améliorent en 90 à 180 jours et peuvent durer jusqu’à un an ou plus pour le visage et jusqu’à 6 mois ou plus pour les
+bras et l’abdomen.<sup>3,5</sup></figcaption>
         </figure>
       </div>
     </section>
@@ -211,7 +211,7 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
         </div>
         <div class="advantages-cta">
           <a class="watch-btn" href="#praticien">Trouver un praticien <span class="nowrap-brand">Ultherapy<sup>®</sup> PRIME</span></a>
-          <p class="advantages-footnote">* Les résultats s'améliorent en 90 à 180 jours et peuvent durer jusqu'à un an ou plus pour le visage <br> et jusqu'à 6 mois ou plus pour les bras et l'abdomen.<sup>3,5</sup></p>
+          <p class="advantages-footnote">* Les résultats s’améliorent en 90 à 180 jours et peuvent durer jusqu’à un an ou plus pour le visage <br> et jusqu’à 6 mois ou plus pour les bras et l’abdomen.<sup>3,5</sup></p>
         </div>
       </div>
     </section>
@@ -283,11 +283,11 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
       <div class="section-shell social-proof-content">
         <blockquote class="salma-quote">
           <img src="<?php echo esc_url($img); ?>/icon-citation.webp" alt="Guillemet ouvrant" class="salma-quote-mark salma-quote-mark-open" aria-hidden="true">
-          <p id="social-proof-title">"JE SUIS TELLEMENT HEUREUSE DE MES RÉSULTATS, <span class="nowrap-brand">ULTHERAPY<sup>®</sup> PRIME</span> EST VRAIMENT <strong>THE LIFT YOU CAN SEE</strong>*"</p>
+          <p id="social-proof-title">“JE SUIS TELLEMENT HEUREUSE DE MES RÉSULTATS, <span class="nowrap-brand">ULTHERAPY<sup>®</sup> PRIME</span> EST VRAIMENT <strong>THE LIFT YOU CAN SEE</strong>*”</p>
           <footer>
             <img src="<?php echo esc_url($img); ?>/signature-salma.png" alt="Signature de Salma Hayek Pinault">
           </footer>
-          <p class="salma-legal">Photo retouchée à des fins esthétiques. La patiente a bénéficié d'un traitement Ultherapy<sup>®</sup> PRIME. Les zones traitées ont été conservées sans modification. Les résultats individuels peuvent varier.</p>
+          <p class="salma-legal">Photo retouchée à des fins esthétiques. La patiente a bénéficié d’un traitement Ultherapy<sup>®</sup> PRIME. Les zones traitées ont été conservées sans modification. Les résultats individuels peuvent varier.</p>
           <p class="salma-legal salma-translation">*Le lifting qui se voit</p>
         </blockquote>
         <div class="salma-photo" aria-hidden="true">
@@ -383,7 +383,7 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
             <div class="face-callout face-callout-oval" aria-hidden="true">
               <span class="face-callout-dot"></span>
               <span class="face-callout-line"></span>
-              <span class="face-callout-text">REDESSINER L'OVALE<br>DU VISAGE</span>
+              <span class="face-callout-text">REDESSINER L’OVALE<br>DU VISAGE</span>
             </div>
 
             <div class="face-callout face-callout-neck" aria-hidden="true">
@@ -521,7 +521,7 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
           </article>
           <article class="faq-item">
             <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Quelle est la durée des résultats ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
-            <div class="faq-panel"><div class="faq-answer">Les résultats d'Ultherapy<sup>®</sup> sont progressifs et durables. Ils commencent à apparaître progressivement dans les 2 à 3 mois suivant la séance, le temps que la production de collagène se relance. Les effets s'améliorent ensuite naturellement et peuvent durer jusqu'à 1 an ou plus pour le visage et décolleté jusqu'à 6 mois ou plus pour les bras et l'abdomen, selon l'âge, la qualité de la peau et le mode de vie.</div></div>
+            <div class="faq-panel"><div class="faq-answer">Les résultats d’Ultherapy<sup>®</sup> sont progressifs et durables. Ils commencent à apparaître progressivement dans les 2 à 3 mois suivant la séance, le temps que la production de collagène se relance. Les effets s’améliorent ensuite naturellement et peuvent durer jusqu’à 1 an ou plus pour le visage et décolleté jusqu’à 6 mois ou plus pour les bras et l’abdomen, selon l’âge, la qualité de la peau et le mode de vie.</div></div>
           </article>
           <article class="faq-item">
             <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Quelles zones peuvent être traitées ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
@@ -529,7 +529,7 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
           </article>
           <article class="faq-item">
             <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Est-ce que le traitement Ultherapy<sup>®</sup> PRIME est douloureux ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
-            <div class="faq-panel"><div class="faq-answer">Lors du traitement Ultherapy<sup>®</sup> PRIME, certaines personnes peuvent ressentir une sensation passagère de chaleur ou de picotements. Cela correspond à l'énergie des ultrasons focalisés, délivrée à des profondeurs précises pour stimuler la production naturelle de collagène. Le niveau de confort varie selon la sensibilité de chacun, mais ces sensations restent brèves et uniquement présentes pendant l'émission de l'énergie.</div></div>
+            <div class="faq-panel"><div class="faq-answer">Lors du traitement Ultherapy<sup>®</sup> PRIME, certaines personnes peuvent ressentir une sensation passagère de chaleur ou de picotements. Cela correspond à l’énergie des ultrasons focalisés, délivrée à des profondeurs précises pour stimuler la production naturelle de collagène. Le niveau de confort varie selon la sensibilité de chacun, mais ces sensations restent brèves et uniquement présentes pendant l’émission de l’énergie.</div></div>
           </article>
           <article class="faq-item">
             <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Faut-il prévoir plusieurs séances ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
@@ -537,7 +537,7 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
           </article>
           <article class="faq-item">
             <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Est-ce que je peux reprendre ma vie normalement après le traitement ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
-            <div class="faq-panel"><div class="faq-answer">Avec Ultherapy<sup>®</sup> PRIME, il n'y a pas d'éviction sociale. Après l'intervention, la zone traitée conserve son aspect naturel, sans cicatrices ni modification des traits. Vous pouvez reprendre vos activités normales, sans avoir à suivre de mesures post-traitement. <sup>8,9</sup></div></div>
+            <div class="faq-panel"><div class="faq-answer">Avec Ultherapy<sup>®</sup> PRIME, il n’y a pas d’éviction sociale. Après l’intervention, la zone traitée conserve son aspect naturel, sans cicatrices ni modification des traits. Vous pouvez reprendre vos activités normales, sans avoir à suivre de mesures post-traitement. <sup>8,9</sup></div></div>
           </article>
         </div>
       </div>
@@ -550,7 +550,7 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
             <div class="section-heading cta-heading">
               <p class="benefits-tag">Trouver un praticien</p> <br><br>
               <h2 id="cta-title">Trouvez votre <br><span>centre</span> <span class="cta-brand cta-brand-inline">Ultherapy<sup>®</sup></span></h2>
-              <p>Trouvez un centre près de chez vous proposant un traitement Ultherapy<sup>®</sup> et Ultherapy<sup>®</sup> PRIME, pour un lifting non invasif* du visage (haut du visage, bas du visage) et/ou du corps (cou, décolleté, face postérieure et antérieure des bras, ventre).<br><br><strong>Saisissez votre code postal dès maintenant pour localiser les centres en toute simplicité !</strong><br><br><span style="font-size:0.82em;"><em>*sans chirurgie</em></span></p>
+              <p>Trouvez un centre près de chez vous proposant un traitement Ultherapy<sup>®</sup> et Ultherapy<sup>®</sup> PRIME, pour un lifting non invasif* du visage (haut du visage, bas du visage) et/ou du corps (cou, décolleté, face postérieure et antérieure des bras, ventre).<br><br><strong>Saisissez votre code postal dès maintenant pour localiser les centres en toute simplicité !</strong></p>
             </div>
             <div class="cta-search-row">
               <input id="doc-search" type="text" placeholder="Code postal / Ville">
@@ -559,6 +559,7 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
             <button id="geolocate-btn" type="button" style="margin-top:10px;display:flex;align-items:center;gap:8px;background:none;border:2px solid #f6b23d;color:#f6b23d;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;width:100%;">
               <i class="fa-solid fa-location-dot"></i> Utiliser ma position
             </button>
+            <p style="margin:10px 0 0;font-size:0.82em;"><em>*sans chirurgie</em></p>
             <div id="doclocator-results" style="margin-top:16px;display:none;">
               <p id="doclocator-count" style="font-size:13px;opacity:0.7;margin-bottom:10px;"></p>
               <ul id="doclocator-list" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;max-height:420px;overflow-y:auto;"></ul>
@@ -570,276 +571,6 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
           </div>
         </div>
       </div>
-
-      <script>
-      window.addEventListener('load', function() {
-        var PRACTITIONERS = [
-          {name:"Clinique esthétique de Corbiac",city:"Saint-Médard-en-Jalles",zip:"33160",lat:44.876705,lng:-0.696811,street:"Rue Claude Bernard",streetNumber:"26",country:"France",treatmentType:"prime"},
-          {name:"CSHP Centre Saint Honoré Ponthieu",city:"Paris",zip:"75008",lat:48.870477,lng:2.310511,street:"Rue de Ponthieu",streetNumber:"12",country:"France",treatmentType:"prime"},
-          {name:"DBC Esthetic",city:"Paris",zip:"75001",lat:48.866214,lng:2.329198,street:"Rue Saint Honore",streetNumber:"231",country:"France",treatmentType:"prime"},
-          {name:"Centre Laser Clipp",city:"Paris",zip:"75007",lat:48.856138,lng:2.302764,street:"Avenue de la Bourdonnais",streetNumber:"85",country:"France",treatmentType:"prime"},
-          {name:"Cabinet médical Chantilly",city:"Chantilly",zip:"60500",lat:49.192687,lng:2.463905,street:"Rue de Gouvieux",streetNumber:"9",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Boulevard Saint-Germain",city:"Paris",zip:"75006",lat:48.852399,lng:2.339677,street:"Boulevard Saint Germain",streetNumber:"126",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Marseille Rodocanachi",city:"Marseille",zip:"13008",lat:43.274374,lng:5.385837,street:"Boulevard Rodocanachi",streetNumber:"55 bis",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Lyon – Quai Jean Moulin",city:"Lyon",zip:"69001",lat:45.766576,lng:4.837887,street:"Quai Jean Moulin",streetNumber:"9",country:"France",treatmentType:"prime"},
-          {name:"Centre CLEMA",city:"Angers",zip:"49000",lat:47.444203,lng:-0.543031,street:"Rue François Cevert",streetNumber:"16",country:"France",treatmentType:"prime"},
-          {name:"CLDE – Centre Laser Dermatologique",city:"Viry-Châtillon",zip:"91170",lat:48.670938,lng:2.376374,street:"Rue Alexandre Dumas",streetNumber:"8",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Montbazon",city:"Montbazon",zip:"37250",lat:47.275244,lng:0.708017,street:"Allée John Ropper",streetNumber:"12",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Fréjus",city:"Fréjus",zip:"83600",lat:43.421569,lng:6.745674,street:"Place d'Actium",streetNumber:"14",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Paris – Chasseloup Laubat",city:"Paris",zip:"75015",lat:48.847502,lng:2.305144,street:"Rue Chasseloup Laubat",streetNumber:"15",country:"France",treatmentType:"prime"},
-          {name:"CLEME 37",city:"Tours",zip:"37000",lat:47.388074,lng:0.688381,street:"Rue d'Entraigues",streetNumber:"19",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Amiens",city:"Amiens",zip:"80000",lat:49.894379,lng:2.292921,street:"Place Léon Gontier",streetNumber:"4",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Thionville",city:"Thionville",zip:"57100",lat:49.358019,lng:6.164896,street:"Rue du Vieux Collège",streetNumber:"10",country:"France",treatmentType:"prime"},
-          {name:"Dermatologie Esthétique Caen",city:"Caen",zip:"14000",lat:49.179074,lng:-0.361873,street:"Place de l'Ancienne Comédie",streetNumber:"12",country:"France",treatmentType:"prime"},
-          {name:"Centre CLEO",city:"Bordeaux",zip:"33200",lat:44.856182,lng:-0.615268,street:"Rue Falquet",streetNumber:"12",country:"France",treatmentType:"prime"},
-          {name:"Maison Elixience",city:"Metz",zip:"57000",lat:49.107022,lng:6.163254,street:"Rue Bossuet",streetNumber:"31",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Montpellier",city:"Montpellier",zip:"34000",lat:43.600264,lng:3.898424,street:"Rue de Syracuse",streetNumber:"82",country:"France",treatmentType:"ultherapy"},
-          {name:"Clinique Del Mar",city:"Antibes",zip:"06160",lat:43.558947,lng:7.128187,street:"Boulevard Francis Meilland",streetNumber:"90",country:"France",treatmentType:"ultherapy"},
-          {name:"Cabinet Prigonrieux",city:"Prigonrieux",zip:"24130",lat:44.850606,lng:0.437918,street:"Route Du Guel",streetNumber:"69",country:"France",treatmentType:"ultherapy"},
-          {name:"IEMCEP Marseille",city:"Marseille",zip:"13006",lat:43.289532,lng:5.374693,street:"Rue Roux de Brignoles",streetNumber:"13",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Paris – Rue de la Trémoille",city:"Paris",zip:"75008",lat:48.867085,lng:2.302883,street:"Rue de la Tremoille",streetNumber:"9",country:"France",treatmentType:"ultherapy"},
-          {name:"Cabinet Laser Médical Paris",city:"Paris",zip:"75017",lat:48.882461,lng:2.309578,street:"Place du Général Catroux",streetNumber:"7",country:"France",treatmentType:"ultherapy"},
-          {name:"Centre de la Femme",city:"Nantes",zip:"44000",lat:47.217029,lng:-1.563169,street:"Place Aristide Briand",streetNumber:"5",country:"France",treatmentType:"ultherapy"},
-          {name:"Centre Médical International de Monaco",city:"Monaco",zip:"98000",lat:43.733488,lng:7.415655,street:"Rue de la Lüjerneta",streetNumber:"2",country:"Monaco",treatmentType:"ultherapy"},
-          {name:"Cabinet Audenge",city:"Audenge",zip:"33980",lat:44.690262,lng:-1.020797,street:"Avenue de Certes",streetNumber:"54",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Paris – Rue de l'Arcade",city:"Paris",zip:"75008",lat:48.870846,lng:2.323371,street:"Rue de l'Arcade",streetNumber:"4",country:"France",treatmentType:"ultherapy"},
-          {name:"Cabinet Square Moncey",city:"Paris",zip:"75009",lat:48.880500,lng:2.330073,street:"Square Moncey",streetNumber:"5",country:"France",treatmentType:"ultherapy"},
-          {name:"Cabinet Cagnes-sur-Mer",city:"Cagnes-sur-Mer",zip:"06800",lat:43.658278,lng:7.163023,street:"Avenue Maréchal de Lattre de Tassigny",streetNumber:"5",country:"France",treatmentType:"ultherapy"},
-          {name:"SKIN AESTHETICS",city:"Limoges",zip:"87100",lat:45.843250,lng:1.192997,street:"Avenue de Landouge",streetNumber:"223",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Coutances",city:"Coutances",zip:"50200",lat:49.051507,lng:-1.442467,street:"Rue du Palais de Justice",streetNumber:"36",country:"France",treatmentType:"prime"},
-          {name:"OPHTA 34",city:"Mauguio",zip:"34130",lat:43.589854,lng:3.935367,street:"Rue Saint-Exupéry",streetNumber:"30",country:"France",treatmentType:"prime"},
-          {name:"Clinique esthétique Villa Ermitage",city:"Lambersart",zip:"59130",lat:50.644465,lng:3.031826,street:"Avenue Henri Delecaux",streetNumber:"8 bis",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Cournon-d'Auvergne",city:"Cournon-d'Auvergne",zip:"63800",lat:45.741463,lng:3.159245,street:"Rue de Sarliève",streetNumber:"21",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Marseille – Avenue du Prado",city:"Marseille",zip:"13008",lat:43.274374,lng:5.390671,street:"Avenue du Prado",streetNumber:"255",country:"France",treatmentType:"prime"},
-          {name:"Cabinet Aix-en-Provence",city:"Aix-en-Provence",zip:"13090",lat:43.539966,lng:5.407771,street:"Route d'Eguilles",streetNumber:"1890",country:"France",treatmentType:"prime"}
-        ];
-
-        var map = L.map('doclocator-map', {zoomControl: true}).setView([46.8, 2.3], 6);
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-          maxZoom: 18
-        }).addTo(map);
-        setTimeout(function(){ map.invalidateSize(); }, 50);
-
-        var primeIcon = L.divIcon({
-          className: '',
-          html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.5 14 24 14 24S28 23.5 28 14C28 6.268 21.732 0 14 0z" fill="#f6b23d" stroke="#f6b23d" stroke-width="1.5"/><circle cx="14" cy="14" r="6" fill="#fff" opacity="0.9"/></svg>',
-          iconSize: [28, 38], iconAnchor: [14, 38], popupAnchor: [0, -40]
-        });
-
-        var ultherapyIcon = L.divIcon({
-          className: '',
-          html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.5 14 24 14 24S28 23.5 28 14C28 6.268 21.732 0 14 0z" fill="#1f3340" stroke="#0c161d" stroke-width="1.5"/><circle cx="14" cy="14" r="6" fill="#fff" opacity="0.9"/></svg>',
-          iconSize: [28, 38], iconAnchor: [14, 38], popupAnchor: [0, -40]
-        });
-
-        var markers = PRACTITIONERS.map(function(p) {
-          var m = L.marker([p.lat, p.lng], {
-            icon: p.treatmentType === 'prime' ? primeIcon : ultherapyIcon
-          }).addTo(map);
-          m._p = p;
-          m.bindPopup(createPopupContent(p));
-          m.on('popupopen', function(event) {
-            var popupEl = event.popup && event.popup.getElement ? event.popup.getElement() : null;
-            if (!popupEl) return;
-            var shareBtn = popupEl.querySelector('[data-action="share-destination"]');
-            if (!shareBtn) return;
-            shareBtn.addEventListener('click', function(clickEvent) {
-              clickEvent.preventDefault();
-              sharePractitioner(p);
-            });
-          });
-          return m;
-        });
-
-        var input  = document.getElementById('doc-search');
-        var btn    = document.querySelector('.cta-search-btn');
-        var resultsBox = document.getElementById('doclocator-results');
-        var countEl    = document.getElementById('doclocator-count');
-        var listEl     = document.getElementById('doclocator-list');
-
-        function getTreatmentLabel(p) {
-          return p.treatmentType === 'prime' ? 'Ultherapy PRIME' : 'Ultherapy';
-        }
-
-        function getTreatmentBadgeClass(p) {
-          return p.treatmentType === 'prime' ? 'doclocator-badge doclocator-badge-prime' : 'doclocator-badge doclocator-badge-ultherapy';
-        }
-
-        function getAddressLine(p) {
-          return [p.streetNumber, p.street].join(' ') + ', ' + p.zip + ' ' + p.city;
-        }
-
-        function getDirectionsUrl(p) {
-          return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(getAddressLine(p) + ', ' + p.country);
-        }
-
-        function escapeHtml(value) {
-          return String(value)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#39;');
-        }
-
-        function createPopupContent(p) {
-          return '<div class="doclocator-popup">' +
-            '<span class="' + getTreatmentBadgeClass(p) + '">' + escapeHtml(getTreatmentLabel(p)) + '</span>' +
-            '<p class="doclocator-popup-title">' + escapeHtml(p.name) + '</p>' +
-            '<p class="doclocator-popup-address">' + escapeHtml(getAddressLine(p)) + '</p>' +
-            '<div class="doclocator-popup-actions">' +
-              '<a class="doclocator-action doclocator-action-primary" href="' + getDirectionsUrl(p) + '" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-route" aria-hidden="true"></i> Itinéraire</a>' +
-              '<button type="button" class="doclocator-action" data-action="share-destination"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Partager la destination</button>' +
-            '</div>' +
-          '</div>';
-        }
-
-        function sharePractitioner(p) {
-          var shareUrl = getDirectionsUrl(p);
-          var shareData = { title: p.name, text: getTreatmentLabel(p) + ' - ' + getAddressLine(p), url: shareUrl };
-          if (navigator.share) { navigator.share(shareData).catch(function() {}); return; }
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(shareUrl).then(function() { window.alert('Lien copié.'); }).catch(function() { window.prompt('Copiez ce lien :', shareUrl); });
-            return;
-          }
-          window.prompt('Copiez ce lien :', shareUrl);
-        }
-
-        function renderPractitionerList(items, options) {
-          var settings = Object.assign({ heading: '', showDistance: false }, options || {});
-          listEl.innerHTML = '';
-          countEl.textContent = settings.heading;
-          items.forEach(function(p) {
-            var li = document.createElement('li');
-            li.className = 'doclocator-item';
-            li.innerHTML = '<div class="doclocator-item-header">' +
-                '<p class="doclocator-item-title">' + escapeHtml(p.name) + '</p>' +
-                '<span class="' + getTreatmentBadgeClass(p) + '">' + escapeHtml(getTreatmentLabel(p)) + '</span>' +
-              '</div>' +
-              '<p class="doclocator-item-address">' + escapeHtml(getAddressLine(p)) + '</p>' +
-              (settings.showDistance ? '<span class="doclocator-item-distance">' + Math.round(p.dist) + ' km</span>' : '') +
-              '<div class="doclocator-item-actions">' +
-                '<button type="button" class="doclocator-action doclocator-action-primary" data-action="directions"><i class="fa-solid fa-route" aria-hidden="true"></i> Itinéraire</button>' +
-                '<button type="button" class="doclocator-action" data-action="share"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Partager</button>' +
-              '</div>';
-            li.addEventListener('click', function() {
-              map.setView([p.lat, p.lng], 15);
-              markers.find(function(m){ return m._p.name === p.name && m._p.zip === p.zip; }).openPopup();
-              window._mtm = window._mtm || [];
-              window._mtm.push({'event': 'docsearch_contact'});
-            });
-            li.querySelector('[data-action="directions"]').addEventListener('click', function(event) {
-              event.stopPropagation();
-              window.open(getDirectionsUrl(p), '_blank', 'noopener');
-            });
-            li.querySelector('[data-action="share"]').addEventListener('click', function(event) {
-              event.stopPropagation();
-              sharePractitioner(p);
-            });
-            listEl.appendChild(li);
-          });
-          resultsBox.style.display = 'block';
-        }
-
-        function geocodeLocation(query) {
-          var url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=fr,mc&q=' + encodeURIComponent(query);
-          return fetch(url, { headers: { 'Accept': 'application/json' } }).then(function(response) {
-            if (!response.ok) throw new Error('geocode_failed');
-            return response.json();
-          }).then(function(data) {
-            if (!data || !data.length) return null;
-            return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
-          });
-        }
-
-        function doSearch() {
-          var rawQuery = input.value.trim();
-          var q = rawQuery.toLowerCase();
-          if (!q) return;
-          window._mtm = window._mtm || [];
-          window._mtm.push({'event': 'docsearch_searchbar'});
-          var matched = PRACTITIONERS.filter(function(p) {
-            return p.city.toLowerCase().indexOf(q) !== -1 || p.zip.indexOf(q) !== -1 || p.name.toLowerCase().indexOf(q) !== -1;
-          });
-          if (matched.length) {
-            map.fitBounds(L.latLngBounds(matched.map(function(p){return [p.lat,p.lng];})), {padding:[40,40],maxZoom:13});
-            renderPractitionerList(matched, { heading: matched.length + ' praticien' + (matched.length>1?'s':'') + ' trouvé' + (matched.length>1?'s':'') + ' pour "' + rawQuery + '"' });
-            return;
-          }
-          countEl.textContent = 'Recherche autour de "' + rawQuery + '"…';
-          listEl.innerHTML = '';
-          resultsBox.style.display = 'block';
-          geocodeLocation(rawQuery).then(function(location) {
-            if (!location) { countEl.textContent = 'Aucun praticien trouvé pour "' + rawQuery + '".'; return; }
-            showNearest(location.lat, location.lng, { heading: '5 praticiens Ultherapy les plus proches de "' + rawQuery + '"', showUserMarker: false });
-          }).catch(function() {
-            countEl.textContent = 'Recherche indisponible pour "' + rawQuery + '". Essayez une autre ville ou un autre code postal.';
-          });
-        }
-
-        btn.addEventListener('click', doSearch);
-        input.addEventListener('keydown', function(e){if(e.key==='Enter') doSearch();});
-
-        function haversine(lat1, lng1, lat2, lng2) {
-          var R = 6371;
-          var dLat = (lat2 - lat1) * Math.PI / 180;
-          var dLng = (lng2 - lng1) * Math.PI / 180;
-          var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLng/2) * Math.sin(dLng/2);
-          return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        }
-
-        var userMarker = null;
-
-        function showNearest(userLat, userLng, options) {
-          var settings = Object.assign({ heading: '5 praticiens Ultherapy les plus proches de vous', showUserMarker: true }, options || {});
-          if (userMarker) { map.removeLayer(userMarker); userMarker = null; }
-          if (settings.showUserMarker) {
-            userMarker = L.circleMarker([userLat, userLng], { radius: 8, fillColor: '#fff', color: '#f6b23d', weight: 3, fillOpacity: 1 }).addTo(map).bindPopup('Votre position');
-          }
-          var sorted = PRACTITIONERS.slice().map(function(p) {
-            return Object.assign({}, p, { dist: haversine(userLat, userLng, p.lat, p.lng) });
-          }).sort(function(a, b) { return a.dist - b.dist; }).slice(0, 5);
-          var bounds = [[userLat, userLng]].concat(sorted.map(function(p){ return [p.lat, p.lng]; }));
-          map.fitBounds(L.latLngBounds(bounds), { padding: [40, 40], maxZoom: 13 });
-          renderPractitionerList(sorted, { heading: settings.heading, showDistance: true });
-        }
-
-        var geoBtn = document.getElementById('geolocate-btn');
-        function requestNearestPractitioners(options) {
-          var settings = Object.assign({ silentError: false, loadingLabel: 'Localisation en cours…' }, options || {});
-          if (!navigator.geolocation) {
-            if (!settings.silentError) { countEl.textContent = 'La géolocalisation n\'est pas supportée par votre navigateur.'; resultsBox.style.display = 'block'; }
-            return;
-          }
-          geoBtn.textContent = settings.loadingLabel;
-          geoBtn.disabled = true;
-          navigator.geolocation.getCurrentPosition(
-            function(pos) {
-              geoBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Utiliser ma position';
-              geoBtn.disabled = false;
-              showNearest(pos.coords.latitude, pos.coords.longitude, { heading: '5 praticiens Ultherapy les plus proches de vous', showUserMarker: true });
-            },
-            function() {
-              geoBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Utiliser ma position';
-              geoBtn.disabled = false;
-              if (!settings.silentError) { countEl.textContent = 'Position non disponible. Essayez de rechercher par ville ou code postal.'; resultsBox.style.display = 'block'; }
-            },
-            { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
-          );
-        }
-
-        geoBtn.addEventListener('click', function() { requestNearestPractitioners({ silentError: false }); });
-      });
-
-      document.addEventListener('click', function(e) {
-        var a = e.target.closest('a[href="#praticien"]');
-        if (a) {
-          window._mtm = window._mtm || [];
-          window._mtm.push({'event': 'doclocator_open'});
-        }
-      });
-      </script>
     </section>
 
     <section class="references-section" aria-labelledby="references-title">
@@ -935,6 +666,359 @@ bras et l'abdomen.<sup>3,5</sup></figcaption>
       </div>
     </div>
   </footer>
+  <script>
+  window.addEventListener('load', function() {
+    var PRACTITIONERS = [
+      {name:"Clinique esthétique de Corbiac",city:"Saint-Médard-en-Jalles",zip:"33160",lat:44.876705,lng:-0.696811,street:"Rue Claude Bernard",streetNumber:"26",country:"France",treatmentType:"prime"},
+      {name:"CSHP Centre Saint Honoré Ponthieu",city:"Paris",zip:"75008",lat:48.870477,lng:2.310511,street:"Rue de Ponthieu",streetNumber:"12",country:"France",treatmentType:"prime"},
+      {name:"DBC Esthetic",city:"Paris",zip:"75001",lat:48.866214,lng:2.329198,street:"Rue Saint Honore",streetNumber:"231",country:"France",treatmentType:"prime"},
+      {name:"Centre Laser Clipp",city:"Paris",zip:"75007",lat:48.856138,lng:2.302764,street:"Avenue de la Bourdonnais",streetNumber:"85",country:"France",treatmentType:"prime"},
+      {name:"Cabinet médical Chantilly",city:"Chantilly",zip:"60500",lat:49.192687,lng:2.463905,street:"Rue de Gouvieux",streetNumber:"9",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Boulevard Saint-Germain",city:"Paris",zip:"75006",lat:48.852399,lng:2.339677,street:"Boulevard Saint Germain",streetNumber:"126",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Marseille Rodocanachi",city:"Marseille",zip:"13008",lat:43.274374,lng:5.385837,street:"Boulevard Rodocanachi",streetNumber:"55 bis",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Lyon – Quai Jean Moulin",city:"Lyon",zip:"69001",lat:45.766576,lng:4.837887,street:"Quai Jean Moulin",streetNumber:"9",country:"France",treatmentType:"prime"},
+      {name:"Centre CLEMA",city:"Angers",zip:"49000",lat:47.444203,lng:-0.543031,street:"Rue François Cevert",streetNumber:"16",country:"France",treatmentType:"prime"},
+      {name:"CLDE – Centre Laser Dermatologique",city:"Viry-Châtillon",zip:"91170",lat:48.670938,lng:2.376374,street:"Rue Alexandre Dumas",streetNumber:"8",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Montbazon",city:"Montbazon",zip:"37250",lat:47.275244,lng:0.708017,street:"Allée John Ropper",streetNumber:"12",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Fréjus",city:"Fréjus",zip:"83600",lat:43.421569,lng:6.745674,street:"Place d'Actium",streetNumber:"14",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Paris – Chasseloup Laubat",city:"Paris",zip:"75015",lat:48.847502,lng:2.305144,street:"Rue Chasseloup Laubat",streetNumber:"15",country:"France",treatmentType:"prime"},
+      {name:"CLEME 37",city:"Tours",zip:"37000",lat:47.388074,lng:0.688381,street:"Rue d'Entraigues",streetNumber:"19",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Amiens",city:"Amiens",zip:"80000",lat:49.894379,lng:2.292921,street:"Place Léon Gontier",streetNumber:"4",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Thionville",city:"Thionville",zip:"57100",lat:49.358019,lng:6.164896,street:"Rue du Vieux Collège",streetNumber:"10",country:"France",treatmentType:"prime"},
+      {name:"Dermatologie Esthétique Caen",city:"Caen",zip:"14000",lat:49.179074,lng:-0.361873,street:"Place de l'Ancienne Comédie",streetNumber:"12",country:"France",treatmentType:"prime"},
+      {name:"Centre CLEO",city:"Bordeaux",zip:"33200",lat:44.856182,lng:-0.615268,street:"Rue Falquet",streetNumber:"12",country:"France",treatmentType:"prime"},
+      {name:"Maison Elixience",city:"Metz",zip:"57000",lat:49.107022,lng:6.163254,street:"Rue Bossuet",streetNumber:"31",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Montpellier",city:"Montpellier",zip:"34000",lat:43.600264,lng:3.898424,street:"Rue de Syracuse",streetNumber:"82",country:"France",treatmentType:"ultherapy"},
+      {name:"Clinique Del Mar",city:"Antibes",zip:"06160",lat:43.558947,lng:7.128187,street:"Boulevard Francis Meilland",streetNumber:"90",country:"France",treatmentType:"ultherapy"},
+      {name:"Cabinet Prigonrieux",city:"Prigonrieux",zip:"24130",lat:44.850606,lng:0.437918,street:"Route Du Guel",streetNumber:"69",country:"France",treatmentType:"ultherapy"},
+      {name:"IEMCEP Marseille",city:"Marseille",zip:"13006",lat:43.289532,lng:5.374693,street:"Rue Roux de Brignoles",streetNumber:"13",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Paris – Rue de la Trémoille",city:"Paris",zip:"75008",lat:48.867085,lng:2.302883,street:"Rue de la Tremoille",streetNumber:"9",country:"France",treatmentType:"ultherapy"},
+      {name:"Cabinet Laser Médical Paris",city:"Paris",zip:"75017",lat:48.882461,lng:2.309578,street:"Place du Général Catroux",streetNumber:"7",country:"France",treatmentType:"ultherapy"},
+      {name:"Centre de la Femme",city:"Nantes",zip:"44000",lat:47.217029,lng:-1.563169,street:"Place Aristide Briand",streetNumber:"5",country:"France",treatmentType:"ultherapy"},
+      {name:"Centre Médical International de Monaco",city:"Monaco",zip:"98000",lat:43.733488,lng:7.415655,street:"Rue de la Lüjerneta",streetNumber:"2",country:"Monaco",treatmentType:"ultherapy"},
+      {name:"Cabinet Audenge",city:"Audenge",zip:"33980",lat:44.690262,lng:-1.020797,street:"Avenue de Certes",streetNumber:"54",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Paris – Rue de l'Arcade",city:"Paris",zip:"75008",lat:48.870846,lng:2.323371,street:"Rue de l'Arcade",streetNumber:"4",country:"France",treatmentType:"ultherapy"},
+      {name:"Cabinet Square Moncey",city:"Paris",zip:"75009",lat:48.880500,lng:2.330073,street:"Square Moncey",streetNumber:"5",country:"France",treatmentType:"ultherapy"},
+      {name:"Cabinet Cagnes-sur-Mer",city:"Cagnes-sur-Mer",zip:"06800",lat:43.658278,lng:7.163023,street:"Avenue Maréchal de Lattre de Tassigny",streetNumber:"5",country:"France",treatmentType:"ultherapy"},
+      {name:"SKIN AESTHETICS",city:"Limoges",zip:"87100",lat:45.843250,lng:1.192997,street:"Avenue de Landouge",streetNumber:"223",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Coutances",city:"Coutances",zip:"50200",lat:49.051507,lng:-1.442467,street:"Rue du Palais de Justice",streetNumber:"36",country:"France",treatmentType:"prime"},
+      {name:"OPHTA 34",city:"Mauguio",zip:"34130",lat:43.589854,lng:3.935367,street:"Rue Saint-Exupéry",streetNumber:"30",country:"France",treatmentType:"prime"},
+      {name:"Clinique esthétique Villa Ermitage",city:"Lambersart",zip:"59130",lat:50.644465,lng:3.031826,street:"Avenue Henri Delecaux",streetNumber:"8 bis",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Cournon-d'Auvergne",city:"Cournon-d'Auvergne",zip:"63800",lat:45.741463,lng:3.159245,street:"Rue de Sarliève",streetNumber:"21",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Marseille – Avenue du Prado",city:"Marseille",zip:"13008",lat:43.274374,lng:5.390671,street:"Avenue du Prado",streetNumber:"255",country:"France",treatmentType:"prime"},
+      {name:"Cabinet Aix-en-Provence",city:"Aix-en-Provence",zip:"13090",lat:43.539966,lng:5.407771,street:"Route d'Eguilles",streetNumber:"1890",country:"France",treatmentType:"prime"}
+    ];
+
+    var map = L.map('doclocator-map', {zoomControl: true}).setView([46.8, 2.3], 6);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 18
+    }).addTo(map);
+    setTimeout(function(){ map.invalidateSize(); }, 50);
+
+    var primeIcon = L.divIcon({
+      className: '',
+      html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.5 14 24 14 24S28 23.5 28 14C28 6.268 21.732 0 14 0z" fill="#f6b23d" stroke="#f6b23d" stroke-width="1.5"/><circle cx="14" cy="14" r="6" fill="#fff" opacity="0.9"/></svg>',
+      iconSize: [28, 38], iconAnchor: [14, 38], popupAnchor: [0, -40]
+    });
+
+    var ultherapyIcon = L.divIcon({
+      className: '',
+      html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.5 14 24 14 24S28 23.5 28 14C28 6.268 21.732 0 14 0z" fill="#1f3340" stroke="#0c161d" stroke-width="1.5"/><circle cx="14" cy="14" r="6" fill="#fff" opacity="0.9"/></svg>',
+      iconSize: [28, 38], iconAnchor: [14, 38], popupAnchor: [0, -40]
+    });
+
+    var markers = PRACTITIONERS.map(function(p) {
+      var m = L.marker([p.lat, p.lng], {
+        icon: p.treatmentType === 'prime' ? primeIcon : ultherapyIcon
+      }).addTo(map);
+      m._p = p;
+      m.bindPopup(createPopupContent(p));
+      m.on('popupopen', function(event) {
+        var popupEl = event.popup && event.popup.getElement ? event.popup.getElement() : null;
+        if (!popupEl) return;
+
+        var shareBtn = popupEl.querySelector('[data-action="share-destination"]');
+        if (!shareBtn) return;
+
+        shareBtn.addEventListener('click', function(clickEvent) {
+          clickEvent.preventDefault();
+          sharePractitioner(p);
+        });
+      });
+      return m;
+    });
+
+    var input  = document.getElementById('doc-search');
+    var btn    = document.querySelector('.cta-search-btn');
+    var resultsBox = document.getElementById('doclocator-results');
+    var countEl    = document.getElementById('doclocator-count');
+    var listEl     = document.getElementById('doclocator-list');
+
+    function getTreatmentLabel(p) {
+      return p.treatmentType === 'prime' ? 'Ultherapy PRIME' : 'Ultherapy';
+    }
+
+    function getTreatmentBadgeClass(p) {
+      return p.treatmentType === 'prime' ? 'doclocator-badge doclocator-badge-prime' : 'doclocator-badge doclocator-badge-ultherapy';
+    }
+
+    function getAddressLine(p) {
+      return [p.streetNumber, p.street].join(' ') + ', ' + p.zip + ' ' + p.city;
+    }
+
+    function getDirectionsUrl(p) {
+      return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(getAddressLine(p) + ', ' + p.country);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function createPopupContent(p) {
+      return '<div class="doclocator-popup">' +
+        '<span class="' + getTreatmentBadgeClass(p) + '">' + escapeHtml(getTreatmentLabel(p)) + '</span>' +
+        '<p class="doclocator-popup-title">' + escapeHtml(p.name) + '</p>' +
+        '<p class="doclocator-popup-address">' + escapeHtml(getAddressLine(p)) + '</p>' +
+        '<div class="doclocator-popup-actions">' +
+          '<a class="doclocator-action doclocator-action-primary" href="' + getDirectionsUrl(p) + '" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-route" aria-hidden="true"></i> Itinéraire</a>' +
+          '<button type="button" class="doclocator-action" data-action="share-destination"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Partager la destination</button>' +
+        '</div>' +
+      '</div>';
+    }
+
+    function sharePractitioner(p) {
+      var shareUrl = getDirectionsUrl(p);
+      var shareData = {
+        title: p.name,
+        text: getTreatmentLabel(p) + ' - ' + getAddressLine(p),
+        url: shareUrl
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).catch(function() {});
+        return;
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(function() {
+          window.alert('Lien copié.');
+        }).catch(function() {
+          window.prompt('Copiez ce lien :', shareUrl);
+        });
+        return;
+      }
+
+      window.prompt('Copiez ce lien :', shareUrl);
+    }
+
+    function renderPractitionerList(items, options) {
+      var settings = Object.assign({
+        heading: '',
+        showDistance: false
+      }, options || {});
+
+      listEl.innerHTML = '';
+      countEl.textContent = settings.heading;
+
+      items.forEach(function(p) {
+        var li = document.createElement('li');
+        li.className = 'doclocator-item';
+        li.innerHTML = '<div class="doclocator-item-header">' +
+            '<p class="doclocator-item-title">' + escapeHtml(p.name) + '</p>' +
+            '<span class="' + getTreatmentBadgeClass(p) + '">' + escapeHtml(getTreatmentLabel(p)) + '</span>' +
+          '</div>' +
+          '<p class="doclocator-item-address">' + escapeHtml(getAddressLine(p)) + '</p>' +
+          (settings.showDistance ? '<span class="doclocator-item-distance">' + Math.round(p.dist) + ' km</span>' : '') +
+          '<div class="doclocator-item-actions">' +
+            '<button type="button" class="doclocator-action doclocator-action-primary" data-action="directions"><i class="fa-solid fa-route" aria-hidden="true"></i> Itinéraire</button>' +
+            '<button type="button" class="doclocator-action" data-action="share"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Partager</button>' +
+          '</div>';
+        li.addEventListener('click', function() {
+          map.setView([p.lat, p.lng], 15);
+          markers.find(function(m){ return m._p.name === p.name && m._p.zip === p.zip; }).openPopup();
+          window._mtm = window._mtm || [];
+          window._mtm.push({'event': 'docsearch_contact'});
+        });
+        li.querySelector('[data-action="directions"]').addEventListener('click', function(event) {
+          event.stopPropagation();
+          window.open(getDirectionsUrl(p), '_blank', 'noopener');
+        });
+        li.querySelector('[data-action="share"]').addEventListener('click', function(event) {
+          event.stopPropagation();
+          sharePractitioner(p);
+        });
+        listEl.appendChild(li);
+      });
+
+      resultsBox.style.display = 'block';
+    }
+
+    function geocodeLocation(query) {
+      var url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=fr,mc&q=' + encodeURIComponent(query);
+      return fetch(url, {
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(function(response) {
+        if (!response.ok) {
+          throw new Error('geocode_failed');
+        }
+        return response.json();
+      }).then(function(data) {
+        if (!data || !data.length) {
+          return null;
+        }
+        return {
+          lat: parseFloat(data[0].lat),
+          lng: parseFloat(data[0].lon)
+        };
+      });
+    }
+
+    function doSearch() {
+      var rawQuery = input.value.trim();
+      var q = rawQuery.toLowerCase();
+      if (!q) return;
+      window._mtm = window._mtm || [];
+      window._mtm.push({'event': 'docsearch_searchbar'});
+      var matched = PRACTITIONERS.filter(function(p) {
+        return p.city.toLowerCase().indexOf(q) !== -1 || p.zip.indexOf(q) !== -1 || p.name.toLowerCase().indexOf(q) !== -1;
+      });
+
+      if (matched.length) {
+        map.fitBounds(L.latLngBounds(matched.map(function(p){return [p.lat,p.lng];})), {padding:[40,40],maxZoom:13});
+        renderPractitionerList(matched, {
+          heading: matched.length + ' praticien' + (matched.length>1?'s':'') + ' trouvé' + (matched.length>1?'s':'') + ' pour "' + rawQuery + '"'
+        });
+        return;
+      }
+
+      countEl.textContent = 'Recherche autour de "' + rawQuery + '"…';
+      listEl.innerHTML = '';
+      resultsBox.style.display = 'block';
+
+      geocodeLocation(rawQuery).then(function(location) {
+        if (!location) {
+          countEl.textContent = 'Aucun praticien trouvé pour "' + rawQuery + '".';
+          return;
+        }
+
+        showNearest(location.lat, location.lng, {
+          heading: '5 praticiens Ultherapy les plus proches de "' + rawQuery + '"',
+          showUserMarker: false
+        });
+      }).catch(function() {
+        countEl.textContent = 'Recherche indisponible pour "' + rawQuery + '". Essayez une autre ville ou un autre code postal.';
+      });
+    }
+
+    btn.addEventListener('click', doSearch);
+    input.addEventListener('keydown', function(e){if(e.key==='Enter') doSearch();});
+
+    function haversine(lat1, lng1, lat2, lng2) {
+      var R = 6371;
+      var dLat = (lat2 - lat1) * Math.PI / 180;
+      var dLng = (lng2 - lng1) * Math.PI / 180;
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLng/2) * Math.sin(dLng/2);
+      return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    }
+
+    var userMarker = null;
+
+    function showNearest(userLat, userLng, options) {
+      var settings = Object.assign({
+        heading: '5 praticiens Ultherapy les plus proches de vous',
+        showUserMarker: true
+      }, options || {});
+
+      if (userMarker) {
+        map.removeLayer(userMarker);
+        userMarker = null;
+      }
+
+      if (settings.showUserMarker) {
+        userMarker = L.circleMarker([userLat, userLng], {
+          radius: 8, fillColor: '#fff', color: '#f6b23d', weight: 3, fillOpacity: 1
+        }).addTo(map).bindPopup('Votre position');
+      }
+
+      var sorted = PRACTITIONERS.slice().map(function(p) {
+        return Object.assign({}, p, { dist: haversine(userLat, userLng, p.lat, p.lng) });
+      }).sort(function(a, b) { return a.dist - b.dist; }).slice(0, 5);
+
+      var bounds = [[userLat, userLng]].concat(sorted.map(function(p){ return [p.lat, p.lng]; }));
+      map.fitBounds(L.latLngBounds(bounds), { padding: [40, 40], maxZoom: 13 });
+
+      renderPractitionerList(sorted, {
+        heading: settings.heading,
+        showDistance: true
+      });
+    }
+
+    var geoBtn = document.getElementById('geolocate-btn');
+    function requestNearestPractitioners(options) {
+      var settings = Object.assign({
+        silentError: false,
+        loadingLabel: 'Localisation en cours…'
+      }, options || {});
+
+      if (!navigator.geolocation) {
+        if (!settings.silentError) {
+          countEl.textContent = 'La géolocalisation n\'est pas supportée par votre navigateur.';
+          resultsBox.style.display = 'block';
+        }
+        return;
+      }
+
+      geoBtn.textContent = settings.loadingLabel;
+      geoBtn.disabled = true;
+
+      navigator.geolocation.getCurrentPosition(
+        function(pos) {
+          geoBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Utiliser ma position';
+          geoBtn.disabled = false;
+          showNearest(pos.coords.latitude, pos.coords.longitude, {
+            heading: '5 praticiens Ultherapy les plus proches de vous',
+            showUserMarker: true
+          });
+        },
+        function() {
+          geoBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Utiliser ma position';
+          geoBtn.disabled = false;
+          if (!settings.silentError) {
+            countEl.textContent = 'Position non disponible. Essayez de rechercher par ville ou code postal.';
+            resultsBox.style.display = 'block';
+          }
+        },
+        {
+          enableHighAccuracy: false,
+          timeout: 10000,
+          maximumAge: 300000
+        }
+      );
+    }
+
+    geoBtn.addEventListener('click', function() {
+      requestNearestPractitioners({ silentError: false });
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href="#praticien"]');
+    if (a) {
+      window._mtm = window._mtm || [];
+      window._mtm.push({'event': 'doclocator_open'});
+    }
+  });
+  </script>
 
 <?php wp_footer(); ?>
 </body>

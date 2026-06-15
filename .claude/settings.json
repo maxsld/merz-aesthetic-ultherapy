@@ -36,7 +36,10 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(rm -f ultherapy-prime-plugin.zip)",
-      "Bash(zip -r ultherapy-prime-plugin.zip ultherapy-prime/ --exclude \"*.DS_Store\")"
+      "Bash(zip -r ultherapy-prime-plugin.zip ultherapy-prime/ --exclude \"*.DS_Store\")",
+      "Bash(grep -v 'img/\\\\|esc_url\\\\|<?php\\\\|bloginfo\\\\|wp_\\\\|language_attr\\\\|body_class\\\\|ABSPATH\\\\|ULTHERAPY\\\\|$img\\\\|html lang')",
+      "Bash(grep -v 'img/\\\\|esc_url\\\\|<?php\\\\|bloginfo\\\\|wp_\\\\|language_attr\\\\|body_class\\\\|ABSPATH\\\\|ULTHERAPY\\\\|$img\\\\|html lang\\\\|charset\\\\|google-site\\\\|msapplication\\\\|preconnect\\\\|fonts.google\\\\|fonts.gstatic\\\\|cdnjs\\\\|style.css\\\\|body>\\\\|apple-touch\\\\|favicon\\\\|safari-pinned\\\\|script src\\\\|gsap\\\\|ScrollTrigger\\\\|vimeo\\\\|leaflet.min')",
+      "Bash(python3 -)"
     ],
     "additionalDirectories": [
       "/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/img",
