@@ -435,11 +435,9 @@ a {
 }
 
 .hero-legal {
-  position: absolute;
-  left: clamp(40px, 5.6vw, 98px);
-  bottom: 18px;
+  position: static;
   z-index: 2;
-  margin: 0;
+  margin: -4px 0 0;
   max-width: min(42vw, 360px);
   color: rgba(110, 110, 110, 0.88);
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -3207,8 +3205,7 @@ h1 sup {
   }
 
   .hero-legal {
-    left: 22px;
-    bottom: 64px;
+    margin-top: 4px;
     max-width: 210px;
     font-size: 9px;
   }
@@ -3474,8 +3471,7 @@ h1 sup {
   }
 
   .hero-legal {
-    left: 22px;
-    bottom: 64px;
+    margin-top: 4px;
     max-width: 210px;
     font-size: 9px;
   }

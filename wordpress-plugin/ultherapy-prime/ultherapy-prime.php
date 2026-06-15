@@ -80,10 +80,16 @@ add_action( 'wp_enqueue_scripts', function () {
         [ 'ultherapy-gsap' ], '3.12.7', true
     );
 
+    // Vimeo player API — needed for video trim / autoplay control
+    wp_enqueue_script( 'vimeo-player',
+        'https://player.vimeo.com/api/player.js',
+        [], null, true
+    );
+
     // Main script
     wp_enqueue_script( 'ultherapy-script',
         $url . 'assets/ultherapy.js',
-        [ 'ultherapy-gsap', 'ultherapy-gsap-st' ], $v, true
+        [ 'ultherapy-gsap', 'ultherapy-gsap-st', 'ultherapy-leaflet-js', 'vimeo-player' ], $v, true
     );
 
     // Remove WP styles that could interfere

@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 
-$ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
+$img = ULTHERAPY_PRIME_URL . 'assets/img';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -14,760 +14,823 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
 <body <?php body_class('ultherapy-page'); ?>>
 <?php wp_body_open(); ?>
 
-<nav class="sticky-nav" aria-label="Navigation rapide">
-  <div class="sticky-nav-inner">
-    <a href="#indications">Indications corps</a>
-    <a href="#avantages">Avantages</a>
-    <a href="#avant-apres">Avant / Après</a>
-    <a href="#visage">Visage</a>
-    <a href="#comment-ca-marche">Comment ça marche</a>
-    <a href="#timeline">Traitement</a>
-    <a href="#faq">FAQ</a>
-    <a href="#praticien">Trouver un praticien</a>
+  <div class="welcome-modal" data-welcome-modal aria-hidden="true">
+    <div class="welcome-modal-backdrop" data-welcome-close></div>
+    <div class="welcome-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="welcome-modal-title">
+      <h2 id="welcome-modal-title">Bienvenue chez Merz<br>Aesthetics<sup>®</sup></h2>
+      <p>Cette section comporte des informations promotionnelles.</p>
+      <button class="welcome-modal-button" type="button" data-welcome-close>D'ACCORD</button>
+    </div>
   </div>
-</nav>
 
-<main>
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-content">
-      <p class="hero-kicker">Ultherapy Skin Tightening</p>
-      <h1 id="hero-title">
-        Un lifting visible,<span>sans chirurgie</span>
-      </h1>
+  <header class="site-header" aria-label="Navigation principale">
+    <div class="site-header-inner">
+      <a class="site-brand" href="https://merzaesthetics.fr/" aria-label="Merz Aesthetics">
+        <img src="<?php echo esc_url($img); ?>/logo-merz-aesthetics.png" alt="Merz Aesthetics">
+      </a>
 
-      <p class="hero-description">
-        Ultherapy<sup>®</sup> PRIME, un lifting visible sans chirurgie<sup>1,2</sup> — maintenant pour le corps
-      </p>
+      <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <div class="hero-actions">
-        <a class="watch-btn" href="#">
-          <span>Trouver Ultherapy<sup>®</sup> PRIME autour de chez moi</span>
-        </a>
-        <a class="secondary-btn" href="#">Découvrez Ultherapy<sup>®</sup> PRIME pour les bras et le ventre</a>
+      <nav class="site-menu" id="site-menu" aria-label="Navigation Ultherapy PRIME">
+        <div class="site-menu-entry site-menu-entry-submenu">
+          <div class="site-menu-entry-head">
+            <a class="site-menu-item site-menu-link" href="https://merzaesthetics.fr/a-propos-de/notre-culture/">À PROPOS</a>
+            <button class="site-menu-submenu-toggle" type="button" aria-expanded="false" aria-label="Ouvrir le sous-menu À propos">
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="site-submenu" aria-label="Sous-menu À propos">
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/a-propos-de/notre-culture/">CULTURE ET ENGAGEMENT</a>
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/a-propos-de/innovation/">INNOVATION</a>
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/a-propos-de/conformite-des-entreprises/">CONFORMITÉ DES ENTREPRISES</a>
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/construire-la-confiance-est-tout-un-art/">CONSTRUIRE LA CONFIANCE EST TOUT UN ART</a>
+          </div>
+        </div>
+        <div class="site-menu-entry site-menu-entry-submenu">
+          <div class="site-menu-entry-head">
+            <a class="site-menu-item site-menu-link" href="https://merzaesthetics.fr/medecine-esthetique/les-zones-de-traitement/">MÉDECINE ESTHÉTIQUE</a>
+            <button class="site-menu-submenu-toggle" type="button" aria-expanded="false" aria-label="Ouvrir le sous-menu Médecine esthétique">
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="site-submenu" aria-label="Sous-menu Médecine esthétique">
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/medecine-esthetique/les-zones-de-traitement/">LES ZONES DE TRAITEMENT</a>
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/force-du-collagene/">LA FORCE DU COLLAGÈNE</a>
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/medecine-esthetique/bien-vieillir/">BIEN VIEILLIR</a>
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/medecine-esthetique/qualite-de-la-peau/">QUALITÉ DE LA PEAU</a>
+          </div>
+        </div>
+        <a class="site-menu-item site-menu-link" href="https://merzaesthetics.fr/produits/">NOS PRODUITS</a>
+        <a class="site-menu-item site-menu-link is-active" href="https://merzaesthetics.fr/produits/ultherapyprime/">ULTHERAPY<sup>®</sup> PRIME</a>
+        <div class="site-menu-entry site-menu-entry-submenu">
+          <div class="site-menu-entry-head">
+            <a class="site-menu-item site-menu-link" href="https://merzaesthetics.fr/nos-services/">NOS SERVICES</a>
+            <button class="site-menu-submenu-toggle" type="button" aria-expanded="false" aria-label="Ouvrir le sous-menu Nos services">
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="site-submenu" aria-label="Sous-menu Nos services">
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/nos-services/">NOS SERVICES MAX</a>
+            <a class="site-submenu-link" href="https://merzaesthetics.fr/zero-dechet-by-merz-aesthetics/">ZÉRO DÉCHET BY MERZ AESTHETICS<sup>®</sup></a>
+          </div>
+        </div>
+        <a class="site-menu-item site-menu-link site-menu-item-highlight" href="#praticien">Trouvez Ultherapy<sup>®</sup> PRIME</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Présentation Ultherapy PRIME">
+      <div class="hero-slides">
+        <article class="hero-slide is-active" aria-labelledby="hero-title-main" data-hero-slide>
+          <div class="hero-slide-bg hero-slide-bg-main" aria-hidden="true"></div>
+          <div class="hero-inner">
+            <div class="hero-content">
+              <h1 id="hero-title-main">
+                Un lifting visible,<br><span>sans chirurgie<sup>1,2</sup></span>
+              </h1>
+
+              <a class="watch-btn hero-primary-cta" href="#praticien">Trouvez <span class="nowrap-brand">Ultherapy<sup>®</sup> PRIME</span> près de chez vous</a>
+
+              <p class="hero-description">
+                Ultherapy<sup>®</sup> PRIME lutte contre le relâchement<br>cutané, maintenant pour le corps<span class="hero-new-badge">Nouveau</span>
+              </p>
+
+              <a class="secondary-btn hero-secondary-cta" href="#a-propos">En savoir plus</a>
+
+              <div class="hero-inline-visual hero-inline-visual-main" aria-hidden="true">
+                <img src="<?php echo esc_url($img); ?>/img-hero-section.png" alt="">
+              </div>
+            </div>
+          </div>
+          <p class="hero-legal">Photo retouchée à des fins esthétiques. <br> Les résultats individuels peuvent varier.</p>
+        </article>
+
+        <article class="hero-slide" aria-labelledby="hero-title-body" data-hero-slide>
+          <div class="hero-slide-bg hero-slide-bg-body" aria-hidden="true"></div>
+          <div class="hero-inner">
+            <div class="hero-content hero-content-body">
+              <h2 id="hero-title-body" class="hero-alt-title">
+                <span>Révéler</span> le corps
+              </h2>
+
+                <a class="watch-btn hero-primary-cta" href="#praticien"><span class="nowrap-brand">Ultherapy<sup>®</sup> PRIME</span> dans votre région</a>
+
+              <p class="hero-description">
+                Raffermissez les bras et le ventre en stimulant <br> naturellement le collagène et l'élastine.
+              </p>
+
+              <a class="secondary-btn hero-secondary-cta" href="#indications-corps">Découvrir</a>
+
+            </div>
+          </div>
+          <p class="hero-legal">Photo retouchée à des fins esthétiques. <br> Les résultats individuels peuvent varier.</p>
+        </article>
       </div>
 
-      <p class="hero-proof">
-        <img class="laurel-branch" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/lauriet-gauche.avif" alt="" aria-hidden="true">
-        <span>95% de satisfaction de <br> nos clients sur 1 an</span>
-        <img class="laurel-branch" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/lauriet-droit.avif" alt="" aria-hidden="true">
-      </p>
-    </div>
-
-    <div class="hero-signature" aria-hidden="true">
-      <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/signature-salma.png" alt="">
-      <p>Salma Hayek Pinault<br>Actress &amp; Producer</p>
-    </div>
-  </section>
-
-  <section class="stats-band" aria-labelledby="stats-title">
-    <div class="stats-inner">
-      <div class="stats-list">
-        <article class="stat-item">
-          <strong>15 ans</strong>
-          <span>d'expertise</span>
-        </article>
-        <article class="stat-item">
-          <strong>3,5M</strong>
-          <span>de traitements</span>
-        </article>
-        <article class="stat-item">
-          <strong>95%</strong>
-          <span>de satisfaction</span>
-        </article>
-        <article class="stat-item">
-          <strong>Dans +80</strong>
-          <span>pays</span>
-        </article>
-        <article class="stat-item">
-          <strong>+100</strong>
-          <span>publications et 55 études cliniques</span>
-        </article>
+      <div class="hero-progress" aria-hidden="true">
+        <span class="hero-progress-track"></span>
+        <span class="hero-progress-fill"></span>
       </div>
-    </div>
-    <p class="stats-footnote">*Données issues d'une étude prospective portant sur 20 patients, réalisée avec Ultherapy<sup>®</sup></p>
-  </section>
-
-  <section class="benefit-intro-section" aria-labelledby="benefit-intro-title">
-    <div class="section-shell benefit-intro-content">
-      <div class="benefit-intro-copy">
-        <p class="benefits-tag">Le futur de la beauté</p> <br><br>
-        <h2 id="benefit-intro-title">Le futur de la beauté <span>est là</span></h2>
-        <p>Une technologie non invasive pour raffermir et redéfinir le visage et le corps.</p>
-        <p>Ultherapy<sup>®</sup> PRIME stimule la production naturelle de collagène et d'élastine en profondeur, là où le relâchement s'installe.</p>
-        <p>Les résultats sont naturels<sup>3,4</sup>, progressifs et durables <sup>+</sup>, et peuvent être visibles jusqu'à un an ou plus.*</p>
-        <p class="benefit-intro-footnote">* Les résultats s'améliorent en 90 à 180 jours et peuvent durer jusqu'à un an.<sup>1,3,4,5,6,7</sup></p>
-        <p class="benefit-intro-footnote">+ Les résultats d'Ultherapy® PRIME peuvent durer jusqu'à 6 mois pour les bras et l'abdomen, et un an ou plus pour le visage. Le terme visage fait référence aux indications autorisées pour Ultherapy® PRIME</p>
-        <a class="watch-btn benefit-intro-btn" href="#">Trouver un praticien près de chez moi</a>
+      <div class="hero-arrows">
+        <button class="hero-arrow hero-arrow-prev" type="button" aria-label="Slide précédent" data-hero-prev>
+          <span aria-hidden="true">&#8249;</span>
+        </button>
+        <button class="hero-arrow hero-arrow-next" type="button" aria-label="Slide suivant" data-hero-next>
+          <span aria-hidden="true">&#8250;</span>
+        </button>
       </div>
-      <figure class="benefit-intro-visual">
-        <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-sunlee.jpg" alt="Résultats Ultherapy PRIME">
-      </figure>
-    </div>
-  </section>
+    </section>
 
-  <section id="indications" class="indications-section" aria-labelledby="indications-title">
-    <div class="express-shell">
-      <div class="express-card">
-        <div class="express-copy">
-          <h2 id="indications-title">
-            Ultherapy<sup>®</sup> PRIME, désormais indiqué pour raffermir
-            <strong>les bras et le ventre</strong>
+    <section class="page-nav-section" aria-labelledby="page-nav-title">
+      <br>
+      <div class="section-shell page-nav-shell">
+        <p class="benefits-tag page-nav-kicker" id="page-nav-title">Navigation</p>
+        <br>
+        <nav class="page-nav-links" aria-label="Navigation dans la page">
+          <a class="page-nav-link" href="#a-propos">À PROPOS</a>
+          <a class="page-nav-link" href="#avant-apres">AVANT / APRÈS</a>
+          <a class="page-nav-link" href="#indications-corps">CORPS</a>
+          <a class="page-nav-link" href="#visage">VISAGE &amp; COU</a>
+          <a class="page-nav-link" href="#comment-ca-marche">TECHNOLOGIE & TRAITEMENT</a>
+          <a class="page-nav-link" href="#praticien">DOC LOCATOR</a>
+        </nav>
+      </div>
+    </section>
+
+    <section id="a-propos" class="benefit-intro-section" aria-labelledby="benefit-intro-title">
+      <div class="section-shell benefit-intro-content">
+        <div class="benefit-intro-copy" style="margin-top: -2rem;">
+          <h2 id="benefit-intro-title">Le futur de la beauté <span>est là</span></h2>
+          <p>Une technologie non invasive pour raffermir et redéfinir le visage<sup>3,6</sup> et le corps en une seule séance.</p>
+          <p>Ultherapy<sup>®</sup> PRIME stimule la production naturelle de collagène et d'élastine en profondeur, là où le relâchement s'installe.</p>
+          <p>Les résultats sont naturels<sup>3,6</sup>, progressifs et durables <sup>4</sup>, et peuvent être visibles jusqu'à un an ou plus.*</p>
+        </div>
+        <figure class="benefit-intro-visual">
+          <img src="<?php echo esc_url($img); ?>/img-section-futur-est-la.png" alt="Résultats Ultherapy PRIME">
+          <figcaption class="benefit-intro-footnote">* Les résultats s'améliorent en 90 à 180 jours et peuvent durer jusqu'à un an ou plus pour le visage et jusqu'à 6 mois ou plus pour les
+bras et l'abdomen.<sup>3,5</sup></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="avantages" class="advantages-section" aria-label="Avantages Ultherapy PRIME">
+      <div class="section-shell">
+        <div class="advantages-rail">
+          <div class="advantages-track">
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/3.png" alt="Visuel Ultherapy PRIME"><p>Sans chirurgie, ni injection<sup>1,2</sup></p></article>
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/10.png" alt="Visuel Ultherapy PRIME"><p>Rides lissées, peau plus ferme &amp; contours définis</p></article>
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/11.png" alt="Visuel Ultherapy PRIME"><p>Pas de <br> saisonnalité</p></article>
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/12.png" alt="Visuel Ultherapy PRIME"><p>Apparence <br> naturelle<sup>5,6</sup></p></article>
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/6.png" alt="Visuel Ultherapy PRIME"><p>Une seule <br> séance<sup>3</sup></p></article>
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/2.png" alt="Visuel Ultherapy PRIME"><p>Pour les grades de laxité léger à modéré</p></article>
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/5.png" alt="Visuel Ultherapy PRIME"><p>Traitement <br> personnalisé<sup>1,3,7</sup></p></article>
+            <article class="advantage-card advantage-card-compact-copy"><img class="advantage-image" src="<?php echo esc_url($img); ?>/1.png" alt="Visuel Ultherapy PRIME"><p>Pour les premiers signes de relâchement cutané<sup>9,10</sup><br>des 35-40 ans</p></article>
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/9.png" alt="Visuel Ultherapy PRIME"><p>Stimule la production de collagène</p></article>
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/4.png" alt="Visuel Ultherapy PRIME"><p>Pour tous les phototypes<sup>1,3,7,8</sup></p></article>
+            <article class="advantage-card"><img class="advantage-image advantage-image-social" src="<?php echo esc_url($img); ?>/7.png" alt="Visuel Ultherapy PRIME"><p>Sans interruption de votre vie sociale<sup>3</sup></p></article>
+            <article class="advantage-card"><img class="advantage-image" src="<?php echo esc_url($img); ?>/8.png" alt="Visuel Ultherapy PRIME"><p>Résultat durable<sup>*</sup> <br> jusqu'à 1 an ou plus</p></article>
+
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/3.png" alt=""><p>Sans chirurgie, ni injection<sup>1,2</sup></p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/10.png" alt=""><p>Rides lissées, peau plus ferme &amp; contours définis</p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/11.png" alt=""><p>Pas de <br> saisonnalité</p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/12.png" alt=""><p>Apparence <br> naturelle<sup>5,6</sup></p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/6.png" alt=""><p>Une seule <br> séance<sup>3</sup></p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/2.png" alt=""><p>Pour les grades de laxité léger à modéré</p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/5.png" alt=""><p>Traitement <br> personnalisé<sup>1,3,7</sup></p></article>
+            <article class="advantage-card advantage-card-compact-copy" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/1.png" alt=""><p>Pour les premiers signes de relâchement cutané<sup>9,10</sup><br>des 35-40 ans</p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/9.png" alt=""><p>Stimule la production de collagène</p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/4.png" alt=""><p>Pour tous les phototypes<sup>1,3,7,8</sup></p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image advantage-image-social" src="<?php echo esc_url($img); ?>/7.png" alt=""><p>Sans interruption de votre vie sociale<sup>3</sup></p></article>
+            <article class="advantage-card" aria-hidden="true"><img class="advantage-image" src="<?php echo esc_url($img); ?>/8.png" alt=""><p>Résultat durable<sup>*</sup> <br> jusqu'à 1 an ou plus</p></article>
+          </div>
+        </div>
+        <div class="advantages-cta">
+          <a class="watch-btn" href="#praticien">Trouver un praticien <span class="nowrap-brand">Ultherapy<sup>®</sup> PRIME</span></a>
+          <p class="advantages-footnote">* Les résultats s'améliorent en 90 à 180 jours et peuvent durer jusqu'à un an ou plus pour le visage <br> et jusqu'à 6 mois ou plus pour les bras et l'abdomen.<sup>3,5</sup></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="avant-apres" class="before-after-section" aria-labelledby="before-after-title">
+      <div class="section-shell before-after-content">
+        <div class="section-heading benefits-heading">
+          <p class="benefits-tag">Avant / Après</p> <br><br>
+          <h2 id="before-after-title">
+            La différence <br> parle d'elle-<span>même</span>
           </h2>
-          <a class="express-btn watch-btn" href="#">Découvrir les nouvelles indications</a>
+          <p>
+            Glissez le curseur pour voir les résultats.
+          </p>
         </div>
 
-        <div class="express-visuals" aria-label="Zones indiquées : bras et ventre">
-          <figure class="body-zone body-zone-arm">
-            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/bras-img.png" alt="Zone des bras traitée par Ultherapy PRIME">
-          </figure>
-          <figure class="body-zone body-zone-abdomen">
-            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/abdomen-img.png" alt="Zone du ventre traitée par Ultherapy PRIME">
-          </figure>
+        <div class="compare-grid">
+          <article class="compare-card">
+            <div class="compare-slider" style="--reveal: 50%;">
+              <img class="compare-img compare-before" src="<?php echo esc_url($img); ?>/avant-apres/5.png" alt="Avant traitement du profil du visage femme">
+              <img class="compare-img compare-after" src="<?php echo esc_url($img); ?>/avant-apres/6.png" alt="Après 3 mois de traitement du profil du visage femme">
+              <span class="compare-label compare-label-before">Avant</span>
+              <span class="compare-label compare-label-after">Après</span>
+              <span class="compare-handle" aria-hidden="true"><svg viewBox="0 0 28 14" focusable="false"><path d="M9 2 3 7l6 5M3 7h22M19 2l6 5-6 5"/></svg></span>
+              <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour le visage femme">
+            </div>
+            <div class="compare-caption-below">
+              <p class="compare-caption-title">HAUT DU VISAGE, BAS DU VISAGE ET COU</p>
+              <p class="compare-caption-delay">APRÈS 3 MOIS</p>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="compare-slider" style="--reveal: 50%;">
+              <img class="compare-img compare-before" src="<?php echo esc_url($img); ?>/avant-apres/2.png" alt="Avant traitement du ventre">
+              <img class="compare-img compare-after" src="<?php echo esc_url($img); ?>/avant-apres/1.png" alt="Après 3 mois de traitement du ventre">
+              <span class="compare-label compare-label-before">Avant</span>
+              <span class="compare-label compare-label-after">Après</span>
+              <span class="compare-handle" aria-hidden="true"><svg viewBox="0 0 28 14" focusable="false"><path d="M9 2 3 7l6 5M3 7h22M19 2l6 5-6 5"/></svg></span>
+              <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour le ventre">
+            </div>
+            <div class="compare-caption-below">
+              <p class="compare-caption-title">VENTRE</p>
+              <p class="compare-caption-delay">APRÈS 3 MOIS</p>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="compare-slider" style="--reveal: 50%;">
+              <img class="compare-img compare-before" src="<?php echo esc_url($img); ?>/avant-apres/3.png" alt="Avant traitement du visage homme">
+              <img class="compare-img compare-after" src="<?php echo esc_url($img); ?>/avant-apres/4.png" alt="Après 3 mois de traitement du visage homme">
+              <span class="compare-label compare-label-before">Avant</span>
+              <span class="compare-label compare-label-after">Après</span>
+              <span class="compare-handle" aria-hidden="true"><svg viewBox="0 0 28 14" focusable="false"><path d="M9 2 3 7l6 5M3 7h22M19 2l6 5-6 5"/></svg></span>
+              <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour le visage homme">
+            </div>
+            <div class="compare-caption-below">
+              <p class="compare-caption-title">BAS DU VISAGE ET COU</p>
+              <p class="compare-caption-delay">APRÈS 3 MOIS</p>
+            </div>
+          </article>
+        </div>
+
+        <a class="watch-btn" href="#praticien"><span class="nowrap-brand">Ultherapy<sup>®</sup> PRIME</span> près de chez vous</a>
+      </div>
+    </section>
+
+    <section class="social-proof-section" aria-labelledby="social-proof-title">
+      <div class="section-shell social-proof-content">
+        <blockquote class="salma-quote">
+          <img src="<?php echo esc_url($img); ?>/icon-citation.webp" alt="Guillemet ouvrant" class="salma-quote-mark salma-quote-mark-open" aria-hidden="true">
+          <p id="social-proof-title">"JE SUIS TELLEMENT HEUREUSE DE MES RÉSULTATS, <span class="nowrap-brand">ULTHERAPY<sup>®</sup> PRIME</span> EST VRAIMENT <strong>THE LIFT YOU CAN SEE</strong>*"</p>
+          <footer>
+            <img src="<?php echo esc_url($img); ?>/signature-salma.png" alt="Signature de Salma Hayek Pinault">
+          </footer>
+          <p class="salma-legal">Photo retouchée à des fins esthétiques. La patiente a bénéficié d'un traitement Ultherapy<sup>®</sup> PRIME. Les zones traitées ont été conservées sans modification. Les résultats individuels peuvent varier.</p>
+          <p class="salma-legal salma-translation">*Le lifting qui se voit</p>
+        </blockquote>
+        <div class="salma-photo" aria-hidden="true">
+          <img src="<?php echo esc_url($img); ?>/salma-hayek-section-citation.jpg" alt="Salma Hayek Pinault">
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="avantages" class="advantages-section" aria-label="Avantages Ultherapy PRIME">
-    <div class="section-shell">
-      <div class="advantages-rail">
-        <div class="advantages-track">
-          <article class="advantage-card"><i class="card-icon fa-solid fa-person-rays" aria-hidden="true"></i><h3>Pour les 35-40 ans</h3><p>Premiers signes de relâchement cutané.<sup>8,9</sup></p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-layer-group" aria-hidden="true"></i><h3>Laxité légère à modérée</h3><p>Indiqué pour les grades de laxité léger à modéré.</p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-ban" aria-hidden="true"></i><h3>Zéro chirurgie, zéro injection</h3><p>Aucune incision, aucune anesthésie, aucun acte invasif.<sup>1,2</sup></p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-users" aria-hidden="true"></i><h3>Tous les phototypes</h3><p>Adapté à toutes les carnations et tous les types de peau.<sup>1,5,6,7</sup></p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-sliders" aria-hidden="true"></i><h3>Traitement personnalisé</h3><p>Protocole adapté à chaque patient et chaque morphologie.<sup>1,5,6</sup></p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-stopwatch" aria-hidden="true"></i><h3>Une seule séance</h3><p>Un seul rendez-vous suffit dans la majorité des protocoles.<sup>5</sup></p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-calendar-xmark" aria-hidden="true"></i><h3>Zéro éviction sociale</h3><p>Aucune interruption de votre vie quotidienne après la séance.<sup>5</sup></p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-clock" aria-hidden="true"></i><h3>Résultat jusqu'à 1 an</h3><p>Les bénéfices se maintiennent jusqu'à un an ou plus.*</p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-dna" aria-hidden="true"></i><h3>Collagène relancé</h3><p>Stimule la production naturelle de collagène en profondeur.</p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-face-smile" aria-hidden="true"></i><h3>Peau ferme &amp; définie</h3><p>Rides lissées, peau plus ferme et contours redéfinis.</p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-sun" aria-hidden="true"></i><h3>Pas de saisonnalité</h3><p>Le traitement peut être réalisé à n'importe quelle période de l'année.</p></article>
-          <article class="advantage-card"><i class="card-icon fa-solid fa-leaf" aria-hidden="true"></i><h3>Apparence naturelle</h3><p>Les résultats respectent et révèlent votre beauté naturelle.<sup>3,4</sup></p></article>
+    <section id="indications-corps" class="body-focus-section" aria-labelledby="body-focus-title">
+      <div class="section-shell">
+        <div class="section-heading body-focus-heading">
+          <p class="benefits-tag">Corps</p> <br><br>
+          <h2 id="body-focus-title"><span class="body-focus-highlight">RÉVÉLER</span> LE CORPS</h2>
+          <p>Retrouvez une peau ferme et tonique sur les bras et ventre en stimulant la production de collagène et d'élastine là où votre peau en a besoin.</p>
+        </div>
 
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-person-rays" aria-hidden="true"></i><h3>Pour les 35-40 ans</h3><p>Premiers signes de relâchement cutané.<sup>8,9</sup></p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-layer-group" aria-hidden="true"></i><h3>Laxité légère à modérée</h3><p>Indiqué pour les grades de laxité léger à modéré.</p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-ban" aria-hidden="true"></i><h3>Zéro chirurgie, zéro injection</h3><p>Aucune incision, aucune anesthésie, aucun acte invasif.<sup>1,2</sup></p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-users" aria-hidden="true"></i><h3>Tous les phototypes</h3><p>Adapté à toutes les carnations et tous les types de peau.<sup>1,5,6,7</sup></p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-sliders" aria-hidden="true"></i><h3>Traitement personnalisé</h3><p>Protocole adapté à chaque patient et chaque morphologie.<sup>1,5,6</sup></p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-stopwatch" aria-hidden="true"></i><h3>Une seule séance</h3><p>Un seul rendez-vous suffit dans la majorité des protocoles.<sup>5</sup></p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-calendar-xmark" aria-hidden="true"></i><h3>Zéro éviction sociale</h3><p>Aucune interruption de votre vie quotidienne après la séance.<sup>5</sup></p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-clock" aria-hidden="true"></i><h3>Résultat jusqu'à 1 an</h3><p>Les bénéfices se maintiennent jusqu'à un an ou plus.*</p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-dna" aria-hidden="true"></i><h3>Collagène relancé</h3><p>Stimule la production naturelle de collagène en profondeur.</p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-face-smile" aria-hidden="true"></i><h3>Peau ferme &amp; définie</h3><p>Rides lissées, peau plus ferme et contours redéfinis.</p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-sun" aria-hidden="true"></i><h3>Pas de saisonnalité</h3><p>Le traitement peut être réalisé à n'importe quelle période de l'année.</p></article>
-          <article class="advantage-card" aria-hidden="true"><i class="card-icon fa-solid fa-leaf" aria-hidden="true"></i><h3>Apparence naturelle</h3><p>Les résultats respectent et révèlent votre beauté naturelle.<sup>3,4</sup></p></article>
+        <figure class="body-focus-indicator">
+          <div class="body-focus-indicator-media">
+            <img src="<?php echo esc_url($img); ?>/img-section-bras-indicator2.png" alt="Indications corps Ultherapy PRIME pour les bras et le ventre">
+
+            <div class="body-callout body-callout-arms" aria-hidden="true">
+              <span class="hero-new-badge body-callout-badge">Nouveau</span>
+              <span class="body-callout-text">TONIFIER LES FACES<br>ANTÉRIEURE ET <br> POSTÉRIEURE DU BRAS</span>
+              <span class="body-callout-line"></span>
+              <span class="body-callout-dot"></span>
+            </div>
+
+            <div class="body-callout body-callout-decollete" aria-hidden="true">
+              <span class="body-callout-text">LISSER LES RIDES ET<br>RIDULES DU DÉCOLLETÉ</span>
+              <span class="body-callout-line"></span>
+              <span class="body-callout-dot"></span>
+            </div>
+
+            <div class="body-callout body-callout-abdomen" aria-hidden="true">
+              <span class="hero-new-badge body-callout-badge">Nouveau</span>
+              <span class="body-callout-dot"></span>
+              <span class="body-callout-line"></span>
+              <span class="body-callout-text">RAFFERMIR LE VENTRE</span>
+            </div>
+          </div>
+        </figure>
+
+        <div class="body-focus-summary">
+          <p>Après une grossesse, une perte de poids, la ménopause : le relâchement cutané s'installe différemment.</p>
+          <p>Ultherapy<sup>®</sup> PRIME cible désormais le ventre et les bras pour raffermir la peau qui a changé.</p>
+        </div>
+
+        <div class="body-focus-gallery" aria-label="Zones corps : bras et ventre">
+          <figure class="body-focus-gallery-item">
+            <img src="<?php echo esc_url($img); ?>/decollete.png" alt="Zone du décolleté traitée par Ultherapy PRIME">
+            <figcaption>Décolleté</figcaption>
+          </figure>
+          <figure class="body-focus-gallery-item is-new">
+            <span class="body-focus-badge">NOUVEAU</span>
+            <img src="<?php echo esc_url($img); ?>/abdomen.png" alt="Zone ventre traitée par Ultherapy PRIME">
+            <figcaption>Ventre</figcaption>
+          </figure>
+          <figure class="body-focus-gallery-item is-new">
+            <span class="body-focus-badge">NOUVEAU</span>
+            <img src="<?php echo esc_url($img); ?>/bras-anterieur.png" alt="Zone bras antérieur traitée par Ultherapy PRIME">
+            <figcaption>Faces antérieure et postérieure du bras</figcaption>
+          </figure>
+        </div>
+
+        <a class="watch-btn body-focus-main-cta" href="#praticien">Découvrez <span class="nowrap-brand">Ultherapy<sup>®</sup> PRIME</span> dans votre région</a>
+      </div>
+    </section>
+
+    <section id="visage" class="face-recap-section" aria-labelledby="face-recap-title">
+      <div class="section-shell face-recap-content">
+        <div class="section-heading face-recap-heading">
+          <p class="benefits-tag">Visage &amp; cou</p> <br><br>
+          <h2 id="face-recap-title">Sublimer <span>le visage</span></h2>
+          <p>Redessiner l'ovale, sculpter le bas du visage, rehausser le sourcil, lisser les rides et ridules du cou : Ultherapy<sup>®</sup> PRIME accompagne chaque détail.</p>
+        </div>
+
+        <figure class="face-recap-indicator">
+          <div class="face-recap-indicator-media">
+            <img src="<?php echo esc_url($img); ?>/img-section-visage.png" alt="Indications visage et cou Ultherapy PRIME">
+
+            <div class="face-callout face-callout-brow" aria-hidden="true">
+              <span class="face-callout-dot"></span>
+              <span class="face-callout-line"></span>
+              <span class="face-callout-text">REHAUSSER LE SOURCIL</span>
+            </div>
+
+            <div class="face-callout face-callout-jaw-left" aria-hidden="true">
+              <span class="face-callout-text">SCULPTER LE BAS<br>DU VISAGE</span>
+              <span class="face-callout-line"></span>
+              <span class="face-callout-dot"></span>
+            </div>
+
+            <div class="face-callout face-callout-oval" aria-hidden="true">
+              <span class="face-callout-dot"></span>
+              <span class="face-callout-line"></span>
+              <span class="face-callout-text">REDESSINER L'OVALE<br>DU VISAGE</span>
+            </div>
+
+            <div class="face-callout face-callout-neck" aria-hidden="true">
+              <span class="face-callout-text">LISSER LES RIDULES<br>DU COU</span>
+              <span class="face-callout-line"></span>
+              <span class="face-callout-dot"></span>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="comment-ca-marche" class="benefits-section" aria-labelledby="benefits-title">
+      <div class="section-shell benefits-content">
+        <div class="section-heading benefits-heading-intro">
+          <p class="benefits-tag">La technologie</p> <br><br>
+          <h2 id="benefits-title">Comment ça <span>fonctionne ?</span></h2>
+        </div>
+
+        <div class="benefits-description">
+          <p>Ultherapy<sup>®</sup> PRIME repose sur la <strong>technologie HIFU</strong> <br> (High-Intensity Focused Ultrasound), des ultrasons microfocalisés capables de cibler avec précision les couches profondes de la peau, jusqu'à 4,5 mm de profondeur.</p>
+          <p>Les brèves augmentations de température, envoyées à la profondeur précise requise, relancent le processus de cicatrisation de votre corps pour créer du nouveau collagène : un phénomène appelé la <strong>néocollagénèse</strong>.</p>
+        </div>
+
+        <div class="benefits-video-block">
+          <iframe
+            class="benefits-video"
+            src="https://player.vimeo.com/video/1196354896?autoplay=1&muted=1&autopause=0&playsinline=1"
+            title="Animation Ultherapy sous la peau"
+            data-start-seconds="25"
+            data-end-trim-seconds="20"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
         </div>
       </div>
-      <div class="advantages-cta">
-        <a class="watch-btn" href="#">Découvrez Ultherapy<sup>®</sup> PRIME autour de chez vous</a>
-        <p class="advantages-footnote">* Les résultats s'améliorent en 90 à 180 jours et peuvent durer jusqu'à un an.<sup>1,3,4,5,6,7</sup></p>
-        <p class="benefit-intro-footnote" style="text-align: center;">+ Les résultats d'Ultherapy® PRIME peuvent durer jusqu'à 6 mois pour les bras et l'abdomen, et un an ou plus pour le visage. <br> Le terme visage fait référence aux indications autorisées pour Ultherapy® PRIME</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="avant-apres" class="before-after-section" aria-labelledby="before-after-title">
-    <div class="section-shell before-after-content">
-      <div class="section-heading benefits-heading">
-        <p class="benefits-tag">Avant / Après</p> <br><br>
-        <h2 id="before-after-title">
-          La différence <br> parle d'elle-<span>même</span>
-        </h2>
-        <p>
-          Glissez le curseur pour voir la transformation. Même peau, même lumière, quelques semaines d'écart.
-        </p>
-      </div>
+    <section class="personalized-section" aria-labelledby="personalized-title">
+      <div class="section-shell personalized-content">
+        <figure class="personalized-visual">
+          <img src="<?php echo esc_url($img); ?>/machine-system.png" alt="Machine Ultherapy PRIME avec transducteurs">
+        </figure>
 
-      <div class="compare-grid">
-        <article class="compare-card">
-          <div class="compare-slider" style="--reveal: 50%;">
-            <img class="compare-img compare-before" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s01-avant.jpg" alt="Avant traitement des bras">
-            <img class="compare-img compare-after" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s01-apres.jpg" alt="Après traitement des bras">
-            <span class="compare-label compare-label-before">Avant</span>
-            <span class="compare-label compare-label-after">Après</span>
-            <span class="compare-handle" aria-hidden="true">
-              <svg viewBox="0 0 28 14" focusable="false"><path d="M9 2 3 7l6 5M3 7h22M19 2l6 5-6 5"/></svg>
-            </span>
-            <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour les bras">
-          </div>
-          <p class="compare-delay">Après 3 mois</p>
-        </article>
-
-        <article class="compare-card">
-          <div class="compare-slider" style="--reveal: 50%;">
-            <img class="compare-img compare-before" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s02-avant.jpg" alt="Avant traitement des bras postérieurs">
-            <img class="compare-img compare-after" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s02-apres.jpg" alt="Après traitement des bras postérieurs">
-            <span class="compare-label compare-label-before">Avant</span>
-            <span class="compare-label compare-label-after">Après</span>
-            <span class="compare-handle" aria-hidden="true">
-              <svg viewBox="0 0 28 14" focusable="false"><path d="M9 2 3 7l6 5M3 7h22M19 2l6 5-6 5"/></svg>
-            </span>
-            <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour les bras postérieurs">
-          </div>
-          <p class="compare-delay">Après 3 mois</p>
-        </article>
-
-        <article class="compare-card">
-          <div class="compare-slider" style="--reveal: 50%;">
-            <img class="compare-img compare-before" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s03-avant.jpg" alt="Avant traitement du ventre">
-            <img class="compare-img compare-after" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s03-apres.jpg" alt="Après traitement du ventre">
-            <span class="compare-label compare-label-before">Avant</span>
-            <span class="compare-label compare-label-after">Après</span>
-            <span class="compare-handle" aria-hidden="true">
-              <svg viewBox="0 0 28 14" focusable="false"><path d="M9 2 3 7l6 5M3 7h22M19 2l6 5-6 5"/></svg>
-            </span>
-            <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après pour le ventre">
-          </div>
-          <p class="compare-delay">Après 3 mois</p>
-        </article>
-      </div>
-
-      <a class="watch-btn" href="#">Trouver un praticien</a>
-    </div>
-  </section>
-
-  <section class="social-proof-section" aria-labelledby="social-proof-title">
-    <div class="section-shell social-proof-content">
-      <blockquote class="salma-quote">
-        <img class="quote-icon" src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/icon-citation.webp" alt="" aria-hidden="true">
-        <p id="social-proof-title">
-          Ultherapy<sup>®</sup> PRIME personnalise* mon traitement en atteignant les couches cibles de la peau, pour activer mon potentiel de régénération et stimuler ma propre production de collagène et d'élastine.<sup>2,3,4</sup> Mieux encore, il est non invasif, ne demande qu'une seule séance et ne nécessite aucune interruption de sa vie sociale.<sup>2</sup>
-        </p>
-        <footer>
-          <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/signature-salma.png" alt="Signature de Salma Hayek Pinault">
-          <span>Salma Hayek Pinault</span>
-          <small>Actress &amp; Producer</small>
-        </footer>
-        <p class="salma-legal">Photo retouchée à des fins esthétiques. La patiente a bénéficié d'un traitement Ultherapy<sup>®</sup> PRIME. Les zones traitées ont été conservées sans modification. Les résultats individuels peuvent varier.</p>
-      </blockquote>
-      <div class="salma-photo" aria-hidden="true">
-        <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-thaise.jpg" alt="">
-      </div>
-    </div>
-  </section>
-
-  <section id="indications-corps" class="body-focus-section" aria-labelledby="body-focus-title">
-    <div class="section-shell">
-      <div class="section-heading body-focus-heading">
-        <p class="benefits-tag">Indications corps</p> <br><br>
-        <h2 id="body-focus-title">Retrouvez une peau ferme et tonique <span>sur les bras et le ventre</span></h2>
-        <p>
-          Stimule la production de collagène et d'élastine là où votre peau en a besoin.
-        </p>
-      </div>
-
-      <p class="body-focus-kicker">Révéler le corps</p>
-
-      <div class="body-focus-stack">
-        <article class="body-focus-row">
-          <figure class="body-focus-visual">
-            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-bras-ant.jpg" alt="Bras antérieur traité par Ultherapy PRIME">
-          </figure>
-          <div class="body-focus-copy">
-            <h3>Bras antérieur</h3>
-            <p>
-              La face interne du bras est l'une des premières zones à perdre en tonicité : post-partum,
-              variation de poids, âge. Ultherapy® PRIME y agit en profondeur pour retendre la peau
-              sans toucher aux volumes ni laisser de trace.
-            </p>
-            <a class="watch-btn body-focus-btn" href="#">Trouver un praticien</a>
-          </div>
-        </article>
-
-        <article class="body-focus-row body-focus-row-reverse">
-          <figure class="body-focus-visual">
-            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-bras-post.jpg" alt="Bras postérieur traité par Ultherapy PRIME">
-          </figure>
-          <div class="body-focus-copy">
-            <h3>Bras postérieur</h3>
-            <p>
-              La face arrière du bras concentre souvent le relâchement le plus visible, en particulier
-              à la ménopause. Un traitement ciblé permet d'y restaurer la densité cutanée sans recours
-              à la chirurgie.
-            </p>
-            <a class="watch-btn body-focus-btn" href="#">Trouver un praticien</a>
-          </div>
-        </article>
-
-        <article class="body-focus-row">
-          <figure class="body-focus-visual">
-            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-abdomen.jpg" alt="Ventre traité par Ultherapy PRIME">
-          </figure>
-          <div class="body-focus-copy">
-            <h3>Ventre</h3>
-            <p>
-              Après une grossesse, une perte de poids ou la ménopause : le relâchement s'installe
-              différemment. Ultherapy® PRIME cible le ventre pour raffermir ce qui a changé, sans abdominoplastie.
-            </p>
-            <a class="watch-btn body-focus-btn" href="#">Trouver un praticien</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="visage" class="face-recap-section" aria-labelledby="face-recap-title">
-    <div class="section-shell face-recap-content">
-      <div class="section-heading face-recap-heading">
-        <p class="benefits-tag">Visage &amp; cou</p> <br><br>
-        <h2 id="face-recap-title">Sublimer <span>le visage</span></h2>
-        <p>
-          Redessiner l'ovale, sculpter le bas du visage, rehausser le sourcil, lisser les ridules du cou : Ultherapy® PRIME accompagne chaque détail.
-        </p>
-      </div>
-
-      <div class="face-recap-grid">
-        <article class="face-recap-card">
-          <figure class="face-recap-visual">
-            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-sylvie.jpg" alt="Lifting du visage avec Ultherapy PRIME">
-          </figure>
-          <div class="face-recap-copy">
-            <h3>Redessiner l'ovale</h3>
-            <p>Redessine les contours du visage pour une lecture plus nette et définie.</p>
-          </div>
-        </article>
-
-        <article class="face-recap-card">
-          <figure class="face-recap-visual">
-            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-rafeeka.jpg" alt="Raffermissement du cou avec Ultherapy PRIME">
-          </figure>
-          <div class="face-recap-copy">
-            <h3>Sculpter le bas du visage</h3>
-            <p>Raffermit la ligne de mâchoire et soulève les joues pour un effet lift naturel.</p>
-          </div>
-        </article>
-
-        <article class="face-recap-card">
-          <figure class="face-recap-visual">
-            <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/model-gabriella.jpg" alt="Redéfinition de l'ovale avec Ultherapy PRIME">
-          </figure>
-          <div class="face-recap-copy">
-            <h3>Rehausser le sourcil &amp; lisser le cou</h3>
-            <p>Agit sur le front, le sourcil et les ridules du cou pour une harmonie complète du visage.</p>
-          </div>
-        </article>
-      </div>
-
-      <a class="watch-btn face-recap-btn" href="#">Trouver un praticien</a>
-    </div>
-  </section>
-
-  <section id="comment-ca-marche" class="benefits-section" aria-labelledby="benefits-title">
-    <div class="section-shell benefits-content">
-      <div class="section-heading benefits-heading">
-        <p class="benefits-tag">La technologie HIFU</p> <br><br>
-        <h2 id="benefits-title">Comment ça <span>fonctionne ?</span></h2>
-        <p>
-          Ultherapy® PRIME repose sur la technologie HIFU (High-Intensity Focused Ultrasound), des ultrasons microfocalisés capables de cibler avec précision les couches profondes de la peau, jusqu'à 4,5 mm de profondeur. Les brèves augmentations de température, envoyées à la profondeur précise requise, relancent le processus de cicatrisation de votre corps pour créer du nouveau collagène : un phénomène appelé la néocollagénèse.
-        </p>
-        <a class="watch-btn benefits-btn" href="#">Trouver un praticien</a>
-      </div>
-
-      <div class="benefits-video-block">
-        <div class="benefits-video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-          <iframe src="https://player.vimeo.com/video/1196354896?badge=0&autopause=0&player_id=0&app_id=58479"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;"
-            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-            title="Ultherapy PRIME – Comment ça fonctionne"></iframe>
+        <div class="section-heading personalized-copy">
+          <p class="benefits-tag">Protocole sur-mesure</p> <br><br>
+          <h2 id="personalized-title">Une approche <span>personnalisée</span> avec une <span>visualisation échographique</span></h2>
+          <p>Chaque patient est <strong>unique</strong> : l'épaisseur et la profondeur des différentes couches de la peau peuvent varier d'une zone à l'autre et d'une personne à une autre.</p>
+          <ul class="personalized-list">
+            <li>Ultherapy<sup>®</sup> PRIME est le seul traitement HIFU intégrant la visualisation échographique en temps réel.</li>
+            <li>Le praticien visualise les tissus pendant la séance pour un ciblage précis.</li>
+            <li>Une prise en charge sur-mesure,<sup>1,3,6</sup> adaptée à la morphologie de chacun.</li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="personalized-section" aria-labelledby="personalized-title">
-    <div class="section-shell personalized-content">
-      <figure class="personalized-visual">
-        <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/machine-system.png" alt="Machine Ultherapy PRIME avec transducteurs">
-      </figure>
+    <section id="timeline" class="timeline-section" aria-labelledby="timeline-title">
+      <div class="section-shell timeline-shell">
+        <div class="section-heading timeline-heading">
+          <p class="benefits-tag">Votre traitement</p> <br><br>
+          <h2 id="timeline-title">Votre traitement <span>Ultherapy<sup class="timeline-brand-mark">®</sup> PRIME</span></h2>
+          <p>De la consultation jusqu'au résultat : voici ce qui se passe, étape par étape.</p>
+        </div>
 
-      <div class="section-heading personalized-copy">
-        <p class="benefits-tag">Protocole sur-mesure</p> <br><br>
-        <h2 id="personalized-title">Une approche personnalisée, guidée par la <span>visualisation échographique</span></h2>
-        <p>
-          Chaque patient est unique : l'épaisseur et la profondeur des différentes couches de la peau peuvent varier d'une zone à l'autre et d'une personne à une autre.
-        </p>
-        <ul class="personalized-list">
-          <li>Ultherapy® PRIME est le seul traitement HIFU intégrant la visualisation échographique en temps réel</li>
-          <li>Le praticien visualise les tissus pendant la séance pour un ciblage précis</li>
-          <li>Une prise en charge sur-mesure,<sup>1,5,6</sup> adaptée à la morphologie de chacun</li>
-        </ul>
+        <div class="timeline-track" aria-label="Étapes du traitement">
+          <span class="timeline-line" aria-hidden="true"><span class="timeline-line-fill"></span></span>
+
+          <article class="timeline-step timeline-step-right">
+            <div class="timeline-card">
+              <i class="fa-solid fa-calendar-check timeline-icon" aria-hidden="true"></i>
+              <h3>AVANT LE TRAITEMENT</h3>
+              <p>Une consultation médicale permet d'évaluer votre peau, les zones à traiter et de définir une prise en charge personnalisée.</p>
+            </div>
+            <span class="timeline-dot" aria-hidden="true"></span>
+          </article>
+
+          <article class="timeline-step timeline-step-left">
+            <div class="timeline-card">
+              <i class="fa-solid fa-hand-holding-medical timeline-icon" aria-hidden="true"></i>
+              <h3>PENDANT LE TRAITEMENT</h3>
+              <div class="timeline-copy">
+                <p>Après nettoyage de la peau, le médecin applique un gel échographique. Grâce à la visualisation échographique en temps réel, Ultherapy<sup>®</sup> PRIME permet de cibler précisément les tissus profonds, sans effraction cutanée, pour stimuler le processus de production de collagène. La sensation pendant la séance varie selon les patients.</p>
+              </div>
+            </div>
+            <span class="timeline-dot" aria-hidden="true"></span>
+          </article>
+
+          <article class="timeline-step timeline-step-right">
+            <div class="timeline-card">
+              <i class="fa-solid fa-trophy timeline-icon" aria-hidden="true"></i>
+              <h3>APRÈS LE TRAITEMENT</h3>
+              <div class="timeline-copy">
+                <div class="timeline-subsection">
+                  <p class="timeline-subtitle">Après la séance</p>
+                  <p>Un premier résultat peut être visible grâce à l'effet de contraction des fibres. Vous pouvez ressentir de légers picotements ou des rougeurs selon votre sensibilité, mais ces effets sont temporaires et disparaissent en quelques heures, sans impact sur le quotidien. Votre médecin pourra vous informer sur d'éventuels effets secondaires plus rares.</p>
+                </div>
+                <div class="timeline-subsection">
+                  <p class="timeline-subtitle">Après 3 mois</p>
+                  <p>Les résultats sont visibles et progressifs. Certains patients peuvent voir leurs résultats évoluer jusqu'à 6 mois.</p>
+                </div>
+              </div>
+            </div>
+            <span class="timeline-dot" aria-hidden="true"></span>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="timeline" class="timeline-section" aria-labelledby="timeline-title">
-    <div class="section-shell timeline-shell">
-      <div class="section-heading timeline-heading">
-        <p class="benefits-tag">Votre traitement</p> <br><br>
-        <h2 id="timeline-title">Votre traitement <span>Ultherapy® PRIME</span></h2>
-        <p>
-          De la consultation jusqu'au résultat : voici ce qui se passe, étape par étape.
-        </p>
+    <section class="stats-band" aria-labelledby="stats-title">
+      <div class="stats-inner">
+        <div class="stats-list">
+          <article class="stat-item"><strong>15 ans</strong><span>d'expertise</span></article>
+          <article class="stat-item"><strong>3,5M</strong><span>de traitements</span></article>
+          <article class="stat-item"><strong>+80</strong><span>pays</span></article>
+          <article class="stat-item"><strong>95%</strong><span>de patients satisfaits après 1 an* <sup>4</sup></span></article>
+          <article class="stat-item"><strong>+100</strong><span>publications et 55 études cliniques</span></article>
+        </div>
       </div>
+      <p class="stats-footnote">*Données issues d'une étude prospective portant sur 20 patients, réalisée avec Ultherapy<sup>®</sup></p>
+    </section>
 
-      <div class="timeline-track" aria-label="Étapes du traitement">
-        <span class="timeline-line" aria-hidden="true">
-          <span class="timeline-line-fill"></span>
-        </span>
+    <section id="faq" class="faq-section" aria-labelledby="faq-title">
+      <div class="section-shell faq-shell">
+        <div class="section-heading faq-heading">
+          <p class="benefits-tag">FAQ</p> <br><br>
+          <h2 id="faq-title">Vos questions, <span>nos réponses</span></h2>
+          <p>Tout ce que vous voulez savoir avant de consulter : le déroulement d'une séance, ce que vous ressentirez, et à quoi vous attendre dans les semaines qui suivent.</p>
+        </div>
 
-        <article class="timeline-step timeline-step-right">
-          <div class="timeline-card">
-            <i class="fa-solid fa-calendar-check timeline-icon" aria-hidden="true"></i>
-            <h3>Avant le traitement</h3>
-            <p>Une consultation médicale permet d'évaluer votre peau, les zones à traiter et de définir une prise en charge personnalisée.</p>
-            <figure class="timeline-photo">
-              <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s01-avant.jpg" alt="Photo de la zone avant traitement">
-            </figure>
-          </div>
-          <span class="timeline-dot" aria-hidden="true"></span>
-        </article>
-
-        <article class="timeline-step timeline-step-left">
-          <div class="timeline-card">
-            <i class="fa-solid fa-hand-holding-medical timeline-icon" aria-hidden="true"></i>
-            <h3>Pendant le traitement</h3>
-            <p>Après nettoyage et gel échographique, Ultherapy® PRIME cible précisément les tissus profonds grâce à la visualisation en temps réel. Les brèves augmentations de température stimulent la néocollagénèse.</p>
-            <figure class="timeline-photo">
-              <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-bras-ant.jpg" alt="Photo du traitement en cours">
-            </figure>
-          </div>
-          <span class="timeline-dot" aria-hidden="true"></span>
-        </article>
-
-        <article class="timeline-step timeline-step-right">
-          <div class="timeline-card">
-            <i class="fa-solid fa-trophy timeline-icon" aria-hidden="true"></i>
-            <h3>Après le traitement</h3>
-            <p>Aucune éviction sociale. Les premiers résultats apparaissent progressivement : à 90 jours les effets sont nets, à 1 an ils restent visibles et harmonieux.</p>
-            <figure class="timeline-photo">
-              <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/zone-abdomen.jpg" alt="Photo après le traitement">
-            </figure>
-          </div>
-          <span class="timeline-dot" aria-hidden="true"></span>
-        </article>
-
-        <article class="timeline-step timeline-step-left">
-          <div class="timeline-card">
-            <i class="fa-solid fa-chart-line timeline-icon" aria-hidden="true"></i>
-            <h3>À 90 jours et au-delà</h3>
-            <p>Les résultats sont à leur plein potentiel. L'effet de fermeté est installé naturellement et peut se maintenir jusqu'à un an ou plus.*</p>
-            <figure class="timeline-photo">
-              <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/ba-s03-apres.jpg" alt="Photo du résultat à 90 jours">
-            </figure>
-          </div>
-          <span class="timeline-dot" aria-hidden="true"></span>
-        </article>
+        <div class="faq-list">
+          <article class="faq-item is-open">
+            <button class="faq-trigger" type="button" aria-expanded="true"><span class="faq-question">Combien de temps dure une séance Ultherapy<sup>®</sup> PRIME ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+            <div class="faq-panel"><div class="faq-answer">Une séance dure en moyenne 30 minutes à 1h30 selon la ou les zones traitées.</div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Quelle est la durée des résultats ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+            <div class="faq-panel"><div class="faq-answer">Les résultats d'Ultherapy<sup>®</sup> sont progressifs et durables. Ils commencent à apparaître progressivement dans les 2 à 3 mois suivant la séance, le temps que la production de collagène se relance. Les effets s'améliorent ensuite naturellement et peuvent durer jusqu'à 1 an ou plus pour le visage et décolleté jusqu'à 6 mois ou plus pour les bras et l'abdomen, selon l'âge, la qualité de la peau et le mode de vie.</div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Quelles zones peuvent être traitées ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+            <div class="faq-panel"><div class="faq-answer">Ultherapy<sup>®</sup> PRIME traite le visage, le cou, le décolleté, les bras (face antérieure et postérieure) et le ventre. Le praticien détermine les zones adaptées lors de la consultation.</div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Est-ce que le traitement Ultherapy<sup>®</sup> PRIME est douloureux ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+            <div class="faq-panel"><div class="faq-answer">Lors du traitement Ultherapy<sup>®</sup> PRIME, certaines personnes peuvent ressentir une sensation passagère de chaleur ou de picotements. Cela correspond à l'énergie des ultrasons focalisés, délivrée à des profondeurs précises pour stimuler la production naturelle de collagène. Le niveau de confort varie selon la sensibilité de chacun, mais ces sensations restent brèves et uniquement présentes pendant l'émission de l'énergie.</div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Faut-il prévoir plusieurs séances ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+            <div class="faq-panel"><div class="faq-answer">Ultherapy<sup>®</sup> PRIME nécessite généralement une seule séance ; toutefois, ce nombre peut varier en fonction du degré de relâchement cutané.</div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false"><span class="faq-question">Est-ce que je peux reprendre ma vie normalement après le traitement ?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+            <div class="faq-panel"><div class="faq-answer">Avec Ultherapy<sup>®</sup> PRIME, il n'y a pas d'éviction sociale. Après l'intervention, la zone traitée conserve son aspect naturel, sans cicatrices ni modification des traits. Vous pouvez reprendre vos activités normales, sans avoir à suivre de mesures post-traitement. <sup>8,9</sup></div></div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="faq" class="faq-section" aria-labelledby="faq-title">
-    <div class="section-shell faq-shell">
-      <div class="section-heading faq-heading">
-        <p class="benefits-tag">FAQ</p> <br><br>
-        <h2 id="faq-title">Vos questions, <span>nos réponses</span></h2>
-        <p>
-          Tout ce que vous voulez savoir avant de consulter : le déroulement d'une séance,
-          ce que vous ressentirez, et à quoi vous attendre dans les semaines qui suivent.
-        </p>
-      </div>
-
-      <div class="faq-list">
-        <article class="faq-item is-open">
-          <button class="faq-trigger" type="button" aria-expanded="true">
-            <span class="faq-question">Est-ce que je peux reprendre ma vie normalement après le traitement ?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="faq-panel">
-            <div class="faq-answer">Oui, immédiatement. Ultherapy® PRIME ne nécessite aucune période de récupération. Vous pouvez ressentir de légers picotements ou rougeurs qui disparaissent en quelques heures, sans impact sur votre quotidien.</div>
+    <section id="praticien" class="cta-section" aria-labelledby="cta-title">
+      <div class="section-shell cta-shell">
+        <div class="cta-locator">
+          <div class="cta-search">
+            <div class="section-heading cta-heading">
+              <p class="benefits-tag">Trouver un praticien</p> <br><br>
+              <h2 id="cta-title">Trouvez votre <br><span>centre</span> <span class="cta-brand cta-brand-inline">Ultherapy<sup>®</sup></span></h2>
+              <p>Trouvez un centre près de chez vous proposant un traitement Ultherapy<sup>®</sup> et Ultherapy<sup>®</sup> PRIME, pour un lifting non invasif* du visage (haut du visage, bas du visage) et/ou du corps (cou, décolleté, face postérieure et antérieure des bras, ventre).<br><br><strong>Saisissez votre code postal dès maintenant pour localiser les centres en toute simplicité !</strong><br><br><span style="font-size:0.82em;"><em>*sans chirurgie</em></span></p>
+            </div>
+            <div class="cta-search-row">
+              <input id="doc-search" type="text" placeholder="Code postal / Ville">
+              <button class="watch-btn cta-search-btn" type="button">Rechercher</button>
+            </div>
+            <button id="geolocate-btn" type="button" style="margin-top:10px;display:flex;align-items:center;gap:8px;background:none;border:2px solid #f6b23d;color:#f6b23d;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;width:100%;">
+              <i class="fa-solid fa-location-dot"></i> Utiliser ma position
+            </button>
+            <div id="doclocator-results" style="margin-top:16px;display:none;">
+              <p id="doclocator-count" style="font-size:13px;opacity:0.7;margin-bottom:10px;"></p>
+              <ul id="doclocator-list" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;max-height:420px;overflow-y:auto;"></ul>
+            </div>
           </div>
-        </article>
 
-        <article class="faq-item">
-          <button class="faq-trigger" type="button" aria-expanded="false">
-            <span class="faq-question">Combien de temps dure une séance Ultherapy® PRIME ?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="faq-panel">
-            <div class="faq-answer">Une séance dure en moyenne 30 minutes à 1 heure selon la ou les zones traitées.</div>
+          <div class="cta-map" style="display:flex;flex-direction:column;">
+            <div id="doclocator-map" style="width:100%;flex:1;min-height:420px;"></div>
           </div>
-        </article>
-
-        <article class="faq-item">
-          <button class="faq-trigger" type="button" aria-expanded="false">
-            <span class="faq-question">Quand les premiers résultats peuvent-ils apparaître ?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="faq-panel">
-            <div class="faq-answer">Les premiers effets deviennent perceptibles vers 30 jours. Le résultat optimal s'installe autour de 90 jours, quand la production de collagène a atteint son pic.</div>
-          </div>
-        </article>
-
-        <article class="faq-item">
-          <button class="faq-trigger" type="button" aria-expanded="false">
-            <span class="faq-question">Quelles zones peuvent être traitées ?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="faq-panel">
-            <div class="faq-answer">Ultherapy® PRIME traite le visage, le cou, le décolleté, les bras (face antérieure et postérieure) et le ventre. Le praticien détermine les zones adaptées lors de la consultation.</div>
-          </div>
-        </article>
-
-        <article class="faq-item">
-          <button class="faq-trigger" type="button" aria-expanded="false">
-            <span class="faq-question">Le ressenti pendant la séance varie-t-il selon les zones ?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="faq-panel">
-            <div class="faq-answer">Oui. Les zones osseuses ou à la peau fine peuvent être plus sensibles. Le praticien adapte les paramètres en temps réel pour garantir votre confort tout au long de la séance.</div>
-          </div>
-        </article>
-
-        <article class="faq-item">
-          <button class="faq-trigger" type="button" aria-expanded="false">
-            <span class="faq-question">Faut-il prévoir plusieurs séances ?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="faq-panel">
-            <div class="faq-answer">Dans la majorité des cas, une séance suffit. Pour certains profils ou certaines zones, le praticien peut recommander un second traitement à 12 mois, défini ensemble lors de la consultation.</div>
-          </div>
-        </article>
-
-        <article class="faq-item">
-          <button class="faq-trigger" type="button" aria-expanded="false">
-            <span class="faq-question">Comment savoir si je suis un bon candidat ?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="faq-panel">
-            <div class="faq-answer">Ultherapy® PRIME est indiqué pour les premiers signes de relâchement cutané, dès 35-40 ans, pour les grades de laxité léger à modéré. La meilleure façon de le savoir est de consulter un praticien certifié.</div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="praticien" class="cta-section" aria-labelledby="cta-title">
-    <div class="section-shell cta-shell">
-      <div class="section-heading cta-heading" style="text-align:center;margin-bottom:32px;">
-        <p class="benefits-tag">Trouver un praticien</p><br><br>
-        <h2 id="cta-title">Découvrez Ultherapy<sup>®</sup> PRIME <span>près de chez vous</span></h2>
-        <p>Tous nos praticiens sont formés et certifiés Ultherapy<sup>®</sup> PRIME.</p>
+        </div>
       </div>
 
-      <div class="doclocator-search-bar" style="display:flex;gap:12px;max-width:480px;margin:0 auto 12px;">
-        <input id="doclocator-input" type="text" placeholder="Ville ou code postal…"
-          style="flex:1;padding:14px 18px;border:2px solid #e5a72d;border-radius:8px;font-size:16px;outline:none;font-family:inherit;"
-          aria-label="Rechercher une ville ou un code postal">
-        <button id="doclocator-btn" type="button"
-          style="padding:14px 22px;background:#e5a72d;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;">
-          Rechercher
-        </button>
-      </div>
-      <div style="max-width:480px;margin:0 auto 28px;">
-        <button id="geolocate-btn" type="button"
-          style="display:flex;align-items:center;gap:8px;background:none;border:2px solid #e5a72d;color:#e5a72d;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;width:100%;">
-          <i class="fa-solid fa-location-dot"></i> Utiliser ma position
-        </button>
-      </div>
+      <script>
+      window.addEventListener('load', function() {
+        var PRACTITIONERS = [
+          {name:"Clinique esthétique de Corbiac",city:"Saint-Médard-en-Jalles",zip:"33160",lat:44.876705,lng:-0.696811,street:"Rue Claude Bernard",streetNumber:"26",country:"France",treatmentType:"prime"},
+          {name:"CSHP Centre Saint Honoré Ponthieu",city:"Paris",zip:"75008",lat:48.870477,lng:2.310511,street:"Rue de Ponthieu",streetNumber:"12",country:"France",treatmentType:"prime"},
+          {name:"DBC Esthetic",city:"Paris",zip:"75001",lat:48.866214,lng:2.329198,street:"Rue Saint Honore",streetNumber:"231",country:"France",treatmentType:"prime"},
+          {name:"Centre Laser Clipp",city:"Paris",zip:"75007",lat:48.856138,lng:2.302764,street:"Avenue de la Bourdonnais",streetNumber:"85",country:"France",treatmentType:"prime"},
+          {name:"Cabinet médical Chantilly",city:"Chantilly",zip:"60500",lat:49.192687,lng:2.463905,street:"Rue de Gouvieux",streetNumber:"9",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Boulevard Saint-Germain",city:"Paris",zip:"75006",lat:48.852399,lng:2.339677,street:"Boulevard Saint Germain",streetNumber:"126",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Marseille Rodocanachi",city:"Marseille",zip:"13008",lat:43.274374,lng:5.385837,street:"Boulevard Rodocanachi",streetNumber:"55 bis",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Lyon – Quai Jean Moulin",city:"Lyon",zip:"69001",lat:45.766576,lng:4.837887,street:"Quai Jean Moulin",streetNumber:"9",country:"France",treatmentType:"prime"},
+          {name:"Centre CLEMA",city:"Angers",zip:"49000",lat:47.444203,lng:-0.543031,street:"Rue François Cevert",streetNumber:"16",country:"France",treatmentType:"prime"},
+          {name:"CLDE – Centre Laser Dermatologique",city:"Viry-Châtillon",zip:"91170",lat:48.670938,lng:2.376374,street:"Rue Alexandre Dumas",streetNumber:"8",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Montbazon",city:"Montbazon",zip:"37250",lat:47.275244,lng:0.708017,street:"Allée John Ropper",streetNumber:"12",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Fréjus",city:"Fréjus",zip:"83600",lat:43.421569,lng:6.745674,street:"Place d'Actium",streetNumber:"14",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Paris – Chasseloup Laubat",city:"Paris",zip:"75015",lat:48.847502,lng:2.305144,street:"Rue Chasseloup Laubat",streetNumber:"15",country:"France",treatmentType:"prime"},
+          {name:"CLEME 37",city:"Tours",zip:"37000",lat:47.388074,lng:0.688381,street:"Rue d'Entraigues",streetNumber:"19",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Amiens",city:"Amiens",zip:"80000",lat:49.894379,lng:2.292921,street:"Place Léon Gontier",streetNumber:"4",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Thionville",city:"Thionville",zip:"57100",lat:49.358019,lng:6.164896,street:"Rue du Vieux Collège",streetNumber:"10",country:"France",treatmentType:"prime"},
+          {name:"Dermatologie Esthétique Caen",city:"Caen",zip:"14000",lat:49.179074,lng:-0.361873,street:"Place de l'Ancienne Comédie",streetNumber:"12",country:"France",treatmentType:"prime"},
+          {name:"Centre CLEO",city:"Bordeaux",zip:"33200",lat:44.856182,lng:-0.615268,street:"Rue Falquet",streetNumber:"12",country:"France",treatmentType:"prime"},
+          {name:"Maison Elixience",city:"Metz",zip:"57000",lat:49.107022,lng:6.163254,street:"Rue Bossuet",streetNumber:"31",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Montpellier",city:"Montpellier",zip:"34000",lat:43.600264,lng:3.898424,street:"Rue de Syracuse",streetNumber:"82",country:"France",treatmentType:"ultherapy"},
+          {name:"Clinique Del Mar",city:"Antibes",zip:"06160",lat:43.558947,lng:7.128187,street:"Boulevard Francis Meilland",streetNumber:"90",country:"France",treatmentType:"ultherapy"},
+          {name:"Cabinet Prigonrieux",city:"Prigonrieux",zip:"24130",lat:44.850606,lng:0.437918,street:"Route Du Guel",streetNumber:"69",country:"France",treatmentType:"ultherapy"},
+          {name:"IEMCEP Marseille",city:"Marseille",zip:"13006",lat:43.289532,lng:5.374693,street:"Rue Roux de Brignoles",streetNumber:"13",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Paris – Rue de la Trémoille",city:"Paris",zip:"75008",lat:48.867085,lng:2.302883,street:"Rue de la Tremoille",streetNumber:"9",country:"France",treatmentType:"ultherapy"},
+          {name:"Cabinet Laser Médical Paris",city:"Paris",zip:"75017",lat:48.882461,lng:2.309578,street:"Place du Général Catroux",streetNumber:"7",country:"France",treatmentType:"ultherapy"},
+          {name:"Centre de la Femme",city:"Nantes",zip:"44000",lat:47.217029,lng:-1.563169,street:"Place Aristide Briand",streetNumber:"5",country:"France",treatmentType:"ultherapy"},
+          {name:"Centre Médical International de Monaco",city:"Monaco",zip:"98000",lat:43.733488,lng:7.415655,street:"Rue de la Lüjerneta",streetNumber:"2",country:"Monaco",treatmentType:"ultherapy"},
+          {name:"Cabinet Audenge",city:"Audenge",zip:"33980",lat:44.690262,lng:-1.020797,street:"Avenue de Certes",streetNumber:"54",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Paris – Rue de l'Arcade",city:"Paris",zip:"75008",lat:48.870846,lng:2.323371,street:"Rue de l'Arcade",streetNumber:"4",country:"France",treatmentType:"ultherapy"},
+          {name:"Cabinet Square Moncey",city:"Paris",zip:"75009",lat:48.880500,lng:2.330073,street:"Square Moncey",streetNumber:"5",country:"France",treatmentType:"ultherapy"},
+          {name:"Cabinet Cagnes-sur-Mer",city:"Cagnes-sur-Mer",zip:"06800",lat:43.658278,lng:7.163023,street:"Avenue Maréchal de Lattre de Tassigny",streetNumber:"5",country:"France",treatmentType:"ultherapy"},
+          {name:"SKIN AESTHETICS",city:"Limoges",zip:"87100",lat:45.843250,lng:1.192997,street:"Avenue de Landouge",streetNumber:"223",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Coutances",city:"Coutances",zip:"50200",lat:49.051507,lng:-1.442467,street:"Rue du Palais de Justice",streetNumber:"36",country:"France",treatmentType:"prime"},
+          {name:"OPHTA 34",city:"Mauguio",zip:"34130",lat:43.589854,lng:3.935367,street:"Rue Saint-Exupéry",streetNumber:"30",country:"France",treatmentType:"prime"},
+          {name:"Clinique esthétique Villa Ermitage",city:"Lambersart",zip:"59130",lat:50.644465,lng:3.031826,street:"Avenue Henri Delecaux",streetNumber:"8 bis",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Cournon-d'Auvergne",city:"Cournon-d'Auvergne",zip:"63800",lat:45.741463,lng:3.159245,street:"Rue de Sarliève",streetNumber:"21",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Marseille – Avenue du Prado",city:"Marseille",zip:"13008",lat:43.274374,lng:5.390671,street:"Avenue du Prado",streetNumber:"255",country:"France",treatmentType:"prime"},
+          {name:"Cabinet Aix-en-Provence",city:"Aix-en-Provence",zip:"13090",lat:43.539966,lng:5.407771,street:"Route d'Eguilles",streetNumber:"1890",country:"France",treatmentType:"prime"}
+        ];
 
-      <div id="doclocator-map" style="width:100%;height:520px;border-radius:12px;overflow:hidden;border:1px solid rgba(229,167,45,0.3);"></div>
-
-      <div id="doclocator-results" style="margin-top:20px;display:none;">
-        <p id="doclocator-count" style="font-size:14px;opacity:0.7;margin-bottom:12px;"></p>
-        <ul id="doclocator-list" style="list-style:none;padding:0;margin:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));"></ul>
-      </div>
-    </div>
-
-    <?php
-    $doclocator_practitioners = [
-      ["name"=>"Clinique esthétique de Corbiac","city"=>"Saint-Médard-en-Jalles","zip"=>"33160","lat"=>44.876705,"lng"=>-0.696811],
-      ["name"=>"CSHP Centre Saint Honoré Ponthieu","city"=>"Paris","zip"=>"75008","lat"=>48.870477,"lng"=>2.310511],
-      ["name"=>"DBC Esthetic","city"=>"Paris","zip"=>"75001","lat"=>48.866214,"lng"=>2.329198],
-      ["name"=>"Centre Laser Clipp","city"=>"Paris","zip"=>"75007","lat"=>48.856138,"lng"=>2.302764],
-      ["name"=>"Cabinet médical Chantilly","city"=>"Chantilly","zip"=>"60500","lat"=>49.192687,"lng"=>2.463905],
-      ["name"=>"Cabinet Boulevard Saint-Germain","city"=>"Paris","zip"=>"75006","lat"=>48.852399,"lng"=>2.339677],
-      ["name"=>"Cabinet Marseille Rodocanachi","city"=>"Marseille","zip"=>"13008","lat"=>43.274374,"lng"=>5.385837],
-      ["name"=>"Cabinet Lyon – Quai Jean Moulin","city"=>"Lyon","zip"=>"69001","lat"=>45.766576,"lng"=>4.837887],
-      ["name"=>"Centre CLEMA","city"=>"Angers","zip"=>"49000","lat"=>47.444203,"lng"=>-0.543031],
-      ["name"=>"CLDE – Centre Laser Dermatologique","city"=>"Viry-Châtillon","zip"=>"91170","lat"=>48.670938,"lng"=>2.376374],
-      ["name"=>"Cabinet Montbazon","city"=>"Montbazon","zip"=>"37250","lat"=>47.275244,"lng"=>0.708017],
-      ["name"=>"Cabinet Fréjus","city"=>"Fréjus","zip"=>"83600","lat"=>43.421569,"lng"=>6.745674],
-      ["name"=>"Cabinet Paris – Chasseloup Laubat","city"=>"Paris","zip"=>"75015","lat"=>48.847502,"lng"=>2.305144],
-      ["name"=>"CLEME 37","city"=>"Tours","zip"=>"37000","lat"=>47.388074,"lng"=>0.688381],
-      ["name"=>"Cabinet Amiens","city"=>"Amiens","zip"=>"80000","lat"=>49.894379,"lng"=>2.292921],
-      ["name"=>"Cabinet Thionville","city"=>"Thionville","zip"=>"57100","lat"=>49.358019,"lng"=>6.164896],
-      ["name"=>"Dermatologie Esthétique Caen","city"=>"Caen","zip"=>"14000","lat"=>49.179074,"lng"=>-0.361873],
-      ["name"=>"Centre CLEO","city"=>"Bordeaux","zip"=>"33200","lat"=>44.856182,"lng"=>-0.615268],
-      ["name"=>"Maison Elixience","city"=>"Metz","zip"=>"57000","lat"=>49.107022,"lng"=>6.163254],
-      ["name"=>"Cabinet Montpellier","city"=>"Montpellier","zip"=>"34000","lat"=>43.600264,"lng"=>3.898424],
-      ["name"=>"Clinique Del Mar","city"=>"Antibes","zip"=>"06160","lat"=>43.558947,"lng"=>7.128187],
-      ["name"=>"Cabinet Prigonrieux","city"=>"Prigonrieux","zip"=>"24130","lat"=>44.850606,"lng"=>0.437918],
-      ["name"=>"IEMCEP Marseille","city"=>"Marseille","zip"=>"13006","lat"=>43.289532,"lng"=>5.374693],
-      ["name"=>"Cabinet Paris – Rue de la Trémoille","city"=>"Paris","zip"=>"75008","lat"=>48.867085,"lng"=>2.302883],
-      ["name"=>"Cabinet Laser Médical Paris","city"=>"Paris","zip"=>"75017","lat"=>48.882461,"lng"=>2.309578],
-      ["name"=>"Centre de la Femme","city"=>"Nantes","zip"=>"44000","lat"=>47.217029,"lng"=>-1.563169],
-      ["name"=>"Centre Médical International de Monaco","city"=>"Monaco","zip"=>"98000","lat"=>43.733488,"lng"=>7.415655],
-      ["name"=>"Cabinet Audenge","city"=>"Audenge","zip"=>"33980","lat"=>44.690262,"lng"=>-1.020797],
-      ["name"=>"Cabinet Paris – Rue de l'Arcade","city"=>"Paris","zip"=>"75008","lat"=>48.870846,"lng"=>2.323371],
-      ["name"=>"Cabinet Square Moncey","city"=>"Paris","zip"=>"75009","lat"=>48.880500,"lng"=>2.330073],
-      ["name"=>"Cabinet Cagnes-sur-Mer","city"=>"Cagnes-sur-Mer","zip"=>"06800","lat"=>43.658278,"lng"=>7.163023],
-      ["name"=>"SKIN AESTHETICS","city"=>"Limoges","zip"=>"87100","lat"=>45.843250,"lng"=>1.192997],
-      ["name"=>"Cabinet Coutances","city"=>"Coutances","zip"=>"50200","lat"=>49.051507,"lng"=>-1.442467],
-      ["name"=>"OPHTA 34","city"=>"Mauguio","zip"=>"34130","lat"=>43.589854,"lng"=>3.935367],
-      ["name"=>"Clinique esthétique Villa Ermitage","city"=>"Lambersart","zip"=>"59130","lat"=>50.644465,"lng"=>3.031826],
-      ["name"=>"Cabinet Cournon-d'Auvergne","city"=>"Cournon-d'Auvergne","zip"=>"63800","lat"=>45.741463,"lng"=>3.159245],
-      ["name"=>"Cabinet Marseille – Avenue du Prado","city"=>"Marseille","zip"=>"13008","lat"=>43.274374,"lng"=>5.390671],
-      ["name"=>"Cabinet Aix-en-Provence","city"=>"Aix-en-Provence","zip"=>"13090","lat"=>43.539966,"lng"=>5.407771],
-    ];
-    ?>
-    <script>
-    (function(){
-      var PRACTITIONERS = <?php echo wp_json_encode( $doclocator_practitioners ); ?>;
-      var leafletUrl    = '<?php echo esc_url( ULTHERAPY_PRIME_URL . 'assets/vendor/leaflet/' ); ?>';
-
-      function initMap() {
-        var map = L.map('doclocator-map', { zoomControl: true }).setView([46.8, 2.3], 6);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        var map = L.map('doclocator-map', {zoomControl: true}).setView([46.8, 2.3], 6);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
           maxZoom: 18
         }).addTo(map);
         setTimeout(function(){ map.invalidateSize(); }, 50);
 
-        var goldIcon = L.divIcon({
+        var primeIcon = L.divIcon({
           className: '',
-          html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.5 14 24 14 24S28 23.5 28 14C28 6.268 21.732 0 14 0z" fill="#e5a72d" stroke="#b8861e" stroke-width="1.5"/><circle cx="14" cy="14" r="6" fill="#fff" opacity="0.9"/></svg>',
-          iconSize: [28, 38],
-          iconAnchor: [14, 38],
-          popupAnchor: [0, -40]
+          html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.5 14 24 14 24S28 23.5 28 14C28 6.268 21.732 0 14 0z" fill="#f6b23d" stroke="#f6b23d" stroke-width="1.5"/><circle cx="14" cy="14" r="6" fill="#fff" opacity="0.9"/></svg>',
+          iconSize: [28, 38], iconAnchor: [14, 38], popupAnchor: [0, -40]
+        });
+
+        var ultherapyIcon = L.divIcon({
+          className: '',
+          html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.5 14 24 14 24S28 23.5 28 14C28 6.268 21.732 0 14 0z" fill="#1f3340" stroke="#0c161d" stroke-width="1.5"/><circle cx="14" cy="14" r="6" fill="#fff" opacity="0.9"/></svg>',
+          iconSize: [28, 38], iconAnchor: [14, 38], popupAnchor: [0, -40]
         });
 
         var markers = PRACTITIONERS.map(function(p) {
-          var m = L.marker([p.lat, p.lng], { icon: goldIcon }).addTo(map);
-          m.bindPopup('<strong>' + p.name + '</strong><br>' + p.zip + ' ' + p.city);
-          m._practitioner = p;
+          var m = L.marker([p.lat, p.lng], {
+            icon: p.treatmentType === 'prime' ? primeIcon : ultherapyIcon
+          }).addTo(map);
+          m._p = p;
+          m.bindPopup(createPopupContent(p));
+          m.on('popupopen', function(event) {
+            var popupEl = event.popup && event.popup.getElement ? event.popup.getElement() : null;
+            if (!popupEl) return;
+            var shareBtn = popupEl.querySelector('[data-action="share-destination"]');
+            if (!shareBtn) return;
+            shareBtn.addEventListener('click', function(clickEvent) {
+              clickEvent.preventDefault();
+              sharePractitioner(p);
+            });
+          });
           return m;
         });
 
-        var input  = document.getElementById('doclocator-input');
-        var btn    = document.getElementById('doclocator-btn');
+        var input  = document.getElementById('doc-search');
+        var btn    = document.querySelector('.cta-search-btn');
         var resultsBox = document.getElementById('doclocator-results');
         var countEl    = document.getElementById('doclocator-count');
         var listEl     = document.getElementById('doclocator-list');
 
+        function getTreatmentLabel(p) {
+          return p.treatmentType === 'prime' ? 'Ultherapy PRIME' : 'Ultherapy';
+        }
+
+        function getTreatmentBadgeClass(p) {
+          return p.treatmentType === 'prime' ? 'doclocator-badge doclocator-badge-prime' : 'doclocator-badge doclocator-badge-ultherapy';
+        }
+
+        function getAddressLine(p) {
+          return [p.streetNumber, p.street].join(' ') + ', ' + p.zip + ' ' + p.city;
+        }
+
+        function getDirectionsUrl(p) {
+          return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(getAddressLine(p) + ', ' + p.country);
+        }
+
+        function escapeHtml(value) {
+          return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+        }
+
+        function createPopupContent(p) {
+          return '<div class="doclocator-popup">' +
+            '<span class="' + getTreatmentBadgeClass(p) + '">' + escapeHtml(getTreatmentLabel(p)) + '</span>' +
+            '<p class="doclocator-popup-title">' + escapeHtml(p.name) + '</p>' +
+            '<p class="doclocator-popup-address">' + escapeHtml(getAddressLine(p)) + '</p>' +
+            '<div class="doclocator-popup-actions">' +
+              '<a class="doclocator-action doclocator-action-primary" href="' + getDirectionsUrl(p) + '" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-route" aria-hidden="true"></i> Itinéraire</a>' +
+              '<button type="button" class="doclocator-action" data-action="share-destination"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Partager la destination</button>' +
+            '</div>' +
+          '</div>';
+        }
+
+        function sharePractitioner(p) {
+          var shareUrl = getDirectionsUrl(p);
+          var shareData = { title: p.name, text: getTreatmentLabel(p) + ' - ' + getAddressLine(p), url: shareUrl };
+          if (navigator.share) { navigator.share(shareData).catch(function() {}); return; }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(shareUrl).then(function() { window.alert('Lien copié.'); }).catch(function() { window.prompt('Copiez ce lien :', shareUrl); });
+            return;
+          }
+          window.prompt('Copiez ce lien :', shareUrl);
+        }
+
+        function renderPractitionerList(items, options) {
+          var settings = Object.assign({ heading: '', showDistance: false }, options || {});
+          listEl.innerHTML = '';
+          countEl.textContent = settings.heading;
+          items.forEach(function(p) {
+            var li = document.createElement('li');
+            li.className = 'doclocator-item';
+            li.innerHTML = '<div class="doclocator-item-header">' +
+                '<p class="doclocator-item-title">' + escapeHtml(p.name) + '</p>' +
+                '<span class="' + getTreatmentBadgeClass(p) + '">' + escapeHtml(getTreatmentLabel(p)) + '</span>' +
+              '</div>' +
+              '<p class="doclocator-item-address">' + escapeHtml(getAddressLine(p)) + '</p>' +
+              (settings.showDistance ? '<span class="doclocator-item-distance">' + Math.round(p.dist) + ' km</span>' : '') +
+              '<div class="doclocator-item-actions">' +
+                '<button type="button" class="doclocator-action doclocator-action-primary" data-action="directions"><i class="fa-solid fa-route" aria-hidden="true"></i> Itinéraire</button>' +
+                '<button type="button" class="doclocator-action" data-action="share"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Partager</button>' +
+              '</div>';
+            li.addEventListener('click', function() {
+              map.setView([p.lat, p.lng], 15);
+              markers.find(function(m){ return m._p.name === p.name && m._p.zip === p.zip; }).openPopup();
+              window._mtm = window._mtm || [];
+              window._mtm.push({'event': 'docsearch_contact'});
+            });
+            li.querySelector('[data-action="directions"]').addEventListener('click', function(event) {
+              event.stopPropagation();
+              window.open(getDirectionsUrl(p), '_blank', 'noopener');
+            });
+            li.querySelector('[data-action="share"]').addEventListener('click', function(event) {
+              event.stopPropagation();
+              sharePractitioner(p);
+            });
+            listEl.appendChild(li);
+          });
+          resultsBox.style.display = 'block';
+        }
+
+        function geocodeLocation(query) {
+          var url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=fr,mc&q=' + encodeURIComponent(query);
+          return fetch(url, { headers: { 'Accept': 'application/json' } }).then(function(response) {
+            if (!response.ok) throw new Error('geocode_failed');
+            return response.json();
+          }).then(function(data) {
+            if (!data || !data.length) return null;
+            return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+          });
+        }
+
         function doSearch() {
-          var q = input.value.trim().toLowerCase();
+          var rawQuery = input.value.trim();
+          var q = rawQuery.toLowerCase();
           if (!q) return;
           window._mtm = window._mtm || [];
           window._mtm.push({'event': 'docsearch_searchbar'});
           var matched = PRACTITIONERS.filter(function(p) {
             return p.city.toLowerCase().indexOf(q) !== -1 || p.zip.indexOf(q) !== -1 || p.name.toLowerCase().indexOf(q) !== -1;
           });
-
-          listEl.innerHTML = '';
-          if (matched.length === 0) {
-            countEl.textContent = 'Aucun praticien trouvé pour "' + input.value + '".';
-            resultsBox.style.display = 'block';
+          if (matched.length) {
+            map.fitBounds(L.latLngBounds(matched.map(function(p){return [p.lat,p.lng];})), {padding:[40,40],maxZoom:13});
+            renderPractitionerList(matched, { heading: matched.length + ' praticien' + (matched.length>1?'s':'') + ' trouvé' + (matched.length>1?'s':'') + ' pour "' + rawQuery + '"' });
             return;
           }
-
-          var bounds = L.latLngBounds(matched.map(function(p){ return [p.lat, p.lng]; }));
-          map.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
-
-          countEl.textContent = matched.length + ' praticien' + (matched.length > 1 ? 's' : '') + ' trouvé' + (matched.length > 1 ? 's' : '') + ' pour "' + input.value + '"';
-          matched.forEach(function(p) {
-            var li = document.createElement('li');
-            li.style.cssText = 'background:#fff;border:1px solid rgba(229,167,45,0.4);border-radius:8px;padding:12px 16px;cursor:pointer;transition:box-shadow .2s;';
-            li.innerHTML = '<strong style="display:block;font-size:14px;">' + p.name + '</strong><span style="font-size:13px;opacity:0.65;">' + p.zip + ' ' + p.city + '</span>';
-            li.addEventListener('click', function() {
-              map.setView([p.lat, p.lng], 15);
-              markers.find(function(m){ return m._practitioner === p; }).openPopup();
-              window._mtm = window._mtm || [];
-              window._mtm.push({'event': 'docsearch_contact'});
-            });
-            li.addEventListener('mouseenter', function(){ this.style.boxShadow = '0 4px 16px rgba(229,167,45,0.25)'; });
-            li.addEventListener('mouseleave', function(){ this.style.boxShadow = ''; });
-            listEl.appendChild(li);
-          });
+          countEl.textContent = 'Recherche autour de "' + rawQuery + '"…';
+          listEl.innerHTML = '';
           resultsBox.style.display = 'block';
+          geocodeLocation(rawQuery).then(function(location) {
+            if (!location) { countEl.textContent = 'Aucun praticien trouvé pour "' + rawQuery + '".'; return; }
+            showNearest(location.lat, location.lng, { heading: '5 praticiens Ultherapy les plus proches de "' + rawQuery + '"', showUserMarker: false });
+          }).catch(function() {
+            countEl.textContent = 'Recherche indisponible pour "' + rawQuery + '". Essayez une autre ville ou un autre code postal.';
+          });
         }
 
         btn.addEventListener('click', doSearch);
-        input.addEventListener('keydown', function(e){ if (e.key === 'Enter') doSearch(); });
+        input.addEventListener('keydown', function(e){if(e.key==='Enter') doSearch();});
 
         function haversine(lat1, lng1, lat2, lng2) {
           var R = 6371;
           var dLat = (lat2 - lat1) * Math.PI / 180;
           var dLng = (lng2 - lng1) * Math.PI / 180;
-          var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                  Math.sin(dLng/2) * Math.sin(dLng/2);
+          var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLng/2) * Math.sin(dLng/2);
           return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         }
 
-        function showNearest(userLat, userLng) {
-          L.circleMarker([userLat, userLng], {
-            radius: 8, fillColor: '#fff', color: '#e5a72d', weight: 3, fillOpacity: 1
-          }).addTo(map).bindPopup('Votre position');
+        var userMarker = null;
 
+        function showNearest(userLat, userLng, options) {
+          var settings = Object.assign({ heading: '5 praticiens Ultherapy les plus proches de vous', showUserMarker: true }, options || {});
+          if (userMarker) { map.removeLayer(userMarker); userMarker = null; }
+          if (settings.showUserMarker) {
+            userMarker = L.circleMarker([userLat, userLng], { radius: 8, fillColor: '#fff', color: '#f6b23d', weight: 3, fillOpacity: 1 }).addTo(map).bindPopup('Votre position');
+          }
           var sorted = PRACTITIONERS.slice().map(function(p) {
             return Object.assign({}, p, { dist: haversine(userLat, userLng, p.lat, p.lng) });
           }).sort(function(a, b) { return a.dist - b.dist; }).slice(0, 5);
-
           var bounds = [[userLat, userLng]].concat(sorted.map(function(p){ return [p.lat, p.lng]; }));
           map.fitBounds(L.latLngBounds(bounds), { padding: [40, 40], maxZoom: 13 });
-
-          listEl.innerHTML = '';
-          countEl.textContent = '5 praticiens Ultherapy® PRIME les plus proches de vous';
-          sorted.forEach(function(p) {
-            var li = document.createElement('li');
-            li.style.cssText = 'background:#fff;border:1px solid rgba(229,167,45,0.4);border-radius:8px;padding:12px 16px;cursor:pointer;transition:box-shadow .2s;';
-            li.innerHTML = '<strong style="display:block;font-size:14px;">' + p.name + '</strong>' +
-              '<span style="font-size:13px;opacity:0.65;">' + p.zip + ' ' + p.city + '</span>' +
-              '<span style="display:block;font-size:12px;color:#e5a72d;font-weight:600;margin-top:4px;">' + Math.round(p.dist) + ' km</span>';
-            li.addEventListener('click', function() {
-              map.setView([p.lat, p.lng], 15);
-              markers.find(function(m){ return m._practitioner === p; }).openPopup();
-              window._mtm = window._mtm || [];
-              window._mtm.push({'event': 'docsearch_contact'});
-            });
-            li.addEventListener('mouseenter', function(){ this.style.boxShadow = '0 4px 16px rgba(229,167,45,0.25)'; });
-            li.addEventListener('mouseleave', function(){ this.style.boxShadow = ''; });
-            listEl.appendChild(li);
-          });
-          resultsBox.style.display = 'block';
+          renderPractitionerList(sorted, { heading: settings.heading, showDistance: true });
         }
 
         var geoBtn = document.getElementById('geolocate-btn');
-        geoBtn.addEventListener('click', function() {
+        function requestNearestPractitioners(options) {
+          var settings = Object.assign({ silentError: false, loadingLabel: 'Localisation en cours…' }, options || {});
           if (!navigator.geolocation) {
-            countEl.textContent = 'La géolocalisation n\'est pas supportée par votre navigateur.';
-            resultsBox.style.display = 'block';
+            if (!settings.silentError) { countEl.textContent = 'La géolocalisation n\'est pas supportée par votre navigateur.'; resultsBox.style.display = 'block'; }
             return;
           }
-          geoBtn.innerHTML = 'Localisation en cours…';
+          geoBtn.textContent = settings.loadingLabel;
           geoBtn.disabled = true;
           navigator.geolocation.getCurrentPosition(
             function(pos) {
               geoBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Utiliser ma position';
               geoBtn.disabled = false;
-              showNearest(pos.coords.latitude, pos.coords.longitude);
+              showNearest(pos.coords.latitude, pos.coords.longitude, { heading: '5 praticiens Ultherapy les plus proches de vous', showUserMarker: true });
             },
             function() {
               geoBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Utiliser ma position';
               geoBtn.disabled = false;
-              countEl.textContent = 'Position non disponible. Essayez de rechercher par ville ou code postal.';
-              resultsBox.style.display = 'block';
-            }
+              if (!settings.silentError) { countEl.textContent = 'Position non disponible. Essayez de rechercher par ville ou code postal.'; resultsBox.style.display = 'block'; }
+            },
+            { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
           );
-        });
-      }
+        }
 
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initMap);
-      } else {
-        initMap();
-      }
+        geoBtn.addEventListener('click', function() { requestNearestPractitioners({ silentError: false }); });
+      });
 
       document.addEventListener('click', function(e) {
         var a = e.target.closest('a[href="#praticien"]');
@@ -776,80 +839,102 @@ $ultherapy_prime_img_url = ULTHERAPY_PRIME_URL . 'assets/img';
           window._mtm.push({'event': 'doclocator_open'});
         }
       });
-    })();
-    </script>
-  </section>
-</main>
+      </script>
+    </section>
 
-<footer class="site-footer">
-  <div class="section-shell footer-shell">
-    <div class="footer-legal">
-      <p>ULTHERAPY® PRIME® est indiqué dans le modelage dermatologique et le lifting non invasif du derme sans chirurgie de la face supérieure, inférieure, du cou et du décolleté. En fonction des grades de sévérité de laxité de la peau, un lifting chirurgical ou tout autre traitement peut être indiqué.</p>
-      <p>Équipement à visée esthétique marqué CE, sans finalité médicale. ® Marque enregistrée</p>
-      <p>Pour une information complète demandez conseil à votre médecin.</p>
-      <p>Pour déclarer tout effet indésirable ou incident : vigilances.ax@merz.com ou https://signalement.social-sante.gouv.fr. Pour toute question relative à ULTHERAPY® : infomed.ax@merz.com. Veuillez lire attentivement la notice.</p>
-      <p>Publication à destination des patients.</p>
-      <p>Distributeur : Merz Aesthetics France, 2 Avenue Gambetta 92400 Courbevoie www.merzaesthetics.fr. Fabricant : Ulthera Inc, 6501 Six Forks Road, Raleigh, NC 27615 USA. Mandataire : Merz Aesthetics GmbH, Eckenheimer Landstraße 100, 60318 Frankfurt am Main Germany.</p>
-      <p>© 2026 Merz Aesthetics France. Tous droits réservés. MERZ AESTHETICS est une marque de commerce et une marque déposée de Merz Pharma GmbH &amp; Co. KGaA dans l'UE et certains autres pays. ULTHERA, ULTHERAPY, ULTHERAPY PRIME, DEEPSEE et le logo en forme de zigzag sont des marques de commerce et des marques déposées d'Ulthera, Inc. dans l'UE et certains autres pays. Les figures/images ne sont pas représentées à l'échelle.</p>
+    <section class="references-section" aria-labelledby="references-title">
+      <div class="section-shell references-shell">
+        <h2 id="references-title">Références</h2>
+        <ol class="references-list">
+          <li>Pavicic T., et al. Microfocused ultrasound with visualization: Consensus on safety and review of energy-based devices. J Cosmet Dermatol. 2021;21:636–647.</li>
+          <li>Laubach HJ., et al. Intense focused ultrasound: evaluation of a new treatment modality for precise microcoagulation within the skin. Dermatol Surg. 2008;34(5):727-734.</li>
+          <li>Mode d'emploi Ultherapy <sup>®</sup> PRIME</li>
+          <li>Sasaki G, Tevez A. Microfocused Ultrasound for Nonablative Skin and SubdermalTightening to the Periorbitum and Body Sites: Preliminary Report on Eighty-TwoPatients. J of Cosm, Derm Sci and Applic. (2012) 02(02) 108-116.</li>
+          <li>Werschler, W. P. et al. Long-term efficacy of micro-focused ultrasound with visualization for lifting and tightening lax facial and neck skin using a customized vectoring treatment method. J Clin Aesthet Dermatol 2016;9:27–33.</li>
+          <li>Fabi, S. G., et al. Evaluation of microfocused ultrasound with visualization for lifting, tightening, and wrinkle reduction of the décolletage. J Am Acad Dermatol 2013;69:965–71.</li>
+          <li>Fabi SG, et al. Optimizing patient outcomes by customizing treatment with microfocused ultrasound with visualization: gold standard consensus guidelines from an expert panel. J Drugs Dermatol. 2019;18(5):426-432.</li>
+          <li>Park JY, et al. Customized Treatment Using Microfocused Ultrasound with Visualization for Optimized Patient Outcomes. J Clin Aesthet Dermatol. 2021;14(5):E70-E79.</li>
+          <li>Varani J., et al. Decreased collagen production in chronologically aged skin. Am J Pathol. 2006 Jun;168(6):1861-8.</li>
+          <li>Fisher GJ., et al. Looking older: Fibroblast Collapse and Therapeutic Implications. Arch Dermatol. 2008 May;144(5):666-72.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-shell">
+      <div class="footer-top">
+        <div class="footer-nav-grid">
+          <div class="footer-column">
+            <h3>À propos de nous</h3>
+            <ul class="footer-link-list">
+              <li><a href="https://merzaesthetics.fr/a-propos-de/notre-culture/" target="_blank" rel="noopener noreferrer">Culture et engagement</a></li>
+              <li><a href="https://merzaesthetics.fr/a-propos-de/innovation/" target="_blank" rel="noopener noreferrer">Innovation</a></li>
+              <li><a href="https://merzaesthetics.fr/a-propos-de/conformite-des-entreprises/" target="_blank" rel="noopener noreferrer">Conformité des entreprises</a></li>
+              <li><a href="https://merzaesthetics.fr/construire-la-confiance-est-tout-un-art/" target="_blank" rel="noopener noreferrer">Construire la confiance est tout un art</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Médecine esthétique</h3>
+            <ul class="footer-link-list">
+              <li><a href="https://merzaesthetics.fr/medecine-esthetique/les-zones-de-traitement/" target="_blank" rel="noopener noreferrer">Les zones de traitement</a></li>
+              <li><a href="https://merzaesthetics.fr/force-du-collagene/" target="_blank" rel="noopener noreferrer">La force du collagène</a></li>
+              <li><a href="https://merzaesthetics.fr/medecine-esthetique/bien-vieillir/" target="_blank" rel="noopener noreferrer">Bien vieillir</a></li>
+              <li><a href="https://merzaesthetics.fr/medecine-esthetique/qualite-de-la-peau/" target="_blank" rel="noopener noreferrer">Qualité de la peau</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Nos produits</h3>
+            <ul class="footer-link-list">
+              <li><a href="https://merzaesthetics.fr/produits/" target="_blank" rel="noopener noreferrer">Nos produits</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>ULTHERAPY<sup>®</sup> PRIME</h3>
+            <ul class="footer-link-list">
+              <li><a href="https://merzaesthetics.fr/produits/ultherapyprime/" target="_blank" rel="noopener noreferrer">Ultherapy<sup>®</sup> Prime</a></li>
+              <li><a href="https://merzaesthetics.fr/doclocator/" target="_blank" rel="noopener noreferrer">DocLocator</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-subheading">Nos services</h3>
+            <ul class="footer-link-list">
+              <li><a href="https://merzaesthetics.fr/nos-services/" target="_blank" rel="noopener noreferrer">Nos services MAX</a></li>
+              <li><a href="https://merzaesthetics.fr/zero-dechet-by-merz-aesthetics/" target="_blank" rel="noopener noreferrer">Zéro Déchet by Merz Aesthetics<sup>®</sup></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-social" aria-label="Réseaux sociaux">
+          <a href="https://www.facebook.com/merzaestheticsfrance" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-square-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/merzaesthetics_fr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/merz-aesthetics-france/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-meta-links">
+        <a href="https://merzaesthetics.fr/rejoignez-notre-equipe-2/" target="_blank" rel="noopener noreferrer">Rejoignez notre équipe</a>
+        <a href="https://merzaesthetics.fr/contact/" target="_blank" rel="noopener noreferrer">Contact</a>
+        <a href="https://merzaesthetics.fr/politique-de-confidentialite/" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>
+        <a href="https://merzaesthetics.fr/mentions-legales/" target="_blank" rel="noopener noreferrer">Mentions légales</a>
+        <a href="https://merzaesthetics.fr/conditions-generales-dutilisation/" target="_blank" rel="noopener noreferrer">Conditions générales d'utilisation</a>
+        <a href="https://merzaesthetics.fr/politique-de-gestion-des-cookies/" target="_blank" rel="noopener noreferrer">Politique de gestion des cookies</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright © 2026 Merz Aesthetics France. Tous droits réservés. PUB-ULT.PRIME-2024072-Rev04_Mai2026</p>
+        <div class="footer-brand">
+          <a href="https://merzaesthetics.fr/" aria-label="Merz Aesthetics">
+            <img src="<?php echo esc_url($img); ?>/logo-merz-aesthetics.png" alt="Merz Aesthetics Logo">
+          </a>
+        </div>
+      </div>
     </div>
-
-    <div class="footer-columns">
-      <div class="footer-column footer-column-wide">
-        <h3>Références</h3>
-        <ul class="footer-reference-list">
-          <li>1. Pavicic T., et al. Microfocused ultrasound with visualization: Consensus on safety and review of energy-based devices. J Cosmet Dermatol. 2021;21:636–647.</li>
-          <li>2. Laubach HJ., et al. Intense focused ultrasound: evaluation of a new treatment modality for precise microcoagulation within the skin. Dermatol Surg. 2008;34(5):727-734.</li>
-          <li>3. Werschler, W. P. et al. Long-term efficacy of micro-focused ultrasound with visualization for lifting and tightening lax facial and neck skin using a customized vectoring treatment method. J Clin Aesthet Dermatol 2016;9:27–33.</li>
-          <li>4. Fabi, S. G., et al. Evaluation of microfocused ultrasound with visualization for lifting, tightening, and wrinkle reduction of the décolletage. J Am Acad Dermatol 2013;69:965–71.</li>
-          <li>5. Mode d'emploi Ultherapy PRIME®</li>
-          <li>6. Fabi SG, et al. Optimizing patient outcomes by customizing treatment with microfocused ultrasound with visualization: gold standard consensus guidelines from an expert panel. J Drugs Dermatol. 2019;18(5):426-432.</li>
-          <li>7. Park JY, et al. Customized Treatment Using Microfocused Ultrasound with Visualization for Optimized Patient Outcomes. J Clin Aesthet Dermatol. 2021;14(5):E70-E79.</li>
-          <li>8. Varani J., et al. Decreased collagen production in chronologically aged skin. Am J Pathol. 2006 Jun;168(6):1861-8.</li>
-          <li>9. Fisher GJ., et al. Looking older: Fibroblast Collapse and Therapeutic Implications. Arch Dermatol. 2008 May;144(5):666-72.</li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Navigation</h3>
-        <ul class="footer-link-list">
-          <li><a href="#a-propos">À propos</a></li>
-          <li><a href="#avantages">Bénéfices</a></li>
-          <li><a href="#avant-apres">Avant / Après</a></li>
-          <li><a href="#indications-corps">Corps</a></li>
-          <li><a href="#visage">Visage</a></li>
-          <li><a href="#comment-ca-marche">Comment ça fonctionne ?</a></li>
-          <li><a href="#timeline">Votre traitement</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#praticien">Trouver un praticien</a></li>
-          <li><a href="#references-title">Références</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Produits et services</h3>
-        <ul class="footer-link-list">
-          <li><a href="https://merzaesthetics.fr/produits/" target="_blank" rel="noopener noreferrer">Nos produits</a></li>
-          <li><a href="https://merzaesthetics.fr/produits/ultherapyprime/" target="_blank" rel="noopener noreferrer">ULTHERAPY<sup>®</sup> PRIME</a></li>
-          <li><a href="https://merzaesthetics.fr/doclocator/" target="_blank" rel="noopener noreferrer">DocLocator</a></li>
-          <li><a href="https://merzaesthetics.fr/nos-services/" target="_blank" rel="noopener noreferrer">Nos services MAX</a></li>
-          <li><a href="https://merzaesthetics.fr/zero-dechet-by-merz-aesthetics/" target="_blank" rel="noopener noreferrer">Zéro Déchet by Merz Aesthetics<sup>®</sup></a></li>
-          <li><a href="https://merzaesthetics.fr/contact/" target="_blank" rel="noopener noreferrer">Contact</a></li>
-          <li><a href="https://merzaesthetics.fr/politique-de-confidentialite/" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a></li>
-          <li><a href="https://merzaesthetics.fr/mentions-legales/" target="_blank" rel="noopener noreferrer">Mentions légales</a></li>
-          <li><a href="https://merzaesthetics.fr/conditions-generales-dutilisation/" target="_blank" rel="noopener noreferrer">Conditions générales d'utilisation</a></li>
-          <li><a href="https://merzaesthetics.fr/politique-de-gestion-des-cookies/" target="_blank" rel="noopener noreferrer">Politique de gestion des cookies</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="footer-brand">
-        <img src="<?php echo esc_url( $ultherapy_prime_img_url ); ?>/logo-merz-aesthetics.png" alt="Merz Aesthetics Logo">
-      </div>
-      <p>Copyright © 2026 Merz Aesthetics France. Tous droits réservés. PUB-ULT.PRIME-2024072-Rev03_Avril2025</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <?php wp_footer(); ?>
 </body>

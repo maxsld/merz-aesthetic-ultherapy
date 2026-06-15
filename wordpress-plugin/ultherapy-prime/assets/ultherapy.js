@@ -1,4 +1,170 @@
 const compareRanges = document.querySelectorAll(".compare-range");
+const siteHeader = document.querySelector(".site-header");
+const siteMenuLinks = Array.from(document.querySelectorAll(".site-menu .site-menu-link"));
+const siteMenuToggle = document.querySelector(".site-menu-toggle");
+const siteMenuSubmenuEntries = Array.from(document.querySelectorAll(".site-menu-entry-submenu"));
+const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
+const heroProgressFill = document.querySelector(".hero-progress-fill");
+const heroPrevButton = document.querySelector("[data-hero-prev]");
+const heroNextButton = document.querySelector("[data-hero-next]");
+
+if (siteHeader && siteMenuToggle) {
+  const closeSubmenus = () => {
+    siteMenuSubmenuEntries.forEach((entry) => {
+      entry.classList.remove("is-open");
+      entry.querySelector(".site-menu-submenu-toggle")?.setAttribute("aria-expanded", "false");
+    });
+  };
+
+  const syncMenuState = (isOpen) => {
+    siteHeader.classList.toggle("is-menu-open", isOpen);
+    siteMenuToggle.setAttribute("aria-expanded", String(isOpen));
+    if (!isOpen) {
+      closeSubmenus();
+    }
+  };
+
+  siteMenuToggle.addEventListener("click", () => {
+    syncMenuState(!siteHeader.classList.contains("is-menu-open"));
+  });
+
+  siteMenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      syncMenuState(false);
+    });
+  });
+
+  siteMenuSubmenuEntries.forEach((entry) => {
+    const toggle = entry.querySelector(".site-menu-submenu-toggle");
+
+    toggle?.addEventListener("click", (event) => {
+      event.preventDefault();
+      const nextState = !entry.classList.contains("is-open");
+
+      if (window.innerWidth <= 1120) {
+        closeSubmenus();
+        entry.classList.toggle("is-open", nextState);
+      } else {
+        entry.classList.toggle("is-open", nextState);
+      }
+
+      toggle.setAttribute("aria-expanded", String(entry.classList.contains("is-open")));
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".site-menu")) {
+      closeSubmenus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1120) {
+      syncMenuState(false);
+      closeSubmenus();
+    }
+  });
+}
+
+if (heroSlides.length > 1 && heroProgressFill) {
+  const heroSlideDuration = 8000;
+  let currentHeroSlideIndex = 0;
+  let heroCycleStart = performance.now();
+
+  const setHeroSlide = (nextIndex) => {
+    currentHeroSlideIndex = nextIndex;
+    heroSlides.forEach((slide, index) => {
+      slide.classList.toggle("is-active", index === nextIndex);
+    });
+    heroCycleStart = performance.now();
+    heroProgressFill.style.setProperty("--hero-progress", "0");
+  };
+
+  const tickHeroSlider = (now) => {
+    const elapsed = now - heroCycleStart;
+    const progress = Math.min(elapsed / heroSlideDuration, 1);
+
+    heroProgressFill.style.setProperty("--hero-progress", `${progress * 100}`);
+
+    if (elapsed >= heroSlideDuration) {
+      setHeroSlide((currentHeroSlideIndex + 1) % heroSlides.length);
+    }
+
+    window.requestAnimationFrame(tickHeroSlider);
+  };
+
+  heroPrevButton?.addEventListener("click", () => {
+    setHeroSlide((currentHeroSlideIndex - 1 + heroSlides.length) % heroSlides.length);
+  });
+
+  heroNextButton?.addEventListener("click", () => {
+    setHeroSlide((currentHeroSlideIndex + 1) % heroSlides.length);
+  });
+
+  setHeroSlide(0);
+  window.requestAnimationFrame(tickHeroSlider);
+}
+
+if (siteMenuLinks.length) {
+  const menuTargets = siteMenuLinks
+    .map((link) => {
+      const href = link.getAttribute("href");
+
+      if (!href || !href.startsWith("#")) {
+        return null;
+      }
+
+      const target = document.querySelector(href);
+
+      if (!target) {
+        return null;
+      }
+
+      return { link, target };
+    })
+    .filter(Boolean);
+
+  const setActiveMenuLink = (activeLink) => {
+    siteMenuLinks.forEach((link) => {
+      link.classList.toggle("is-active", link === activeLink);
+    });
+  };
+
+  const syncActiveMenuLink = () => {
+    const headerOffset = siteHeader?.offsetHeight || 0;
+    const triggerY = window.scrollY + headerOffset + 120;
+    let activeItem = menuTargets[0] || null;
+
+    menuTargets.forEach((item) => {
+      if (item.target.offsetTop <= triggerY) {
+        activeItem = item;
+      }
+    });
+
+    if (activeItem) {
+      setActiveMenuLink(activeItem.link);
+    }
+  };
+
+  siteMenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      setActiveMenuLink(link);
+    });
+  });
+
+  window.addEventListener("scroll", syncActiveMenuLink, { passive: true });
+  window.addEventListener("load", syncActiveMenuLink);
+  syncActiveMenuLink();
+}
+
+if (siteHeader) {
+  const syncHeaderState = () => {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+
+  syncHeaderState();
+  window.addEventListener("scroll", syncHeaderState, { passive: true });
+}
 
 compareRanges.forEach((range) => {
   const slider = range.closest(".compare-slider");
@@ -16,133 +182,90 @@ const benefitsVideoBlock = document.querySelector(".benefits-video-block");
 const benefitsVideo = document.querySelector(".benefits-video");
 
 if (benefitsSection && benefitsVideoBlock && benefitsVideo) {
-  const toggleButton = benefitsVideoBlock.querySelector(".video-toggle");
-  const muteButton = benefitsVideoBlock.querySelector(".video-mute");
-  const progress = benefitsVideoBlock.querySelector(".video-progress");
-  const time = benefitsVideoBlock.querySelector(".video-time");
-  const toggleIcon = toggleButton?.querySelector("i");
-  const muteIcon = muteButton?.querySelector("i");
-  let controlsTimer;
+  const startSeconds = Number(benefitsVideo.dataset.startSeconds || 0);
+  const endTrimSeconds = Number(benefitsVideo.dataset.endTrimSeconds || 0);
+  const VimeoPlayer = window.Vimeo && window.Vimeo.Player;
 
-  benefitsVideo.removeAttribute("controls");
+  if (VimeoPlayer) {
+    const player = new VimeoPlayer(benefitsVideo);
+    let duration = 0;
+    let effectiveEndTime = 0;
+    let hasAppliedInitialSeek = false;
 
-  const showControlsBriefly = () => {
-    benefitsVideoBlock.classList.add("is-controls-visible");
-    window.clearTimeout(controlsTimer);
+    const syncEffectiveEndTime = () => {
+      effectiveEndTime = duration > endTrimSeconds
+        ? Math.max(startSeconds, duration - endTrimSeconds)
+        : duration;
+    };
 
-    if (!benefitsVideo.paused) {
-      controlsTimer = window.setTimeout(() => {
-        benefitsVideoBlock.classList.remove("is-controls-visible");
-      }, 1600);
-    }
-  };
+    const seekToTrimmedStart = () => player.setCurrentTime(startSeconds).catch(() => {});
 
-  const formatVideoTime = (seconds) => {
-    if (!Number.isFinite(seconds)) {
-      return "0:00";
-    }
+    const playBenefitsVideo = async () => {
+      try {
+        const currentTime = await player.getCurrentTime();
 
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, "0");
-
-    return `${minutes}:${remainingSeconds}`;
-  };
-
-  const updatePlayState = () => {
-    const isPaused = benefitsVideo.paused;
-
-    benefitsVideoBlock.classList.toggle("is-video-paused", isPaused);
-    toggleButton?.setAttribute("aria-label", isPaused ? "Lire la vidéo" : "Mettre la vidéo en pause");
-    toggleIcon?.classList.toggle("fa-play", isPaused);
-    toggleIcon?.classList.toggle("fa-pause", !isPaused);
-  };
-
-  const updateMuteState = () => {
-    const isMuted = benefitsVideo.muted;
-
-    muteButton?.setAttribute("aria-label", isMuted ? "Activer le son" : "Couper le son");
-    muteIcon?.classList.toggle("fa-volume-xmark", isMuted);
-    muteIcon?.classList.toggle("fa-volume-high", !isMuted);
-  };
-
-  const updateProgress = () => {
-    const duration = benefitsVideo.duration || 0;
-    const percent = duration ? (benefitsVideo.currentTime / duration) * 100 : 0;
-
-    if (progress) {
-      progress.value = String(percent);
-      progress.style.setProperty("--progress", `${percent}%`);
-    }
-
-    if (time) {
-      time.textContent = formatVideoTime(benefitsVideo.currentTime);
-    }
-  };
-
-  const playBenefitsVideo = () => {
-    benefitsVideo.muted = true;
-    benefitsVideo.play().catch(() => {
-      updatePlayState();
-    });
-    updateMuteState();
-  };
-
-  toggleButton?.addEventListener("click", () => {
-    if (benefitsVideo.paused) {
-      benefitsVideo.play().catch(() => {});
-    } else {
-      benefitsVideo.pause();
-    }
-  });
-
-  muteButton?.addEventListener("click", () => {
-    benefitsVideo.muted = !benefitsVideo.muted;
-    updateMuteState();
-  });
-
-  benefitsVideo.addEventListener("click", () => {
-    showControlsBriefly();
-
-    if (benefitsVideo.paused) {
-      benefitsVideo.play().catch(() => {});
-    } else {
-      benefitsVideo.pause();
-    }
-  });
-
-  progress?.addEventListener("input", () => {
-    const duration = benefitsVideo.duration || 0;
-
-    if (duration) {
-      benefitsVideo.currentTime = (Number(progress.value) / 100) * duration;
-    }
-  });
-
-  benefitsVideoBlock.addEventListener("mousemove", showControlsBriefly);
-  benefitsVideoBlock.addEventListener("touchstart", showControlsBriefly, { passive: true });
-  benefitsVideo.addEventListener("play", updatePlayState);
-  benefitsVideo.addEventListener("pause", updatePlayState);
-  benefitsVideo.addEventListener("timeupdate", updateProgress);
-  benefitsVideo.addEventListener("loadedmetadata", updateProgress);
-  benefitsVideo.addEventListener("volumechange", updateMuteState);
-
-  if ("IntersectionObserver" in window) {
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          playBenefitsVideo();
-        } else {
-          benefitsVideo.pause();
+        if (currentTime < startSeconds || (effectiveEndTime && currentTime >= effectiveEndTime)) {
+          await seekToTrimmedStart();
         }
-      });
-    }, { threshold: 0.48 });
 
-    videoObserver.observe(benefitsSection);
+        await player.play();
+      } catch (_) {
+        // Ignore autoplay and seek failures from the embed.
+      }
+    };
+
+    player.ready().then(async () => {
+      try {
+        duration = await player.getDuration();
+        syncEffectiveEndTime();
+        await player.setMuted(true);
+        await seekToTrimmedStart();
+        hasAppliedInitialSeek = true;
+      } catch (_) {
+        // Ignore player readiness failures.
+      }
+    }).catch(() => {});
+
+    player.on("loaded", async () => {
+      if (duration) {
+        return;
+      }
+
+      try {
+        duration = await player.getDuration();
+        syncEffectiveEndTime();
+      } catch (_) {
+        // Ignore metadata read failures.
+      }
+    });
+
+    player.on("timeupdate", (event) => {
+      if (!hasAppliedInitialSeek && event.seconds < startSeconds) {
+        seekToTrimmedStart();
+        hasAppliedInitialSeek = true;
+        return;
+      }
+
+      if (effectiveEndTime && event.seconds >= effectiveEndTime) {
+        player.pause().catch(() => {});
+        seekToTrimmedStart();
+      }
+    });
+
+    if ("IntersectionObserver" in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            playBenefitsVideo();
+          } else {
+            player.pause().catch(() => {});
+          }
+        });
+      }, { threshold: 0.48 });
+
+      videoObserver.observe(benefitsSection);
+    }
   }
-
-  updatePlayState();
-  updateMuteState();
-  updateProgress();
 }
 
 if (window.gsap && window.ScrollTrigger) {
@@ -183,6 +306,46 @@ if (window.gsap && window.ScrollTrigger) {
       });
     });
   }
+
+  const bodyFocusIndicator = document.querySelector(".body-focus-indicator");
+  const faceRecapIndicator = document.querySelector(".face-recap-indicator");
+
+  if (bodyFocusIndicator) {
+    let bodyFocusIndicatorTimer = null;
+
+    ScrollTrigger.create({
+      trigger: bodyFocusIndicator,
+      start: "top 78%",
+      once: true,
+      onEnter: () => {
+        bodyFocusIndicatorTimer = window.setTimeout(() => {
+          bodyFocusIndicator.classList.add("is-visible");
+        }, 1000);
+      },
+    });
+  }
+
+  if (faceRecapIndicator) {
+    let faceRecapIndicatorTimer = null;
+
+    ScrollTrigger.create({
+      trigger: faceRecapIndicator,
+      start: "top 78%",
+      once: true,
+      onEnter: () => {
+        faceRecapIndicatorTimer = window.setTimeout(() => {
+          faceRecapIndicator.classList.add("is-visible");
+        }, 120);
+      },
+    });
+
+    window.addEventListener("beforeunload", () => {
+      if (faceRecapIndicatorTimer) {
+        window.clearTimeout(faceRecapIndicatorTimer);
+      }
+    });
+  }
+
 }
 
 const faqItems = document.querySelectorAll(".faq-item");
@@ -229,3 +392,36 @@ window.addEventListener("resize", () => {
     }
   });
 });
+
+const welcomeModal = document.querySelector("[data-welcome-modal]");
+const welcomeModalCloseControls = document.querySelectorAll("[data-welcome-close]");
+
+if (welcomeModal) {
+  const openWelcomeModal = () => {
+    welcomeModal.classList.add("is-visible");
+    welcomeModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("has-welcome-modal");
+  };
+
+  const closeWelcomeModal = () => {
+    welcomeModal.classList.remove("is-visible");
+    welcomeModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("has-welcome-modal");
+  };
+
+  const welcomeModalTimer = window.setTimeout(openWelcomeModal, 1500);
+
+  welcomeModalCloseControls.forEach((control) => {
+    control.addEventListener("click", closeWelcomeModal);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && welcomeModal.classList.contains("is-visible")) {
+      closeWelcomeModal();
+    }
+  });
+
+  window.addEventListener("beforeunload", () => {
+    window.clearTimeout(welcomeModalTimer);
+  });
+}

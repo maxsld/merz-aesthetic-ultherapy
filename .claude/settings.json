@@ -34,7 +34,9 @@
       "Bash(echo \"EXIT: $?\")",
       "Bash(git rm *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(rm -f ultherapy-prime-plugin.zip)",
+      "Bash(zip -r ultherapy-prime-plugin.zip ultherapy-prime/ --exclude \"*.DS_Store\")"
     ],
     "additionalDirectories": [
       "/Users/maxenssoldan/Documents/Codage/merz-aesthetic-ultherapy/img",
