@@ -1653,6 +1653,17 @@ h1 sup {
   border: 0;
 }
 
+.doclocator-footnote {
+  margin: 10px 0 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.doclocator-footnote-mobile {
+  display: none;
+}
+
 #doclocator-map .leaflet-tile {
   filter: grayscale(1) contrast(1.05) brightness(1.02);
 }
@@ -1807,6 +1818,21 @@ h1 sup {
 
 .references-list li + li {
   margin-top: 4px;
+}
+
+.references-legal {
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.references-legal p {
+  margin: 0;
+}
+
+.references-legal p + p {
+  margin-top: 10px;
 }
 
 .site-footer {
@@ -4058,6 +4084,15 @@ h1 sup {
 
   .cta-map-frame {
     min-height: 200px;
+  }
+
+  .doclocator-footnote-desktop {
+    display: none;
+  }
+
+  .doclocator-footnote-mobile {
+    display: block;
+    margin-top: -12px;
   }
 
   .footer-shell {
